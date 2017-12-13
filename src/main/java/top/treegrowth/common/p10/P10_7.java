@@ -5,21 +5,21 @@ import java.util.Scanner;
 
 public class P10_7 
 {
-	static double maxvalue;							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
-	static double totalvalue;							//ï¿½ï¿½Æ·ï¿½Ü¼ï¿½Öµ
-	static double maxwt; 								//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	static int num;									//ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
-	static char[] seltemp; 								//ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ 
+	static double maxvalue;							//·½°¸×î´ó¼ÛÖµ
+	static double totalvalue;							//ÎïÆ·×Ü¼ÛÖµ
+	static double maxwt; 								//ÇÔÔôÄÜÄÃµÄ×î´óÊıÁ¿
+	static int num;									//ÎïÆ·ÊıÁ¿
+	static char[] seltemp; 								//ÁÙÊ±Êı×é 
 	
-	static void backpack(GType[] goods, int i, double wt, double vt)//ï¿½ã·¨ 
+	static void backpack(GType[] goods, int i, double wt, double vt)//Ëã·¨ 
 	{
 	   int k;
-	   if (wt + goods[i].weight <= maxwt)			//ï¿½ï¿½ï¿½ï¿½Æ·iï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½Ç°ï¿½ï¿½ï¿½ï¿½,ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¡ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	   if (wt + goods[i].weight <= maxwt)			//½«ÎïÆ·i°üº¬ÔÚµ±Ç°·½°¸,ÅĞ¶ÏÖØÁ¿Ğ¡ÓÚµÈÓÚÏŞÖÆÖØÁ¿ 
 	   {
-		  seltemp[i] = 1; 						//Ñ¡ï¿½Ğµï¿½iï¿½ï¿½ï¿½ï¿½Æ· 
-		  if (i < num - 1) 						//ï¿½ï¿½ï¿½ï¿½ï¿½Æ·iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Æ·
+		  seltemp[i] = 1; 						//Ñ¡ÖĞµÚi¸öÎïÆ· 
+		  if (i < num - 1) 						//Èç¹ûÎïÆ·i²»ÊÇ×îºóÒ»¸öÎïÆ·
 		  {
-			 backpack(goods, i + 1, wt + goods[i].weight, vt); //ï¿½İ¹ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
+			 backpack(goods, i + 1, wt + goods[i].weight, vt); //µİ¹éµ÷ÓÃ,¼ÌĞøÌí¼ÓÎïÆ·
 		  }
 		  else 
 		  {
@@ -27,15 +27,15 @@ public class P10_7
 			 {
 				goods[k].isSelect = seltemp[k];
 			 }
-			 maxvalue = vt; 					//ï¿½ï¿½ï¿½æµ±Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ 
+			 maxvalue = vt; 					//±£´æµ±Ç°·½°¸µÄ×î´ó¼ÛÖµ 
 		  }
 	 }
-	   seltemp[i] = 0; 							//È¡ï¿½ï¿½ï¿½ï¿½Æ·iï¿½ï¿½Ñ¡ï¿½ï¿½×´Ì¬ 
-	   if (vt - goods[i].value >maxvalue)			//ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ· 
+	   seltemp[i] = 0; 							//È¡ÏûÎïÆ·iµÄÑ¡Ôñ×´Ì¬ 
+	   if (vt - goods[i].value >maxvalue)			//»¹¿ÉÒÔ¼ÌĞøÌí¼ÓÎïÆ· 
 	   {
 		  if (i < num - 1) 
 		  {
-			 backpack(goods, i + 1, wt, vt - goods[i].value); //ï¿½İ¹ï¿½ï¿½ï¿½ï¿½
+			 backpack(goods, i + 1, wt, vt - goods[i].value); //µİ¹éµ÷ÓÃ
 		  }
 		  else 
 		  {
@@ -53,57 +53,57 @@ public class P10_7
 		   double sumweight;
 		   int i;
 
-		   System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-		   System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
+		   System.out.print("ÇÔÔôÎÊÌâÇó½â£¡\n");
+		   System.out.print("ÇÔÔô±³°üÄÜÈİÄÉµÄ×î´óÖØÁ¿:");
 		   Scanner input=new Scanner(System.in);
-		   maxwt=input.nextDouble();						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		   System.out.print("ï¿½ï¿½Ñ¡ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½:"); 
-		   num=input.nextInt();						//ï¿½ï¿½Ñ¡ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
+		   maxwt=input.nextDouble();						//ÇÔÔô±³°üÄÜÈİÄÉµÄ×î´óÖØÁ¿
+		   System.out.print("¿ÉÑ¡ÎïÆ·ÊıÁ¿:"); 
+		   num=input.nextInt();						//¿ÉÑ¡ÎïÆ·ÊıÁ¿
 		   
 		   GType[] goods=new GType[num];
 		   seltemp=new char[num];
 		   
-		   totalvalue=0;							//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ü¼ï¿½Öµ
+		   totalvalue=0;							//³õÊ¼»¯×Ü¼ÛÖµ
 		   for (i = 0; i < num; i++)
 		   {
 			  GType t=new GType();
-			  System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½"+(i+1)+"ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Öµ:");
+			  System.out.print("ÊäÈëµÚ"+(i+1)+"ºÅÎïÆ·µÄÖØÁ¿ºÍ¼ÛÖµ:");
 			  t.weight=input.nextDouble();
 			  t.value=input.nextDouble();
-			  totalvalue+=t.value;				//Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ü¼ï¿½Öµ
+			  totalvalue+=t.value;				//Í³¼ÆËùÓĞÎïÆ·µÄ×Ü¼ÛÖµ
 			  goods[i]=t;
 		   }
-		   System.out.print("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:  "+maxwt+" \n\n");
+		   System.out.print("\n±³°ü×î´óÄÜ×°µÄÖØÁ¿Îª:  "+maxwt+" \n\n");
 		   for (i = 0; i < num; i++)
 		   {
-			  System.out.print("ï¿½ï¿½"+(i+1)+"ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½:  "+goods[i].weight+" ,ï¿½ï¿½Öµ:"+goods[i].value+" \n");
+			  System.out.print("µÚ"+(i+1)+"ºÅÎïÆ·ÖØ:  "+goods[i].weight+" ,¼ÛÖµ:"+goods[i].value+" \n");
 			  }
 		   for (i = 0; i < num; i++)
 		   {
 		       seltemp[i]=0;
 		   }
 		   maxvalue=0;					
-		   backpack(goods,0,0.0,totalvalue); 			//ï¿½ï¿½ï¿½ 
+		   backpack(goods,0,0.0,totalvalue); 			//Çó½â 
 
 		   sumweight=0; 
-		   System.out.print("\nï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·×°ï¿½ë±³ï¿½ï¿½,Ê¹ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Öµï¿½ï¿½ï¿½:\n");
+		   System.out.print("\n¿É½«ÒÔÏÂÎïÆ·×°Èë±³°ü,Ê¹±³°ü×°µÄÎïÆ·¼ÛÖµ×î´ó:\n");
 		   for (i = 0; i < num; ++i)
 		   {
 			  if (goods[i].isSelect==1)
 			  {
-				 System.out.print("ï¿½ï¿½"+(i+1)+"ï¿½ï¿½ï¿½ï¿½Æ·,ï¿½ï¿½ï¿½ï¿½:  "+goods[i].weight+" ,ï¿½ï¿½Öµ:  "+goods[i].value+" \n");
+				 System.out.print("µÚ"+(i+1)+"ºÅÎïÆ·,ÖØÁ¿:  "+goods[i].weight+" ,¼ÛÖµ:  "+goods[i].value+" \n");
 				 sumweight+=goods[i].weight;
 		      }	 
 		   }
-		   System.out.print("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:  "+sumweight+" ,ï¿½Ü¼ï¿½ÖµÎª:  "+maxvalue+" \n");
+		   System.out.print("\n×ÜÖØÁ¿Îª:  "+sumweight+" ,×Ü¼ÛÖµÎª:  "+maxvalue+" \n");
 
 	}
 
 }
 
-class GType							//ï¿½á¹¹
+class GType							//½á¹¹
 {
-    double value; 							//ï¿½ï¿½Öµ
-    double weight; 						//ï¿½ï¿½ï¿½ï¿½
-    char isSelect; 							//ï¿½Ç·ï¿½Ñ¡ï¿½Ğµï¿½ï¿½ï¿½ï¿½ï¿½ 
+    double value; 							//¼ÛÖµ
+    double weight; 						//ÖØÁ¿
+    char isSelect; 							//ÊÇ·ñÑ¡ÖĞµ½·½°¸ 
 }

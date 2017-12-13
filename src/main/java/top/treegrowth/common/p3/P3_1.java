@@ -3,14 +3,14 @@ package top.treegrowth.common.p3;
 import java.util.Scanner;
 
 public class P3_1{
-	static int chichen,habbit; //chichenï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½habbitï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ¸ï¿½ï¿½ï¿½
-	public static  int qiongJu(int head , int foot) {//ï¿½ï¿½ï¿½ï¿½ã·¨
+	static int chichen,habbit; //chichen´ú±í¼¦µÄ¸öÊý£¬habbit´ú±íÍÃµÄ¸öÊý
+	public static  int qiongJu(int head , int foot) {//Çî¾ÙËã·¨
 		int re,i,j; 
 		re=0;
-	    for(i=0;i<=head;i++)						//Ñ­ï¿½ï¿½
+	    for(i=0;i<=head;i++)						//Ñ­»·
 	    {
 	        j=head-i;
-	        if(i*2+j*4==foot)						//ï¿½Ð¶Ï£ï¿½ï¿½Òµï¿½ï¿½ï¿½
+	        if(i*2+j*4==foot)						//ÅÐ¶Ï£¬ÕÒµ½´ð°¸
 	        {
 	           re=1;  
 			   chichen=i;
@@ -19,20 +19,20 @@ public class P3_1{
 	    }
 	    return re;
 	}
-	public static void main(String[] args) {       //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public static void main(String[] args) {       //Ö÷·½·¨
 		int re,head,foot;
-		System.out.println("ï¿½ï¿½Ù·ï¿½ï¿½ï¿½â¼¦ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½");
+		System.out.println("Çî¾Ù·¨Çó½â¼¦ÍÃÍ¬ÁýÎÊÌâ:");
+		System.out.print("ÇëÊäÈëÍ·Êý£º");
 		Scanner input=new Scanner(System.in);
-		head=input.nextInt();                     //ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
-		foot=input.nextInt();                     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		head=input.nextInt();                     //ÊäÈëÍ·Êý
+		System.out.print("ÇëÊäÈë½ÅÊý£º");
+		foot=input.nextInt();                     //ÊäÈë½ÅÊý
 		re=qiongJu(head,foot);
 		if(re==1){
-			System.out.println("ï¿½ï¿½ï¿½ï¿½"+chichen+"Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+habbit+"Ö»ï¿½ï¿½");
+			System.out.println("¼¦ÓÐ"+chichen+"Ö»£¬ÍÃÓÐ"+habbit+"Ö»¡£");
 		}
 		else{
-			System.out.println("ï¿½Þ·ï¿½ï¿½ï¿½â£¡");
+			System.out.println("ÎÞ·¨Çó½â£¡");
 		}
 	}
 }

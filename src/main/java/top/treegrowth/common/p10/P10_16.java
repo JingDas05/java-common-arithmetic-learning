@@ -6,33 +6,33 @@ import java.util.Scanner;
 public class P10_16 {
 	static int computer,user,last;
 
-	static void jiangjun()								//ï¿½ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static void jiangjun()								//³£Ê¤½«¾üËã·¨
 	{
 	   while(true)
 	   {
-	        System.out.printf(" ----------  Ä¿Ç°ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ %d ï¿½ï¿½ ----------\n",last);
-	        System.out.printf("ï¿½Ã»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:") ;
+	        System.out.printf(" ----------  Ä¿Ç°»¹ÓÐ»ð²ñ %d ¸ù ----------\n",last);
+	        System.out.printf("ÓÃ»§È¡»ð²ñÊýÁ¿:") ;
 	        Scanner input=new Scanner(System.in);
-	        user=input.nextInt();					//ï¿½Ã»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	        user=input.nextInt();					//ÓÃ»§È¡»ð²ñÊýÁ¿
 	        if(user<1 || user>4 || user>last)
 	        {
-				System.out.printf("ï¿½ï¿½Î¥ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½È¡ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!\n\n");
+				System.out.printf("ÄãÎ¥¹æÁË£¬ÄãÈ¡µÄ»ð²ñÊýÓÐÎÊÌâ!\n\n");
 				continue;
 			}
-	        last = last - user;						//Ê£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	        last = last - user;						//Ê£Óà»ð²ñÊýÁ¿
 	        if(last == 0)
 			{
-	        	System.out.printf("\nï¿½Ã»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½Ó®ï¿½ï¿½!\n"); 
+	        	System.out.printf("\nÓÃ»§È¡ÁË×îºóÒ»¸ö»ð²ñ,Òò´Ë¼ÆËã»úÓ®ÁË!\n"); 
 				break;
 			}
 			else
 			{
-				computer =  5 - user;			//ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				computer =  5 - user;			//¼ÆËã»úÈ¡»ð²ñÊýÁ¿
 				last = last - computer;
-				System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:%d  \n",computer);
+				System.out.printf("¼ÆËã»úÈ¡»ð²ñÊýÁ¿:%d  \n",computer);
 				if(last == 0)
 				{
-					System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ó®ï¿½ï¿½!\n"); 
+					System.out.printf("\n¼ÆËã»úÈ¡ÁË×îºóÒ»¸ù»ð²ñ,Òò´ËÓÃ»§Ó®ÁË!\n"); 
 					break;
 				}
 			}
@@ -41,13 +41,13 @@ public class P10_16 {
 	public static void main(String[] args) {
 		int num;
 
-		System.out.printf("ï¿½ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");
+		System.out.printf("³£Ê¤½«¾üÎÊÌâÇó½â£¡\n");
+		System.out.printf("ÇëÏÈÊäÈë»ð²ñµÄ×ÜÁ¿Îª:");
 		Scanner input=new Scanner(System.in);
-        num=input.nextInt();					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª%dï¿½ï¿½",num);
+        num=input.nextInt();					//»ð²ñµÄ×ÜÁ¿
+		System.out.printf("»ð²ñµÄ×ÜÁ¿Îª%d£º",num);
 		last=num;
-		jiangjun();							//ï¿½ï¿½ï¿½
+		jiangjun();							//Çó½â
 
 	}
 

@@ -57,7 +57,7 @@ public class fenjie2
 		String go;
 
 
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½");
+		System.out.println("ÇëÊäÈëÊı×Ö£º");
 		int num=input.nextInt();
 		obj.dispose(num);
 		for(int i=0;i<obj.result.length;i++)
@@ -70,7 +70,7 @@ public class fenjie2
 		}
 		System.out.println(num+"="+s.substring(0,s.length()-1));
 	
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		System.out.println("½áÊø£¡");
 		
 	}
 } 

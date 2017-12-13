@@ -1,28 +1,23 @@
 package top.treegrowth.common.p13;
 
-import java.util.Arrays;
-import java.util.HashSet;   
-import java.util.Iterator;   
-import java.util.Random;   
-import java.util.Scanner;
-import java.util.Set;   
-  
+import java.util.*;
+
 public class caipiao2 
 {   
   
     /**  
-     * ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Öºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä²ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+     * ¸ù¾Ý¸ø¶¨µÄ×îÐ¡Êý×ÖºÍ×î´óÊý×Ö£¬ÒÔ¼°Ëæ»úÊýµÄ¸öÊý£¬²úÉúÖ¸¶¨µÄ²»ÖØ¸´µÄÊý×é  
      *   
      * @param begin  
-     *            ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+     *            ×îÐ¡Êý×Ö£¨°üº¬¸ÃÊý£©  
      * @param end  
-     *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+     *            ×î´óÊý×Ö£¨²»°üº¬¸ÃÊý£©  
      * @param size  
-     *            Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½  
+     *            Ö¸¶¨²úÉúËæ»úÊýµÄ¸öÊý  
      */  
     public static int[] generateBySet1(int begin, int end, int size) 
     {   
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½Ð¶Ï£ï¿½È·ï¿½ï¿½begin<endï¿½ï¿½ï¿½ï¿½sizeï¿½ï¿½ï¿½Ü´ï¿½ï¿½Ú¸Ã±ï¿½Ê¾ï¿½ï¿½Î§   
+        // ¼ÓÈëÂß¼­ÅÐ¶Ï£¬È·±£begin<end²¢ÇÒsize²»ÄÜ´óÓÚ¸Ã±íÊ¾·¶Î§   
         if (begin >= end || (end - begin) < size) 
         {   
             return null;   
@@ -50,17 +45,17 @@ public class caipiao2
     }   
   
     /**  
-     * ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Öºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä²ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+     * ¸ù¾Ý¸ø¶¨µÄ×îÐ¡Êý×ÖºÍ×î´óÊý×Ö£¬ÒÔ¼°Ëæ»úÊýµÄ¸öÊý£¬²úÉúÖ¸¶¨µÄ²»ÖØ¸´µÄÊý×é  
      *   
      * @param begin  
-     *            ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+     *            ×îÐ¡Êý×Ö£¨°üº¬¸ÃÊý£©  
      * @param end  
-     *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+     *            ×î´óÊý×Ö£¨²»°üº¬¸ÃÊý£©  
      * @param size  
-     *            Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½  
+     *            Ö¸¶¨²úÉúËæ»úÊýµÄ¸öÊý  
      */  
 //    public static Integer[] generateBySet2(int begin, int end, int size) {   
-//        // ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½Ð¶Ï£ï¿½È·ï¿½ï¿½begin<endï¿½ï¿½ï¿½ï¿½sizeï¿½ï¿½ï¿½Ü´ï¿½ï¿½Ú¸Ã±ï¿½Ê¾ï¿½ï¿½Î§   
+//        // ¼ÓÈëÂß¼­ÅÐ¶Ï£¬È·±£begin<end²¢ÇÒsize²»ÄÜ´óÓÚ¸Ã±íÊ¾·¶Î§   
 //        if (begin >= end || (end - begin) < size) {   
 //            return null;   
 //        }   
@@ -89,8 +84,8 @@ public class caipiao2
     	Scanner input=new Scanner(System.in);
     	Random ran = new Random(); 
     	
-    	System.out.println("ï¿½ï¿½Ó­Ê¹ï¿½ï¿½Ë«É«ï¿½ï¿½ï¿½Ô¶ï¿½Ò¡ï¿½ï¿½ÏµÍ³");
-    	System.out.print("È·ÊµÒ¡ï¿½ï¿½(y/n)?");
+    	System.out.println("»¶Ó­Ê¹ÓÃË«É«Çò×Ô¶¯Ò¡ºÅÏµÍ³");
+    	System.out.print("È·ÊµÒ¡ºÅ(y/n)?");
     	String go;
     	go=input.next();
     	
@@ -99,10 +94,10 @@ public class caipiao2
     		 ranArr= generateBySet1(1,33,6); 
     		 red=ran.nextInt(16);
     		 System.out.println(Arrays.toString(ranArr)+" "+red);   
-    		 System.out.print("ï¿½ï¿½ï¿½ï¿½Ò¡ï¿½ï¿½(y/n)?");
+    		 System.out.print("¼ÌÐøÒ¡ºÅ(y/n)?");
     		 go=input.next();
     	}
-        System.out.println("Ð»Ð»Ê¹ï¿½Ã£ï¿½");   
+        System.out.println("Ð»Ð»Ê¹ÓÃ£¡");   
   
     }   
 }  

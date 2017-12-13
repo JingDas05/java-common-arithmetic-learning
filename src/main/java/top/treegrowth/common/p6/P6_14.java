@@ -1,7 +1,7 @@
 package top.treegrowth.common.p6;
 
 public class P6_14 {
-	static void cExp(double a,double b,double[] e,double[] f)		//ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static void cExp(double a,double b,double[] e,double[] f)		//¸´Ö¸ÊýÔËËã
 	{
 		double temp;
 		temp=Math.exp(a);
@@ -11,10 +11,10 @@ public class P6_14 {
 	public static void main(String[] args) {
 		double a,b;
 		double[] e={0},f={0};
-		a=3;b=2;									//ï¿½ï¿½Ê¼ï¿½ï¿½
+		a=3;b=2;									//³õÊ¼»¯
 
-		cExp(a,b,e,f);							//ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		System.out.printf("eï¿½ï¿½(%f+%fi)ï¿½ï¿½ï¿½ï¿½= %f+%fi\n",a,b,e[0],f[0]);
+		cExp(a,b,e,f);							//¸´Ö¸ÊýÔËËã
+		System.out.printf("eµÄ(%f+%fi)´ÎÃÝ= %f+%fi\n",a,b,e[0],f[0]);
 
 	}
 

@@ -1,11 +1,11 @@
 package top.treegrowth.common.p6;
 
 public class P6_28 {
-	static double func(double x) 								//ï¿½ï¿½ï¿½ï¿½â·½ï¿½ï¿½ 
+	static double func(double x) 								//´ýÇó½â·½³Ì 
 	{
 	    return x*x*x*x-3*x*x*x+1.5*x*x-4.0;
 	}
-	static double dfunc(double x) 								//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static double dfunc(double x) 								//µ¼Êý·½³Ì
 	{
 	    return 4*x*x*x-9*x*x+3*x;
 	}
@@ -18,41 +18,41 @@ public class P6_28 {
 		i=0;
 		while(i<maxcyc)
 	    {
-	        if(dfunc(x0)==0.0)							//ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÖµÎª0
+	        if(dfunc(x0)==0.0)							//ÈôÍ¨¹ý³õÖµ£¬º¯Êý·µ»ØÖµÎª0
 	        {
-	            System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Îª0!\n");
+	            System.out.print("µü´ú¹ý³ÌÖÐµ¼ÊýÎª0!\n");
 	            return 0;
 	        }
-	        x1=x0-func(x0)/dfunc(x0);						//Å£ï¿½Ùµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	        if(Math.abs(x1-x0)<precision || Math.abs(func(x1))<precision) 	//ï¿½ïµ½Ô¤ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	        x1=x0-func(x0)/dfunc(x0);						//Å£¶Ùµü´ú¼ÆËã 
+	        if(Math.abs(x1-x0)<precision || Math.abs(func(x1))<precision) 	//´ïµ½Ô¤ÉèµÄ½áÊøÌõ¼þ 
 	        {
-	            x[0]=x1; 									//ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ 
+	            x[0]=x1; 									//·µ»Ø½á¹û 
 	            return 1;
 	        }
-	        else 										//Î´ï¿½ïµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	        else 										//Î´´ïµ½½áÊøÌõ¼þ 
 			{
-	            x0=x1; 								//×¼ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Îµï¿½ï¿½ï¿½ 
+	            x0=x1; 								//×¼±¸ÏÂÒ»´Îµü´ú 
 			}
-			i++;										//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¼ï¿½
+			i++;										//µü´ú´ÎÊýÀÛ¼Ó
 	    }
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½Öµ!ï¿½ï¿½Ã»ï¿½Ð´ïµ½ï¿½ï¿½ï¿½È£ï¿½\n");
+	    System.out.print("µü´ú´ÎÊý³¬¹ýÔ¤ÉèÖµ!ÈÔÃ»ÓÐ´ïµ½¾«¶È£¡\n");
 	    return 0;
 	}
 	public static void main(String[] args) {
 		double precision;
 	    int maxcyc,result;
 
-		double[] x={2.0};										//ï¿½ï¿½Ê¼Öµ
-		maxcyc=1000;									//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		precision=0.00001;								//ï¿½ï¿½ï¿½ï¿½
+		double[] x={2.0};										//³õÊ¼Öµ
+		maxcyc=1000;									//µü´ú´ÎÊý
+		precision=0.00001;								//¾«¶È
 		result=NewtonMethod(x,maxcyc,precision);
-	    if(result==1) 									//ï¿½Ãµï¿½ï¿½ï¿½ï¿½
+	    if(result==1) 									//µÃµ½½á¹û
 		{
-	        System.out.printf("ï¿½ï¿½ï¿½ï¿½x*x*x*x-3*x*x*x+1.5*x*x-4.0=0\nï¿½ï¿½2.0ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Îª:%f\n",x[0]);
+	        System.out.printf("·½³Ìx*x*x*x-3*x*x*x+1.5*x*x-4.0=0\nÔÚ2.0¸½½üµÄ¸ùÎª:%f\n",x[0]);
 		}
-	    else 											//Î´ï¿½Ãµï¿½ï¿½ï¿½ï¿½
+	    else 											//Î´µÃµ½½á¹û
 		{
-	        System.out.print("ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½!\n");
+	        System.out.print("µü´úÊ§°Ü!\n");
 		}
 
 	}

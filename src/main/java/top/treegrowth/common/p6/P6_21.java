@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 
 public class P6_21 {
-	static double montePI(int n) 				//ï¿½ï¿½ï¿½Ø¿ï¿½ï¿½ï¿½ï¿½ã·¨
+	static double montePI(int n) 				//ÃÉÌØ¿¨ÂÞËã·¨
 	{
 		int i,sum;
 		double PI;
@@ -15,23 +15,23 @@ public class P6_21 {
 		Random r=new Random();    
 	    for(i=1;i<n;i++)
 	    {
-	        x=r.nextDouble();	//ï¿½ï¿½ï¿½ï¿½0~1Ö®ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	        y=r.nextDouble();	//ï¿½ï¿½ï¿½ï¿½0~1Ö®ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	        if((x*x+y*y)<=1)				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ 
-	            sum++;				//ï¿½ï¿½ï¿½ï¿½ 
+	        x=r.nextDouble();	//²úÉú0~1Ö®¼äµÄÒ»¸öËæ»úÊý 
+	        y=r.nextDouble();	//²úÉú0~1Ö®¼äµÄÒ»¸öËæ»úÊý 
+	        if((x*x+y*y)<=1)				//ÈôÔÚÒõÓ°ÇøÓò 
+	            sum++;				//¼ÆÊý 
 	    }
-		PI=4.0*sum/n;					//ï¿½ï¿½ï¿½ï¿½PI
+		PI=4.0*sum/n;					//¼ÆËãPI
 		return PI;
 	}
 	public static void main(String[] args) {
 		int n; 
 		double PI;
 
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
+	    System.out.print("ÊäÈëµãµÄÊýÁ¿:");
 	    Scanner input=new Scanner(System.in);
-	    n=input.nextInt(); 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	    PI=montePI(n);					//ï¿½ï¿½ï¿½ï¿½PI
-	    System.out.println("PI="+PI); 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    n=input.nextInt(); 				//ÊäÈëÈöµã¸öÊý
+	    PI=montePI(n);					//¼ÆËãPI
+	    System.out.println("PI="+PI); 				//Êä³ö½á¹û 
 
 	}
 

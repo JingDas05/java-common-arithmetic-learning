@@ -4,41 +4,41 @@ public class P6_26 {
 	static final int MaxNum=10;
 	static int array[][]={{3,5,-4,0},
 			              {7,2,6,-4},
-			              {4,-1,5,-5}};//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½			
-	static int[] unuse_result=new int[MaxNum];			//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Ç²ï¿½È·ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½
-	static int GaussFun(int equ,int var,int result[])	//ï¿½ï¿½Ë¹ï¿½ï¿½Ôªï¿½ï¿½ï¿½ã·¨
+			              {4,-1,5,-5}};//ÊäÈëµÄÔö¹ã¾ØÕó			
+	static int[] unuse_result=new int[MaxNum];			//ÅÐ¶ÏÊÇ·ñÊÇ²»È·¶¨µÄ±äÁ¿
+	static int GaussFun(int equ,int var,int result[])	//¸ßË¹ÏûÔª·¨Ëã·¨
 	{
 	    int i,j,k,col,num1,num2;
 	    int max_r,ta,tb,gcdtemp,lcmtemp;
 	    int temp,unuse_x_num,unuse_index=0;
-	    col=0;						//ï¿½ï¿½1ï¿½Ð¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ 
-	    for(k=0;k<equ && col<var;k++,col++) //Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¸ï¿½ï¿½ï¿½
+	    col=0;						//µÚ1ÁÐ¿ªÊ¼´¦Àí 
+	    for(k=0;k<equ && col<var;k++,col++) //Ñ­»·´¦ÀíÔö¹ã¾ØÕóÖÐµÄ¸÷ÐÐ
 	    {    
-	        max_r=k;					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ðºï¿½
+	        max_r=k;					//±£´æ¾ø¶ÔÖµ×î´óµÄÐÐºÅ
 	        for(i=k+1;i<equ;i++)
 			{
 	            if(Math.abs(array[i][col])>Math.abs(array[max_r][col]))
 				{
-	                max_r=i;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ðºï¿½ 
+	                max_r=i;			//±£´æ¾ø¶ÔÖµ×î´óµÄÐÐºÅ 
 				}
 			}
-	        if(max_r!=k)					//ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½Çµï¿½Ç°ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½kï¿½Ð½ï¿½ï¿½ï¿½
+	        if(max_r!=k)					//×î´óÐÐ²»ÊÇµ±Ç°ÐÐ£¬ÔòÓëµÚkÐÐ½»»»
 			{
-	            for(j=k;j<var+1;j++)		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½
+	            for(j=k;j<var+1;j++)		//½»»»¾ØÕóÓÒÉÏ½ÇÊý¾Ý
 				{
 					temp=array[k][j];
 					array[k][j]=array[max_r][j];
 					array[max_r][j]=temp;
 				}
 			}
-	        if(array[k][col]==0) 			//Ëµï¿½ï¿½colï¿½Ðµï¿½kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½Ðµï¿½ï¿½ï¿½Ò»ï¿½ï¿½
+	        if(array[k][col]==0) 			//ËµÃ÷colÁÐµÚkÐÐÒÔÏÂÈ«ÊÇ0£¬Ôò´¦Àíµ±Ç°ÐÐµÄÏÂÒ»ÁÐ
 	        {
 	            k--;
 	            continue;
 	        }
-	        for(i=k+1;i<equ;i++) 			//ï¿½ï¿½ï¿½ï¿½ÒªÉ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	        for(i=k+1;i<equ;i++) 			//²éÕÒÒªÉ¾³ýµÄÐÐ
 	        {
-	            if(array[i][col]!=0) 			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½Îª0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ 
+	            if(array[i][col]!=0) 			//Èç¹û×óÁÐ²»Îª0£¬½øÐÐÏûÔªÔËËã 
 	            {	
 					num1=Math.abs(array[i][col]);
 					num2=Math.abs(array[k][col]);
@@ -48,14 +48,14 @@ public class P6_26 {
 						num2=num1%num2;
 						num1=temp;
 					}
-					gcdtemp=num1;	//ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½
-					lcmtemp=(Math.abs(array[i][col]) * Math.abs(array[k][col]))/gcdtemp;//ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+					gcdtemp=num1;	//×î´ó¹«Ô¼Êý
+					lcmtemp=(Math.abs(array[i][col]) * Math.abs(array[k][col]))/gcdtemp;//Çó×îÐ¡¹«±¶Êý
 
 	                ta=lcmtemp/Math.abs(array[i][col]);
 	                tb=lcmtemp/Math.abs(array[k][col]);
-	                if(array[i][col]*array[k][col]<0) 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å²ï¿½Í¬ 
+	                if(array[i][col]*array[k][col]<0) 	//Èç¹ûÁ½Êý·ûºÅ²»Í¬ 
 					{
-	                    tb=-tb;					//ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	                    tb=-tb;					//ÒìºÅµÄÇé¿öÊÇÁ½¸öÊýÏà¼Ó
 					}
 	                for(j=col;j<var+1;j++)  
 					{
@@ -64,18 +64,18 @@ public class P6_26 {
 	            }
 	        }
 	    }
-	    for(i=k;i<equ;i++)				//ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
+	    for(i=k;i<equ;i++)				//ÅÐ¶Ï×îºóÒ»ÐÐ×îºóÒ»ÁÐ
 		{
-	        if(array[i][col]!=0) 			//ï¿½ï¿½ï¿½ï¿½Îª0ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Þ½ï¿½
+	        if(array[i][col]!=0) 			//Èô²»Îª0£¬±íÊ¾ÎÞ½â
 			{
-	            return -1; 				//ï¿½ï¿½ï¿½ï¿½-1ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Þ½ï¿½
+	            return -1; 				//·µ»Ø-1£¬±íÊ¾ÎÞ½â
 			}
 		}
-	    if(k<var)						//ï¿½ï¿½ï¿½É±ï¿½ï¿½ï¿½ï¿½ï¿½var-kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½var-kï¿½ï¿½.
+	    if(k<var)						//×ÔÓÉ±äÁ¿ÓÐvar-k¸ö£¬¼´²»È·¶¨µÄ±äÁ¿ÖÁÉÙÓÐvar-k¸ö.
 	    {
 	        for(i=k-1;i>=0;i--)
 	        {
-	            unuse_x_num=0; 		//ï¿½Ð¶Ï¸ï¿½ï¿½ï¿½ï¿½Ð²ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	            unuse_x_num=0; 		//ÅÐ¶Ï¸ÃÐÐÖÐ²»È·¶¨±äÁ¿ÊýÁ¿£¬
 	            for(j=0;j<var;j++)
 	            {
 //	                if(array[i][j]!=0 && unuse_result[j])
@@ -87,7 +87,7 @@ public class P6_26 {
 	            }
 	            if(unuse_x_num>1)
 				{
-	                continue; 			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½
+	                continue; 			//Èô³¬¹ý1¸ö£¬ÔòÎÞ·¨Çó½â
 				}
 	            temp=array[i][var];
 	            for(j=0;j<var;j++)
@@ -97,12 +97,12 @@ public class P6_26 {
 	                    temp-=array[i][j]*result[j];
 					}
 	            }
-	            result[unuse_index]=temp/array[i][unuse_index]; 	//ï¿½ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½
-	            unuse_result[unuse_index]=0; 				//ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½
+	            result[unuse_index]=temp/array[i][unuse_index]; 	//Çó³ö¸Ã±äÁ¿
+	            unuse_result[unuse_index]=0; 				//¸Ã±äÁ¿ÊÇÈ·¶¨µÄ
 	        }
-	        return var-k; 								//ï¿½ï¿½ï¿½É±ï¿½ï¿½ï¿½ï¿½ï¿½var-kï¿½ï¿½
+	        return var-k; 								//×ÔÓÉ±äÁ¿ÓÐvar-k¸ö
 	    }
-	    for(i=var-1;i>=0;i--)				//ï¿½ï¿½ï¿½ 
+	    for(i=var-1;i>=0;i--)				//Çó½â 
 	    {
 	        temp=array[i][var];
 	        for(j=i+1;j<var;j++)
@@ -112,9 +112,9 @@ public class P6_26 {
 	                temp-=array[i][j]*result[j];
 				}
 	        }
-	        if(temp % array[i][i]!=0)		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	        if(temp % array[i][i]!=0)		//Èô²»ÄÜÕû³ý 
 			{
-	            return -2; 				//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	            return -2; 				//·µ»ØÓÐ¸¡µãÊý½â£¬µ«ÎÞÕûÊý½â
 			}
 	        result[i]=temp/array[i][i];
 	    }
@@ -123,27 +123,27 @@ public class P6_26 {
 	public static void main(String[] args) {
 		 int i, type;
 		    int equnum, varnum;
-			int[] result=new int[MaxNum]; 		//ï¿½ï¿½ï¿½æ·½ï¿½ÌµÄ½ï¿½
+			int[] result=new int[MaxNum]; 		//±£´æ·½³ÌµÄ½â
 			equnum=3;
 			varnum=3;
 		   
-		    type=GaussFun(equnum,varnum,result); //ï¿½ï¿½ï¿½Ã¸ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ 
-		    if(type==-1) 			//ï¿½Þ½ï¿½ 
+		    type=GaussFun(equnum,varnum,result); //µ÷ÓÃ¸ßË¹º¯Êý 
+		    if(type==-1) 			//ÎÞ½â 
 			{
-		        System.out.printf("ï¿½Ã·ï¿½ï¿½ï¿½ï¿½Þ½ï¿½!\n");
+		        System.out.printf("¸Ã·½³ÌÎÞ½â!\n");
 			}
-		    else if(type==-2)			//Ö»ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+		    else if(type==-2)			//Ö»ÓÐ¸¡µãÊý½â 
 			{
-		        System.out.printf("ï¿½Ã·ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!\n");
+		        System.out.printf("¸Ã·½³ÌÓÐ¸¡µãÊý½â£¬ÎÞÕûÊý½â!\n");
 			}
-		    else if(type>0) 			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+		    else if(type>0) 			//ÎÞÇî¶à¸ö½â 
 		    {
-		         System.out.printf("ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½! ï¿½ï¿½ï¿½É±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª%d\n",type);
+		         System.out.printf("¸Ã·½³ÌÓÐÎÞÇî¶à½â! ×ÔÓÉ±äÁ¿ÊýÁ¿Îª%d\n",type);
 		         for(i=0;i<varnum;i++)
 		         {
 		             if(unuse_result[i]!=0)
 					 {
-		                 System.out.printf("x%d ï¿½Ç²ï¿½È·ï¿½ï¿½ï¿½ï¿½\n",i+1);
+		                 System.out.printf("x%d ÊÇ²»È·¶¨µÄ\n",i+1);
 					 }
 		             else
 					 {
@@ -153,8 +153,8 @@ public class P6_26 {
 		    }
 		    else
 			{
-				    System.out.printf("ï¿½Ã·ï¿½ï¿½ÌµÄ½ï¿½Îª:\n");
-		        for(i=0;i<varnum;i++) //ï¿½ï¿½ï¿½ï¿½ï¿½ 
+				    System.out.printf("¸Ã·½³ÌµÄ½âÎª:\n");
+		        for(i=0;i<varnum;i++) //Êä³ö½â 
 		        {
 		            System.out.printf("x%d=%d\n",i+1,result[i]);
 		        }

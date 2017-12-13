@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 
 public class P9_10 {
-	static int isPrime(int a)			//ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static int isPrime(int a)			//ÅĞ¶ÏËØÊıËã·¨
 	{  
 	    int i;
 	    for(i=2;i<a;i++)
 		{
 			if(a % i == 0)
 			{
-				return 0;      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+				return 0;      //²»ÊÇÖÊÊı 
 			}
 		}
-	    return 1;      			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    return 1;      			//ÊÇÖÊÊı 
 	}
 
-	static void PrimeFactor(int n)		//ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static void PrimeFactor(int n)		//·Ö½âÖÊÒòÊıËã·¨
 	{ 
 	    int i;
 	    if(isPrime(n)==1)  
@@ -30,15 +30,15 @@ public class P9_10 {
 			{
 	            if(n % i == 0)
 	            {
-	                 System.out.printf("%d*",i); 	//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	                 System.out.printf("%d*",i); 	//µÚÒ»¸öÒòÊıÒ»¶¨ÊÇÖÊÒòÊı 
 	                 if(isPrime(n/i)==1) 
-					 {			//ï¿½Ğ¶ÏµÚ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+					 {			//ÅĞ¶ÏµÚ¶ş¸öÒòÊıÊÇ·ñÊÇÖÊÊı 
 	                     System.out.printf("%d",n/i);
-	                     break; 		//ï¿½Òµï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	                     break; 		//ÕÒµ½È«²¿ÖÊÒò×Ó 
 	                 }
 	                else
 					{
-	                    PrimeFactor(n/i);//ï¿½İ¹ï¿½Øµï¿½ï¿½ï¿½PrimeFactor ï¿½Ö½ï¿½n/i 
+	                    PrimeFactor(n/i);//µİ¹éµØµ÷ÓÃPrimeFactor ·Ö½ân/i 
 					}
 	            break;
 	            }
@@ -47,11 +47,11 @@ public class P9_10 {
 	}
 	public static void main(String[] args) {
 		int n;
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½nï¿½ï¿½\n")  ;
+	    System.out.printf("ÇëÊ×ÏÈÊäÈëÒ»¸öÊın£º\n")  ;
 	    Scanner input=new Scanner(System.in);
 	    n=input.nextInt();
 	    System.out.printf("n=%d=",n);
-	    PrimeFactor(n);   			//ï¿½ï¿½nï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    PrimeFactor(n);   			//¶Ôn·Ö½âÖÊÒòÊı 
 
 	}
 

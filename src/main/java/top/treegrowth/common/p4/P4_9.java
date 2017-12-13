@@ -2,14 +2,14 @@ package top.treegrowth.common.p4;
 
 public class P4_9 {
 	static final int N=5;
-	static void quickSort(String[] arr,int left,int right)			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static void quickSort(String[] arr,int left,int right)			//¿ìËÙÅÅÐòËã·¨
 	{
 	    String  f,t;
 		int rtemp,ltemp;
 
 	    ltemp=left;
 	    rtemp=right;
-	    f=arr[(left+right)/2];						//ï¿½Ö½ï¿½Öµ
+	    f=arr[(left+right)/2];						//·Ö½çÖµ
 		while(ltemp<rtemp)
 		{
 	        while(arr[ltemp].compareTo(f)<0)
@@ -36,30 +36,30 @@ public class P4_9 {
 
 	    if(left<rtemp) 
 		{
-			quickSort(arr,left,ltemp-1);			//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
+			quickSort(arr,left,ltemp-1);			//µÝ¹éµ÷ÓÃ
 		}
 	    if(ltemp<right) 
 		{
-			quickSort(arr,rtemp+1,right);			//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
+			quickSort(arr,rtemp+1,right);			//µÝ¹éµ÷ÓÃ
 		}
 	}
 	public static void main(String[] args) 
 	{
-		String[] arr=new String[]{"One","World","Dream","Beijing","Olympic"};	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
+		String[] arr=new String[]{"One","World","Dream","Beijing","Olympic"};	//ÉùÃ÷²¢³õÊ¼»¯
 		int i;
 
-		System.out.print("ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½\n");
+		System.out.print("ÅÅÐòÇ°£º\n");
 		for(i=0;i<N;i++)
 		{
-			System.out.println(arr[i]);					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°
+			System.out.println(arr[i]);					//Êä³öÅÅÐòÇ°
 		}
 
-		quickSort(arr,0,N-1);							//ï¿½ï¿½ï¿½ï¿½
+		quickSort(arr,0,N-1);							//ÅÅÐò
 
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+		System.out.print("ÅÅÐòºó£º\n");
 		for(i=0;i<N;i++)
 		{
-			System.out.println(arr[i]);					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			System.out.println(arr[i]);					//Êä³öÅÅÐòºó
 		}
 		
 

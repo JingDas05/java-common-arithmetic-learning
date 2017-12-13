@@ -1,19 +1,19 @@
 package top.treegrowth.common.p6;
 
 public class P6_15 {
-	static void cLog(double a,double b,double[] e,double[] f)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static void cLog(double a,double b,double[] e,double[] f)	//¸´¶ÔÊýÔËËã
 	{
 		double temp;
 	    temp=Math.log(Math.sqrt(a*a+b*b));
-	    e[0]=temp;						//Êµï¿½ï¿½
-		f[0]=Math.atan2(b,a);					//ï¿½é²¿
+	    e[0]=temp;						//Êµ²¿
+		f[0]=Math.atan2(b,a);					//Ðé²¿
 	}
 	public static void main(String[] args) {
 		double a,b;
 		double[] e={0},f={0};
 		a=2.0;b=3.0;
 
-		cLog(a,b,e,f);				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		cLog(a,b,e,f);				//¸´¶ÔÊýÔËËã
 		System.out.printf("ln(%f+%fi)= %f+%fi\n",a,b,e[0],f[0]);
 
 	}

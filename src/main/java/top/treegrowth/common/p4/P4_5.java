@@ -2,14 +2,14 @@ package top.treegrowth.common.p4;
 
 public class P4_5 {
 	static final int SIZE=18;
-	static void quickSort(int[] arr,int left,int right)			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static void quickSort(int[] arr,int left,int right)			//¿ìËÙÅÅÐòËã·¨
 	{
 	    int f,t;
 		int rtemp,ltemp;
 
 	    ltemp=left;
 	    rtemp=right;
-	    f=arr[(left+right)/2];						//ï¿½Ö½ï¿½Öµ
+	    f=arr[(left+right)/2];						//·Ö½çÖµ
 		while(ltemp<rtemp)
 		{
 	        while(arr[ltemp]<f)
@@ -36,11 +36,11 @@ public class P4_5 {
 
 	    if(left<rtemp) 
 		{
-			quickSort(arr,left,ltemp-1);			//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
+			quickSort(arr,left,ltemp-1);			//µÝ¹éµ÷ÓÃ
 		}
 	    if(ltemp<right) 
 		{
-			quickSort(arr,rtemp+1,right);			//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
+			quickSort(arr,rtemp+1,right);			//µÝ¹éµ÷ÓÃ
 		}
 	}
 	public static void main(String[] args) 
@@ -50,22 +50,22 @@ public class P4_5 {
 		
 		for(i=0;i<SIZE;i++)
 		{
-			shuzu[i]=(int)(100+Math.random()*(100+1));			//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			shuzu[i]=(int)(100+Math.random()*(100+1));			//³õÊ¼»¯Êý×é
 		}
 		
-		System.out.print("ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½\n");				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		System.out.print("ÅÅÐòÇ°µÄÊý×éÎª£º\n");				//Êä³öÅÅÐòÇ°µÄÊý×é
 		for(i=0;i<SIZE;i++)
 		{
 			System.out.print(shuzu[i]+" ");
 		}
 		System.out.print("\n");
 		
-		quickSort(shuzu,0,SIZE-1);					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		quickSort(shuzu,0,SIZE-1);					//ÅÅÐò²Ù×÷
 		
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½\n");
+		System.out.print("ÅÅÐòºóµÄÊý×éÎª£º\n");
 		for(i=0;i<SIZE;i++)
 		{
-			System.out.print(shuzu[i]+" ");					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			System.out.print(shuzu[i]+" ");					//Êä³öÅÅÐòºóµÄÊý×é
 		}
 		System.out.print("\n");
 

@@ -5,15 +5,15 @@ import java.util.Scanner;
 
 class Card2
 {
-   int Suit;							//ï¿½ï¿½É« 
-   char Number;							//ï¿½ï¿½ï¿½ï¿½ 
+   int Suit;							//»¨É« 
+   char Number;							//ÅÆÊý 
    double Num;
 }
 
 public class P11_3 {
-	static Card2[] OneCard=new Card2[52];		    	//ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½Ë¿ËµÄ»ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static Card2[] OneCard=new Card2[52];		    	//±£´æÃ¿ÕÅÆË¿ËµÄ»¨É«¡¢Êý×Ö
 	
-	static void ShowCard() 							//ï¿½ï¿½Ê¾ï¿½Ë¿ï¿½ï¿½ï¿½ 
+	static void ShowCard() 							//ÏÔÊ¾ÆË¿ËÅÆ 
 	{
 	   int i, j;
 	   int sign=0;
@@ -25,33 +25,33 @@ public class P11_3 {
 		  {
 			 System.out.print("\n");
 		  }
-		  switch(OneCard[i].Suit)					//ï¿½ï¿½Ê¾ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
+		  switch(OneCard[i].Suit)					//ÏÔÊ¾»¨É«·ûºÅ
 		  {
 		  case 1:
-			  s="ï¿½ï¿½ï¿½ï¿½";
+			  s="ºÚÌÒ";
 			  sign=3;
 			  break;
 		  case 2:
-			  s="ï¿½ï¿½ï¿½ï¿½";
+			  s="ºìÌÒ";
 			  sign=4;
 			  break;
 		  case 3:
-			  s="Ã·ï¿½ï¿½";
+			  s="Ã·»¨";
 			  sign=5;
 			  break;
 		  case 4:
-			  s="ï¿½ï¿½ï¿½ï¿½";
+			  s="·½¿é";
 			  sign=6;
 			  break;
 		  default:
 			  ;
 		  }
-		  System.out.printf("  "+s+OneCard[i].Number);	//ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
+		  System.out.printf("  "+s+OneCard[i].Number);	//Êä³öÏÔÊ¾
 	   }
 	   System.out.print("\n");
 	}
 	
-	static void Shuffle()								//ï¿½ã·¨
+	static void Shuffle()								//Ëã·¨
 	{
 		int i,j,temp;
 		int suit;
@@ -59,16 +59,16 @@ public class P11_3 {
 	    Card2 tempcard=new Card2();
 
 		suit=0;
-	   for (i = 0; i < 52; i++)						//ï¿½ï¿½ï¿½ï¿½52ï¿½ï¿½ï¿½ï¿½ 
+	   for (i = 0; i < 52; i++)						//Éú³É52ÕÅÅÆ 
 	   {
 		  if (i % 13 == 0)
 		  {
-			 suit++;							//ï¿½Ä±ä»¨É« 
+			 suit++;							//¸Ä±ä»¨É« 
 		  }
 		  Card2 t=new Card2();
-		  t.Suit = suit;					//ï¿½ï¿½ï¿½æ»¨É« 
+		  t.Suit = suit;					//±£´æ»¨É« 
 		  temp = i % 13;
-		  switch(temp)							//ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½
+		  switch(temp)							//ÌØÊâÖµ´¦Àí
 		  {
 		  case 0:
 			  t.Number = 'A';
@@ -89,7 +89,7 @@ public class P11_3 {
 			  t.Number =(char)(temp + '1');
 		  }
 		  
-		  if (temp >= 10)						//ï¿½ï¿½0.5ï¿½ï¿½
+		  if (temp >= 10)						//¼Ç0.5µã
 			 {
 				 t.Num = 0.5;
 			 }
@@ -100,71 +100,71 @@ public class P11_3 {
 		  OneCard[i]=t;
 
 	   }
-	   System.out.printf("Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ÆµÄ³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n"); 
+	   System.out.printf("Ò»¸¶ÐÂÅÆµÄ³õÊ¼ÅÅÁÐÈçÏÂ:\n"); 
 
 	   ShowCard();
 
-	   Random r=new Random();					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	   Random r=new Random();					//Ëæ»úÖÖ×Ó
 	   for (i = 0; i < 52; i++)
 	   {
-		  j = r.nextInt(52);						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		  j = r.nextInt(52);						//Ëæ»ú»»ÅÆ
 		  tempcard = OneCard[j];
 		  OneCard[j] = OneCard[i];
 		  OneCard[i] = tempcard;
 	   }
 	}
 	
-	static void tenhalf() 								//10ï¿½ï¿½ï¿½ï¿½ã·¨
+	static void tenhalf() 								//10µã°ëËã·¨
 	{
-	   int i, count = 0;							//countÎªï¿½ÆµÄ¼ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	   int iUser = 0, iComputer = 0;				//iUserÎªï¿½ï¿½Ï·ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½,iComputerÎªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½ 
+	   int i, count = 0;							//countÎªÅÆµÄ¼ÆÊýÆ÷ 
+	   int iUser = 0, iComputer = 0;				//iUserÎªÓÎÏ·ÕßÅÆµÄÊýÁ¿,iComputerÎª¼ÆËã»úÅÆµÄÊýÁ¿ 
 	   int flag = 1, flagc = 1;	 
 	   String jixu,s="";
-	   Card2[] User=new Card2[20], Computer=new Card2[20];				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ßºÍ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ 
-	   float TotalU = 0, TotalC = 0;					//Í³ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ßºÍ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ 
+	   Card2[] User=new Card2[20], Computer=new Card2[20];				//±£´æÓÎÏ·ÕßºÍ¼ÆËã»úÊÖÖÐµÄÅÆ 
+	   float TotalU = 0, TotalC = 0;					//Í³¼ÆÓÎÏ·ÕßºÍ¼ÆËã»úµÄ×ÜµãÊý 
 	   
 	   Scanner input=new Scanner(System.in);
 
-	   while (flag == 1 && count < 52)				//ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	   while (flag == 1 && count < 52)				//»¹ÓÐÅÆ£¬¼ÌÐø·¢ÅÆ 
 	   {
-		  //ï¿½ï¿½Ï·ï¿½ï¿½È¡ï¿½ï¿½ 
-		  User[iUser++] = OneCard[count++];		//ï¿½ï¿½ï¿½Æ¸ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ 
-		  TotalU += User[iUser - 1].Num;			//ï¿½Û¼ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ 
-		  //ï¿½ï¿½ï¿½ï¿½Îªï¿½É¼ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½
-		  if (count >= 52)						//ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ 
+		  //ÓÎÏ·ÕßÈ¡ÅÆ 
+		  User[iUser++] = OneCard[count++];		//·¢ÅÆ¸øÓÎÏ·Õß 
+		  TotalU += User[iUser - 1].Num;			//ÀÛ¼ÓÓÎÏ·Õß×ÜµãÊý 
+		  //½ÓÏÂÎªÓÉ¼ÆËã»úÈ¡ÅÆ
+		  if (count >= 52)						//ÅÆÒÑÈ¡Íê 
 		  {
 			 flag = 0;
 		  }
-		  else if (TotalU > 10.5)					//ï¿½ï¿½Ï·ï¿½ï¿½Õ¨ï¿½ï¿½
+		  else if (TotalU > 10.5)					//ÓÎÏ·ÕßÕ¨ÁË
 		  {
-			 flagc = 0; 						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ 
+			 flagc = 0; 						//¼ÆËã»ú²»ÔÙÒªÅÆ 
 		  }
 		  else
 		  {
 			 if ((TotalC < 10.5 && TotalC < TotalU) || TotalC < 7) 
 			 {
-				Computer[iComputer++] = OneCard[count++];	//ï¿½ï¿½ï¿½ï¿½ï¿½È¡Ò»ï¿½ï¿½ï¿½ï¿½ 
-				TotalC += Computer[iComputer - 1].Num;		//ï¿½Û¼Æ¼ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ 
+				Computer[iComputer++] = OneCard[count++];	//¼ÆËã»úÈ¡Ò»ÕÅÅÆ 
+				TotalC += Computer[iComputer - 1].Num;		//ÀÛ¼Æ¼ÆËã»ú×ÜµãÊý 
 			 }
 		  }
-		  System.out.printf("\nï¿½Ã»ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½Îª:%.1f\t", TotalU);
-		  System.out.printf("ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");
-		  for (i = 0; i < iUser; i++)					//ï¿½ï¿½Ê¾ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
+		  System.out.printf("\nÓÃ»§µÄ×ÜµãÊýÎª:%.1f\t", TotalU);
+		  System.out.printf("ÓÃ»§µÄÅÆÎª:");
+		  for (i = 0; i < iUser; i++)					//ÏÔÊ¾ÓÃ»§µÄÅÆ
 		  {		
 			  
-			  switch(User[i].Suit)					//ï¿½ï¿½Ê¾ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
+			  switch(User[i].Suit)					//ÏÔÊ¾»¨É«·ûºÅ
 			  {
 			  case 1:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="ºÚÌÒ";
 				  break;
 			  case 2:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="ºìÌÒ";
 				  break;
 			  case 3:
-				  s="Ã·ï¿½ï¿½";
+				  s="Ã·»¨";
 				  break;
 			  case 4:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="·½¿é";
 				  break;
 			  default:
 				  ;
@@ -172,23 +172,23 @@ public class P11_3 {
 			  System.out.printf("  "+s+User[i].Number);
 		  }
 		  System.out.printf("\n");
-		  System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½Îª:%.1f\t", TotalC);
-		  System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");
-		  for (i = 0; i < iComputer; i++)				//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		  System.out.printf("¼ÆËã»úµÄ×ÜµãÊýÎª:%.1f\t", TotalC);
+		  System.out.printf("¼ÆËã»úµÄÅÆÎª:");
+		  for (i = 0; i < iComputer; i++)				//ÏÔÊ¾¼ÆËã»úµÄÅÆ
 		  {
-			  switch(Computer[i].Suit)					//ï¿½ï¿½Ê¾ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
+			  switch(Computer[i].Suit)					//ÏÔÊ¾»¨É«·ûºÅ
 			  {
 			  case 1:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="ºÚÌÒ";
 				  break;
 			  case 2:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="ºìÌÒ";
 				  break;
 			  case 3:
-				  s="Ã·ï¿½ï¿½";
+				  s="Ã·»¨";
 				  break;
 			  case 4:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="·½¿é";
 				  break;
 			  default:
 				  ;
@@ -196,15 +196,15 @@ public class P11_3 {
 			  System.out.printf("  "+s+Computer[i].Number);
 		  }
 		  System.out.printf("\n");
-		  if (TotalU < 10.5)						//ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ßµï¿½ï¿½ï¿½Ð¡ï¿½ï¿½10.5,ï¿½É¼ï¿½ï¿½ï¿½Òªï¿½ï¿½ 
+		  if (TotalU < 10.5)						//Èç¹ûÓÎÏ·ÕßµãÊýÐ¡ÓÚ10.5,¿É¼ÌÐøÒªÅÆ 
 		  {
 			 do
 			 {
-				 System.out.printf("ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½(y/n)?");
+				 System.out.printf("»¹ÒªÅÆÂð(y/n)?");
 				
 				jixu=input.next();
 			 }while (!jixu.equalsIgnoreCase("y") &&!jixu.equalsIgnoreCase("n"));
-			 if (jixu.equalsIgnoreCase("y"))				//ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½
+			 if (jixu.equalsIgnoreCase("y"))				//¼ÌÐøÒªÅÆ
 			 {
 				flag = 1;
 			 }
@@ -214,7 +214,7 @@ public class P11_3 {
 			 }
 			 if (count == 52)
 			 {
-				 System.out.printf("ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½\n");
+				 System.out.printf("ÅÆÒÑ¾­·¢ÍêÁË£¡\n");
 				
 				break;
 			 }
@@ -222,9 +222,9 @@ public class P11_3 {
 	      else
 			 break;
 	   }
-	   while (flagc==1 && count < 52)				//ï¿½ï¿½Ï·ï¿½ß²ï¿½Òªï¿½ï¿½
+	   while (flagc==1 && count < 52)				//ÓÎÏ·Õß²»ÒªÅÆ
 	   {
-		  if (TotalU > 10.5)						//ï¿½ï¿½Ï·ï¿½ï¿½Õ¨ï¿½ï¿½
+		  if (TotalU > 10.5)						//ÓÎÏ·ÕßÕ¨ÁË
 		  {
 			 break;
 		  }
@@ -232,8 +232,8 @@ public class P11_3 {
 		  {
 			 if (TotalC < 10.5 && TotalC < TotalU)	
 			 {
-				Computer[iComputer++] = OneCard[count++];	//ï¿½ï¿½ï¿½ï¿½ï¿½È¡Ò»ï¿½ï¿½ï¿½ï¿½ 
-				TotalC += Computer[iComputer - 1].Num;		//ï¿½Û¼Æ¼ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½Æµï¿½ï¿½Üµï¿½ï¿½ï¿½ 
+				Computer[iComputer++] = OneCard[count++];	//¼ÆËã»úÈ¡Ò»ÕÅÅÆ 
+				TotalC += Computer[iComputer - 1].Num;		//ÀÛ¼Æ¼ÆËã»úÈ¡µÃÅÆµÄ×ÜµãÊý 
 			 }
 			 else
 			 {
@@ -241,23 +241,23 @@ public class P11_3 {
 			 }
 		  }
 	   }
-	   System.out.printf("\nï¿½Ã»ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½:%.1f\t", TotalU);
-	   System.out.printf("ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");
-	   for (i = 0; i < iUser; i++)					//ï¿½ï¿½Ê¾ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
+	   System.out.printf("\nÓÃ»§µÄ×ÜµãÊý:%.1f\t", TotalU);
+	   System.out.printf("ÓÃ»§µÄÅÆÎª:");
+	   for (i = 0; i < iUser; i++)					//ÏÔÊ¾ÓÃ»§µÄÅÆ
 	   {
-		   switch(User[i].Suit)					//ï¿½ï¿½Ê¾ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
+		   switch(User[i].Suit)					//ÏÔÊ¾»¨É«·ûºÅ
 			  {
 			  case 1:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="ºÚÌÒ";
 				  break;
 			  case 2:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="ºìÌÒ";
 				  break;
 			  case 3:
-				  s="Ã·ï¿½ï¿½";
+				  s="Ã·»¨";
 				  break;
 			  case 4:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="·½¿é";
 				  break;
 			  default:
 				  ;
@@ -265,23 +265,23 @@ public class P11_3 {
 			  System.out.printf("  "+s+User[i].Number);
 	   }
 	   System.out.printf("\n");
-	   System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½Îª:%.1f\t", TotalC);
-	   System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");
-	   for (i = 0; i < iComputer; i++)				//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	   System.out.printf("\n¼ÆËã»úµÄ×ÜµãÊýÎª:%.1f\t", TotalC);
+	   System.out.printf("¼ÆËã»úµÄÅÆÎª:");
+	   for (i = 0; i < iComputer; i++)				//ÏÔÊ¾¼ÆËã»úµÄÅÆ
 	   {
-		   switch(Computer[i].Suit)					//ï¿½ï¿½Ê¾ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
+		   switch(Computer[i].Suit)					//ÏÔÊ¾»¨É«·ûºÅ
 			  {
 			  case 1:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="ºÚÌÒ";
 				  break;
 			  case 2:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="ºìÌÒ";
 				  break;
 			  case 3:
-				  s="Ã·ï¿½ï¿½";
+				  s="Ã·»¨";
 				  break;
 			  case 4:
-				  s="ï¿½ï¿½ï¿½ï¿½";
+				  s="·½¿é";
 				  break;
 			  default:
 				  ;
@@ -290,39 +290,39 @@ public class P11_3 {
 	   }
 	   System.out.printf("\n");
 
-	   if(TotalC == TotalU)						//ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½
+	   if(TotalC == TotalU)						//Êä³öÓÎÏ·½á¹û
 	   {
-		   System.out.printf("\nï¿½Ã»ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ½ï¿½ï¿½!\n");
+		   System.out.printf("\nÓÃ»§ºÍ¼ÆËã»ú´ò³ÉÁËÆ½ÊÖ!\n");
 	   }
 	   else
 	   {
 		   if(TotalU > 10.5 && TotalC > 10.5)
 		   {
-			   System.out.printf("\nï¿½Ã»ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ½ï¿½ï¿½!\n");
+			   System.out.printf("\nÓÃ»§ºÍ¼ÆËã»ú´ò³ÉÁËÆ½ÊÖ!\n");
 		   }
 		   else if(TotalU > 10.5)
 		   {
-			   System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!ï¿½ï¿½ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½!\n");
+			   System.out.printf("\nÄãÊäÁË!¼ÌÐøÅ¬Á¦°É!\n");
 		   }
 		   else if(TotalC > 10.5)
 		   {
-			   System.out.printf("\nï¿½ï¿½Ï²ï¿½ï¿½ï¿½Ã»ï¿½Ó®ï¿½ï¿½!\n");
+			   System.out.printf("\n¹§Ï²£¬ÓÃ»§Ó®ÁË!\n");
 		   }
 		   else if(TotalC > TotalU)
 		   {
-			   System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!ï¿½ï¿½ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½!\n");
+			   System.out.printf("\nÄãÊäÁË!¼ÌÐøÅ¬Á¦°É!\n");
 		   }
 		   else
 		   {
-			   System.out.printf("\nï¿½ï¿½Ï²ï¿½ï¿½ï¿½Ã»ï¿½Ó®ï¿½ï¿½!\n");
+			   System.out.printf("\n¹§Ï²£¬ÓÃ»§Ó®ÁË!\n");
 		   }
 	   }
 	}
 	
 	public static void main(String[] args) {
-		 System.out.printf("10ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½\n");
-	 Shuffle();							//Ï´ï¿½ï¿½ 
-		 	  tenhalf();							//ï¿½ï¿½Ê¼ï¿½ï¿½Ï·
+		 System.out.printf("10µã°ëÓÎÏ·£¡\n");
+	 Shuffle();							//Ï´ÅÆ 
+		 	  tenhalf();							//¿ªÊ¼ÓÎÏ·
 
 	}
 

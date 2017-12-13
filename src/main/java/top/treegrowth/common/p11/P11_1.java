@@ -4,14 +4,14 @@ import java.util.Random;
 
 class Card
 {
-   int Suit;							//ï¿½ï¿½É« 
-   char Number;							//ï¿½ï¿½ï¿½ï¿½ 
+   int Suit;							//»¨É« 
+   char Number;							//ÅÆÊý 
 }
 
 public class P11_1 {
-	static Card[] OneCard=new Card[52];		    	//ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½Ë¿ËµÄ»ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static Card[] OneCard=new Card[52];		    	//±£´æÃ¿ÕÅÆË¿ËµÄ»¨É«¡¢Êý×Ö
 	
-	static void ShowCard() 							//ï¿½ï¿½Ê¾ï¿½Ë¿ï¿½ï¿½ï¿½ 
+	static void ShowCard() 							//ÏÔÊ¾ÆË¿ËÅÆ 
 	{
 	   int i, j;
 	   int sign=0;
@@ -23,33 +23,33 @@ public class P11_1 {
 		  {
 			 System.out.print("\n");
 		  }
-		  switch(OneCard[i].Suit)					//ï¿½ï¿½Ê¾ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
+		  switch(OneCard[i].Suit)					//ÏÔÊ¾»¨É«·ûºÅ
 		  {
 		  case 1:
-			  s="ï¿½ï¿½ï¿½ï¿½";
+			  s="ºÚÌÒ";
 			  sign=3;
 			  break;
 		  case 2:
-			  s="ï¿½ï¿½ï¿½ï¿½";
+			  s="ºìÌÒ";
 			  sign=4;
 			  break;
 		  case 3:
-			  s="Ã·ï¿½ï¿½";
+			  s="Ã·»¨";
 			  sign=5;
 			  break;
 		  case 4:
-			  s="ï¿½ï¿½ï¿½ï¿½";
+			  s="·½¿é";
 			  sign=6;
 			  break;
 		  default:
 			  ;
 		  }
-		  System.out.printf("  "+s+OneCard[i].Number);	//ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
+		  System.out.printf("  "+s+OneCard[i].Number);	//Êä³öÏÔÊ¾
 	   }
 	   System.out.print("\n");
 	}
 	
-	static void Shuffle()								//ï¿½ã·¨
+	static void Shuffle()								//Ëã·¨
 	{
 		int i,j,temp;
 		int suit;
@@ -57,16 +57,16 @@ public class P11_1 {
 	    Card tempcard=new Card();
 
 		suit=0;
-	   for (i = 0; i < 52; i++)						//ï¿½ï¿½ï¿½ï¿½52ï¿½ï¿½ï¿½ï¿½ 
+	   for (i = 0; i < 52; i++)						//Éú³É52ÕÅÅÆ 
 	   {
 		  if (i % 13 == 0)
 		  {
-			 suit++;							//ï¿½Ä±ä»¨É« 
+			 suit++;							//¸Ä±ä»¨É« 
 		  }
 		  Card t=new Card();
-		  t.Suit = suit;					//ï¿½ï¿½ï¿½æ»¨É« 
+		  t.Suit = suit;					//±£´æ»¨É« 
 		  temp = i % 13;
-		  switch(temp)							//ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½
+		  switch(temp)							//ÌØÊâÖµ´¦Àí
 		  {
 		  case 0:
 			  t.Number = 'A';
@@ -89,14 +89,14 @@ public class P11_1 {
 		  OneCard[i]=t;
 
 	   }
-	   System.out.printf("Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ÆµÄ³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n"); 
+	   System.out.printf("Ò»¸¶ÐÂÅÆµÄ³õÊ¼ÅÅÁÐÈçÏÂ:\n"); 
 
 	   ShowCard();
 
-	   Random r=new Random();					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	   Random r=new Random();					//Ëæ»úÖÖ×Ó
 	   for (i = 0; i < 52; i++)
 	   {
-		  j = r.nextInt(52);						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		  j = r.nextInt(52);						//Ëæ»ú»»ÅÆ
 		  tempcard = OneCard[j];
 		  OneCard[j] = OneCard[i];
 		  OneCard[i] = tempcard;
@@ -104,9 +104,9 @@ public class P11_1 {
 	}
 	public static void main(String[] args) {
 						
-		 Shuffle();								//Ï´ï¿½ï¿½
-		 System.out.print("\nÏ´ï¿½Æºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n");
-		 ShowCard();							//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½
+		 Shuffle();								//Ï´ÅÆ
+		 System.out.print("\nÏ´ÅÆºóµÄÅÅÁÐÈçÏÂ:\n");
+		 ShowCard();							//ÏÔÊ¾ÐÂÅÆµÄÅÅÁÐ
 
 	}
 

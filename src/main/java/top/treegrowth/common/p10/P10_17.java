@@ -1,12 +1,12 @@
 package top.treegrowth.common.p10;
 
 public class P10_17 {
-	static int wi,wj,wk;								//ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½Öµ
+	static int wi,wj,wk;								//±£´æÆ¥ÅäÖµ
 
-	static int HW(char husband[], char wife[])				//ï¿½ã·¨
+	static int HW(char husband[], char wife[])				//Ëã·¨
 	{
 		int i,j,k;
-		int match=0;								//ï¿½Ç·ï¿½Æ¥ï¿½ï¿½
+		int match=0;								//ÊÇ·ñÆ¥Åä
 
 	    for(i=0;i<3;i++)
 		{
@@ -18,46 +18,46 @@ public class P10_17 {
 	                {
 						if(wife[i] == 'X' || wife[k] == 'X' || wife[k] == 'Z')
 						{
-							match=0;			//Î¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+							match=0;			//Î¥·´¹æÔò
 						}
 						else
 						{
-							match=1;			//ï¿½ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½
+							match=1;			//·ûºÏ¹æÔò
 							wi=i;
 							wj=j;
 							wk=k;
-							return match;		//ï¿½ï¿½ï¿½ï¿½
+							return match;		//·µ»Ø
 						}
 	                }
 				}
 			}
 		}
-		return match;							//ï¿½ï¿½ï¿½ï¿½
+		return match;							//·µ»Ø
 	}
 	public static void main(String[] args) {
 		char[] husband = {'A','B','C'}, wife = {'X','Y','Z'};
 		int i,match;
 
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-		System.out.printf("ï¿½Î¼Ó»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");				//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
+		System.out.printf("ÐÂÀÉÐÂÄïÎÊÌâÇó½â£¡\n");
+		System.out.printf("²Î¼Ó»éÀñµÄÐÂÀÉÎª:");				//ÏÔÊ¾ÐÂÀÉ
 		for(i=0;i<3;i++)
 		{
 			System.out.printf(" %c",husband[i]);
 		}
 		System.out.printf("\n");
-		System.out.printf("ï¿½Î¼Ó»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");				//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
+		System.out.printf("²Î¼Ó»éÀñµÄÐÂÄïÎª:");				//ÏÔÊ¾ÐÂÄï
 		for(i=0;i<3;i++)
 		{
 			System.out.printf(" %c",wife[i]);
 		}
 		System.out.printf("\n");
 
-		match=HW(husband,wife);				//ï¿½ï¿½ï¿½
+		match=HW(husband,wife);				//Çó½â
 		if(match==1)
 		{
-			System.out.printf("Aï¿½ï¿½ï¿½ï¿½%cï¿½ï¿½é£¡\n",wife[wi]);
-			System.out.printf("Bï¿½ï¿½ï¿½ï¿½%cï¿½ï¿½é£¡\n",wife[wj]);
-			System.out.printf("Cï¿½ï¿½ï¿½ï¿½%cï¿½ï¿½é£¡\n",wife[wk]);
+			System.out.printf("A½«ºÍ%c½á»é£¡\n",wife[wi]);
+			System.out.printf("B½«ºÍ%c½á»é£¡\n",wife[wj]);
+			System.out.printf("C½«ºÍ%c½á»é£¡\n",wife[wk]);
 		}
 
 	}

@@ -1,40 +1,40 @@
 package top.treegrowth.common.p9;
 
 public class P9_3 {
-	static void NarcissusNum(int n)					//ï¿½Ð¶ï¿½Ë®ï¿½É»ï¿½ï¿½ï¿½ï¿½ã·¨
+	static void NarcissusNum(int n)					//ÅÐ¶ÏË®ÏÉ»¨ÊýËã·¨
 	{
 		long i,start,end,temp,num,sum;
 		int j;
 
-		start=(long)Math.pow(10,n-1);				//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
-		end=(long)Math.pow(10,n)-1;				//ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½
-		for(i=start;i<=end;i++)				//ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
+		start=(long)Math.pow(10,n-1);				//ÆðÊ¼Êý¾Ý
+		end=(long)Math.pow(10,n)-1;				//ÖÕÖ¹Êý¾Ý
+		for(i=start;i<=end;i++)				//Öð¸öÅÐ¶Ï
 		{
 			temp=0;
 			num=i;
 			sum=0;
-			for(j=0;j<n;j++)					//ï¿½Ö½ï¿½ï¿½Î»
+			for(j=0;j<n;j++)					//·Ö½â¸÷Î»
 			{
 				temp=num%10;
-				sum=sum+(long)Math.pow(temp,n);	//nï¿½ï¿½ï¿½ï¿½ï¿½Û¼ï¿½
+				sum=sum+(long)Math.pow(temp,n);	//n´ÎÃÝÀÛ¼Ó
 				num=(num-temp)/10;
 			}
 			if(sum==i)
 			{
-				System.out.printf("%d\n",i);				//ï¿½ï¿½ï¿½Ë®ï¿½É»ï¿½ï¿½ï¿½
+				System.out.printf("%d\n",i);				//Êä³öË®ÏÉ»¨Êý
 			}
 		}
 	}
 	public static void main(String[] args) {
 		int n;
 
-		n=3;								//ï¿½ï¿½Ê¼ï¿½ï¿½Î»ï¿½ï¿½
-		System.out.printf("ï¿½Ð¾ï¿½%dÎ»ï¿½ï¿½Ë®ï¿½É»ï¿½ï¿½ï¿½ï¿½ï¿½\n",n);
-		NarcissusNum(n);					//ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½Ë®ï¿½É»ï¿½ï¿½ï¿½
+		n=3;								//³õÊ¼»¯Î»Êý
+		System.out.printf("ÁÐ¾Ù%dÎ»µÄË®ÏÉ»¨Êý£º\n",n);
+		NarcissusNum(n);					//ÁÐ¾ÙËùÓÐË®ÏÉ»¨Êý
 		System.out.printf("\n");
-		n=4;								//ï¿½ï¿½Ê¼ï¿½ï¿½Î»ï¿½ï¿½
-		System.out.printf("ï¿½Ð¾ï¿½%dÎ»ï¿½ï¿½Ë®ï¿½É»ï¿½ï¿½ï¿½ï¿½ï¿½\n",n);
-		NarcissusNum(n);					//ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½Ë®ï¿½É»ï¿½ï¿½ï¿½
+		n=4;								//³õÊ¼»¯Î»Êý
+		System.out.printf("ÁÐ¾Ù%dÎ»µÄË®ÏÉ»¨Êý£º\n",n);
+		NarcissusNum(n);					//ÁÐ¾ÙËùÓÐË®ÏÉ»¨Êý
 		System.out.printf("\n");
 
 	}

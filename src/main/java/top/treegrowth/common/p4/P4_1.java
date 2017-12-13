@@ -5,19 +5,19 @@ public class P4_1 {
 	public static void bubbleSort(int[] a) {
 		 int temp;
 		 for (int i = 1; i < a.length; i++) {
-              //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±È½Ï£ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ï¿½
+              //½«ÏàÁÚÁ½¸öÊý½øÐÐ±È½Ï£¬½Ï´óµÄÊýÍùºóÃ°ÅÝ
         	  for (int j = 0; j < a.length - i; j++) {
         		  if (a[j] > a[j + 1]) {
-                   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                   //½»»»ÏàÁÚÁ½¸öÊý
         			  temp=a[j];
         			  a[j]=a[j+1];
         			  a[j+1]=temp;
         		  }
         	  }
-        	  System.out.print("ï¿½ï¿½"+i+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");			//ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½
+        	  System.out.print("µÚ"+i+"²½ÅÅÐò½á¹û:");			//Êä³öÃ¿²½ÅÅÐòµÄ½á¹û
         	  for(int k=0;k<a.length;k++)
         	  {
-        		  System.out.print(" "+a[k]); // ï¿½ï¿½ï¿½
+        		  System.out.print(" "+a[k]); // Êä³ö
         	  }
         	  System.out.print("\n"); 
 		 }
@@ -28,19 +28,19 @@ public class P4_1 {
 		int i;
 		for(i=0;i<SIZE;i++)
 		{
-			shuzu[i]=(int)(100+Math.random()*(100+1));			//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			shuzu[i]=(int)(100+Math.random()*(100+1));			//³õÊ¼»¯Êý×é
 		}
-		System.out.print("ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½\n");				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		System.out.print("ÅÅÐòÇ°µÄÊý×éÎª£º\n");				//Êä³öÅÅÐòÇ°µÄÊý×é
 		for(i=0;i<SIZE;i++)
 		{
 			System.out.print(shuzu[i]+" ");
 		}
 		System.out.print("\n");
-		bubbleSort(shuzu);					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½\n");
+		bubbleSort(shuzu);					//ÅÅÐò²Ù×÷
+		System.out.print("ÅÅÐòºóµÄÊý×éÎª£º\n");
 		for(i=0;i<SIZE;i++)
 		{
-			System.out.print(shuzu[i]+" ");					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			System.out.print(shuzu[i]+" ");					//Êä³öÅÅÐòºóµÄÊý×é
 		}
 		System.out.print("\n");
 

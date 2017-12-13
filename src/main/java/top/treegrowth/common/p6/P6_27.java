@@ -1,18 +1,18 @@
 package top.treegrowth.common.p6;
 
 public class P6_27 {
-	static double func(double x) 			//ï¿½ï¿½ï¿½ï¿½ 
+	static double func(double x) 			//º¯Êý 
 	{
 	    return  2*x*x*x-5*x-1;
 	}
-	static double erfen(double a,double b,double err)	//ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static double erfen(double a,double b,double err)	//¶þ·ÖËã·¨
 	{
 	    double c;
-	    c=(a+b)/2.0;				//ï¿½Ð¼ï¿½Öµ
+	    c=(a+b)/2.0;				//ÖÐ¼äÖµ
 
 	    while(Math.abs(func(c))>err && func(a-b)>err)
 	    {
-	        if(func(c)*func(b)<0) 		//È·ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ 
+	        if(func(c)*func(b)<0) 		//È·¶¨ÐÂµÄÇø¼ä 
 			{
 	            a=c; 
 			}
@@ -20,19 +20,19 @@ public class P6_27 {
 			{
 	            b=c; 
 			}
-	        c=(a+b)/2; 				//ï¿½ï¿½ï¿½Ö·ï¿½È·ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ 
+	        c=(a+b)/2; 				//¶þ·Ö·¨È·¶¨ÐÂµÄÇø¼ä 
 	    }
 
 		return c;
 	}
 	public static void main(String[] args) {
-		double a=1.0,b=2.0;			//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ 
-		double err=1e-5;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		double a=1.0,b=2.0;			//³õÊ¼Çø¼ä 
+		double err=1e-5;			//¾ø¶ÔÎó²î
 	    double result;
 
 	    result=erfen(a,b,err);
-	    System.out.print("ï¿½ï¿½ï¿½Ö·ï¿½ï¿½â·½ï¿½ï¿½:2*x*x*x-5*x-1\n");
-	    System.out.printf("ï¿½ï¿½ï¿½x=%.5f\n",result); //ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    System.out.print("¶þ·Ö·¨½â·½³Ì:2*x*x*x-5*x-1\n");
+	    System.out.printf("½á¹ûx=%.5f\n",result); //Êä³ö½â 
 
 	}
 

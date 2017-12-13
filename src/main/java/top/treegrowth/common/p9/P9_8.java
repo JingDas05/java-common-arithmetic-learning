@@ -1,36 +1,36 @@
 package top.treegrowth.common.p9;
 
 public class P9_8 {
-	static int isPrime(int a)			//ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static int isPrime(int a)			//ËØÊýËã·¨
 	{  
 	    int i;
 	    for(i=2;i<a;i++)
 		{
 			if(a % i == 0)
 			{
-				return 0;      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+				return 0;      //²»ÊÇËØÊý 
 			}
 		}
-	    return 1;      			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    return 1;      			//ÊÇËØÊý 
 	}
 
-	static int huiwen(int n)			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static int huiwen(int n)			//»ØÎÄËØÊýËã·¨
 	{
 		int temp,m,k,t,num,sum;
 		int count,i;
 
 		k=1;
 		count=0;
-		while(k>0)				//ï¿½Ð¶ï¿½Î»ï¿½ï¿½
+		while(k>0)				//ÅÐ¶ÏÎ»Êý
 		{
 			k=n-(int)Math.pow(10,count);
 			count++;
 		}
-		m=count-1;			//Î»ï¿½ï¿½
+		m=count-1;			//Î»Êý
 
 		sum=0;
 		num=n;
-		for(i=0;i<m;i++)			//ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Î»
+		for(i=0;i<m;i++)			//°´Î»´¦Àí£¬½»»»¸ßµÍÎ»
 		{
 			temp=num%10;
 			sum=sum+temp*((int)Math.pow(10,m-1-i));
@@ -41,7 +41,7 @@ public class P9_8 {
 		{
 			if(isPrime(n)==1)
 			{
-				return 1;		//ï¿½Ç»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				return 1;		//ÊÇ»ØÎÄËØÊý
 			}
 			else
 			{
@@ -57,14 +57,14 @@ public class P9_8 {
 		int i,count;
 
 		count=0;
-		System.out.printf("ï¿½Ð¾ï¿½0~50000Ö®ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
-		for(i=10;i<50000;i++)		//ï¿½Ð¾Ù»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		System.out.printf("ÁÐ¾Ù0~50000Ö®¼äµÄ»ØÎÄËØÊý\n");
+		for(i=10;i<50000;i++)		//ÁÐ¾Ù»ØÎÄËØÊý
 		{
 			if(huiwen(i)==1)
 			{
 				System.out.printf("%7d",i);
 				count++;
-				if(count%10==0)//10ï¿½ï¿½ÎªÒ»ï¿½ï¿½
+				if(count%10==0)//10¸öÎªÒ»ÐÐ
 				{
 					System.out.printf("\n");
 				}

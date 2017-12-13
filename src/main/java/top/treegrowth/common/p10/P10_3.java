@@ -7,24 +7,24 @@ public class P10_3
 {
 	static void JTTL(int head,int foot,int[] tu,int[] ji)
 	{
-	    tu[0]=(foot-2*head)/2; 				//ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½
-	    ji[0]=head-tu[0];  					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    tu[0]=(foot-2*head)/2; 				//ÍÃ×ÓµÄÊıÁ¿
+	    ji[0]=head-tu[0];  					//¼¦µÄÊıÁ¿
 	}
 	public static void main(String[] args) 
 	{
 		int[] ji={0},tu={0};
 		int head,foot;
 
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!\n");
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½:");
+	    System.out.printf("¼¦ÍÃÍ¬ÁıÎÊÌâÇó½â!\n");
+		System.out.printf("ÊäÈëÍ·Êı:");
 	    Scanner input=new Scanner(System.in);
-		head=input.nextInt();				//ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
-	    foot=input.nextInt();				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		head=input.nextInt();				//ÊäÈëÍ·Êı
+	    System.out.printf("ÊäÈë½ÅÊı:");
+	    foot=input.nextInt();				//ÊäÈë½ÅÊı
 	    
 		JTTL(head,foot,tu,ji);
 		
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½:%dÖ»,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:%dÖ»ï¿½ï¿½\n",ji[0],tu[0]);
+	    System.out.printf("¼¦ÓĞ:%dÖ»,ÍÃ×ÓÓĞ:%dÖ»¡£\n",ji[0],tu[0]);
 
 	}
 }

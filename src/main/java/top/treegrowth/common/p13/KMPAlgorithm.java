@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class KMPAlgorithm {  
   
     /** 
-     * ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Æ¥ï¿½ï¿½ 
-     * @param target Ä¿ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ 
-     * @param mode Ä£Ê½ï¿½ï¿½ 
-     * @return Æ¥ï¿½ï¿½ï¿½ï¿½ 
+     * ÅÐ¶ÏÊÇ·ñÆ¥Åä 
+     * @param target Ä¿±êÎÄ±¾´® 
+     * @param mode Ä£Ê½´® 
+     * @return Æ¥Åä½á¹û 
      */  
     public static boolean matchString(String target, String mode) 
     {  
-        //Îªï¿½Ëºï¿½ï¿½ã·¨ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â£ï¿½Ê¹indexï¿½ï¿½1ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ç°×º   
+        //ÎªÁËºÍËã·¨±£³ÖÒ»ÖÂ£¬Ê¹index´Ó1¿ªÊ¼£¬Ôö¼ÓÒ»Ç°×º   
         String newTarget = "x" + target;   
         String newMode = 'x' + mode;  
           
@@ -41,11 +41,11 @@ public class KMPAlgorithm {
     }  
       
     /* 
-     * ï¿½ï¿½ï¿½ï¿½KÖµ 
+     * ¼ÆËãKÖµ 
      */  
     private static int[] calculateK(String mode) 
     {  
-        //Îªï¿½Ëºï¿½ï¿½ã·¨ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â£ï¿½Ê¹indexï¿½ï¿½1ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ç°×º   
+        //ÎªÁËºÍËã·¨±£³ÖÒ»ÖÂ£¬Ê¹index´Ó1¿ªÊ¼£¬Ôö¼ÓÒ»Ç°×º   
         String newMode = "x" + mode;  
         int[] K = new int[newMode.length()];  
         int i = 1;  
@@ -77,13 +77,13 @@ public class KMPAlgorithm {
         boolean b;
     	Scanner input=new Scanner(System.in);
         
-    	System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½1ï¿½ï¿½");
+    	System.out.println("ÇëÊäÈë×Ö·û´®1£º");
     	s1=input.next();
-    	System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½2ï¿½ï¿½");
+    	System.out.println("ÇëÊäÈë×Ö·û´®2£º");
     	s2=input.next();
         
     	b=KMPAlgorithm.matchString(s1, s2);
-    	System.out.println("Æ¥ï¿½ï¿½É¹ï¿½ï¿½ï¿½"+b);  
+    	System.out.println("Æ¥Åä³É¹¦£¿"+b);  
   
     }  
   

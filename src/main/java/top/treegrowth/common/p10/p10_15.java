@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class p10_15 
 {
-	static int Fibonacci(int n)							//ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½ã·¨
+	static int Fibonacci(int n)							//ÍÃ×Ó²ú×ÐËã·¨
 	{ 
 		int t1,t2;
 
@@ -15,7 +15,7 @@ public class p10_15
 		}
 	    else
 		{
-			t1=Fibonacci(n-1);				//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
+			t1=Fibonacci(n-1);				//µÝ¹éµ÷ÓÃ
 			t2=Fibonacci(n-2);
 			return t1+t2;  
 		}
@@ -24,12 +24,12 @@ public class p10_15
 	{
 		int n,num;
 		
-		System.out.printf("ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º");
+		System.out.printf("ÍÃ×Ó²ú×ÐÎÊÌâÇó½â£¡\n");
+		System.out.printf("ÇëÏÈÊ±¼ä£º");
 		Scanner input=new Scanner(System.in);
-		n=input.nextInt();						//Ê±ï¿½ï¿½
-		num=Fibonacci(n);					//ï¿½ï¿½ï¿½
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½%dï¿½Âµï¿½Ê±ï¿½ä£¬ï¿½ï¿½ï¿½Ü·ï¿½Ö³ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½\n",n,num);
+		n=input.nextInt();						//Ê±¼ä
+		num=Fibonacci(n);					//Çó½â
+	    System.out.printf("¾­¹ý%dÔÂµÄÊ±¼ä£¬¹²ÄÜ·±Ö³³É%d¶ÔÍÃ×Ó£¡\n",n,num);
 
 	}
 

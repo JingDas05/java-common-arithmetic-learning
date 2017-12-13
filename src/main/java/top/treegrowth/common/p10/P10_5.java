@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 
 public class P10_5 {
-	static double mai(int n)					//ï¿½áº±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static double mai(int n)					//Éáº±ÍõÉÍÂóËã·¨
 	{
 		int i;
 		double temp,sum;
 
 		temp=1;
-		sum=0;						//ï¿½Üºï¿½
+		sum=0;						//×ÜºÏ
 
-		for(i=1;i<=n;i++)				//ï¿½ï¿½ï¿½ï¿½È±È¼ï¿½ï¿½ï¿½ï¿½Äºï¿½
+		for(i=1;i<=n;i++)				//¼ÆËãµÈ±È¼¶ÊıµÄºÍ
 	    {
 	        temp=temp*2;
 	        sum=sum+temp;
@@ -23,13 +23,13 @@ public class P10_5 {
 		int n;
 		double sum;
 
-		System.out.printf("ï¿½áº±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½:");
+		System.out.printf("Éáº±ÍõÉÍÂóÎÊÌâÇó½â£¡\n");
+		System.out.printf("ÊäÈëÆåÅÌ¸ñ×ÜÊı:");
 	    Scanner input=new Scanner(System.in);
 		n=input.nextInt(); 
-		sum=mai(n);					//ï¿½ï¿½ï¿½
-	    System.out.printf("ï¿½áº±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:%fï¿½ï¿½ï¿½ï¿½\n",sum);
-	    System.out.printf("ï¿½ï¿½:%.2fï¿½Ö¡ï¿½\n",sum/25000/1000);
+		sum=mai(n);					//Çó½â
+	    System.out.printf("Éáº±ÍõÉÍ×ÜÂóÁ£ÊıÎª:%fÁ£¡£\n",sum);
+	    System.out.printf("¹²:%.2f¶Ö¡£\n",sum/25000/1000);
 
 	}
 

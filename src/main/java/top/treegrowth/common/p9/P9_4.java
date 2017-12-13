@@ -1,21 +1,21 @@
 package top.treegrowth.common.p9;
 
 public class P9_4 {
-	static int zishounum1(long n)				//ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨1
+	static int zishounum1(long n)				//ÅÐ¶Ï×ÔÊØÊýËã·¨1
 	{
 		long temp,m,k;
 		int count;
 
 		k=1;
 		count=0;
-		while(k>0)						//ï¿½Ð¶ï¿½Î»ï¿½ï¿½
+		while(k>0)						//ÅÐ¶ÏÎ»Êý
 		{
 			k=n-(long)Math.pow(10,count);
 			count++;
 		}
-		m=count-1;					//Î»ï¿½ï¿½
+		m=count-1;					//Î»Êý
 		temp=(n*n)%((long)(Math.pow(10,m)));	
-		if(temp==n)					//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		if(temp==n)					//ÅÐ¶ÏÊÇ·ñÎª×ÔÊØÊý
 		{
 			return 1;
 		}
@@ -25,31 +25,31 @@ public class P9_4 {
 		}
 	}
 
-	static int zishounum2(long num) 			//ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨2
+	static int zishounum2(long num) 			//ÅÐ¶Ï×ÔÊØÊýËã·¨2
 	{
-	    long faciend,mod,n_mod,p_mod; 	//modï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½n_modï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½,p_modï¿½ï¿½ï¿½Ö³Ë»ï¿½ï¿½ï¿½Ïµï¿½ï¿½ 
-	    long t,n;  						//ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ 
+	    long faciend,mod,n_mod,p_mod; 	//mod±»³ËÊýµÄÏµÊý£¬n_mod³ËÊýµÄÏµÊý,p_mod²¿·Ö³Ë»ýµÄÏµÊý 
+	    long t,n;  						//ÁÙÊ±±äÁ¿ 
 
-		faciend=num; 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+		faciend=num; 					//±»³ËÊý 
 	    mod=1;
 	    do
 		{
-	        mod*=10; 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ 
+	        mod*=10; 					//±»³ËÊýµÄÏµÊý 
 	        faciend/=10;
-	    }while(faciend>0); 				//Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ 
-	    p_mod=mod; 					//p_modÎªï¿½ï¿½È¡ï¿½ï¿½ï¿½Ö»ï¿½Ê±ï¿½ï¿½Ïµï¿½ï¿½ 
-	    faciend=0; 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NÎ» 
-	    n_mod=10; 					//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦Î»Ê±ï¿½ï¿½Ïµï¿½ï¿½ 
+	    }while(faciend>0); 				//Ñ­»·Çó³ö±»³ËÊýµÄÏµÊý 
+	    p_mod=mod; 					//p_modÎª½ØÈ¡²¿·Ö»ýÊ±µÄÏµÊý 
+	    faciend=0; 					//»ýµÄ×îºóNÎ» 
+	    n_mod=10; 					//½ØÈ¡³ËÊýÏàÓ¦Î»Ê±µÄÏµÊý 
 	    while(mod>0)
 	    {
-	       t=num % (mod*10); 			//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	       n=num%n_mod-num%(n_mod/10);//ï¿½Ö½ï¿½ï¿½Ã¿Ò»Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ 
-	       t=t*n; 						//ï¿½ï¿½ËµÄ½ï¿½ï¿½ 
-	       faciend=(faciend+t)%p_mod; 	//ï¿½ï¿½È¡ï¿½Ë»ï¿½ï¿½Äºï¿½ï¿½æ¼¸Î»
-	       mod/=10; 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ 
-	       n_mod*=10; 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ 
+	       t=num % (mod*10); 			//»ñÈ¡±»³ËÊý 
+	       n=num%n_mod-num%(n_mod/10);//·Ö½â³öÃ¿Ò»Î»³ËÊý×÷Îª³ËÊý 
+	       t=t*n; 						//Ïà³ËµÄ½á¹û 
+	       faciend=(faciend+t)%p_mod; 	//½ØÈ¡³Ë»ýµÄºóÃæ¼¸Î»
+	       mod/=10; 					//µ÷Õû±»³ËÊýµÄÏµÊý 
+	       n_mod*=10; 				//µ÷Õû³ËÊýµÄÏµÊý 
 	    }
-	    if(num==faciend) 				//ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    if(num==faciend) 				//ÅÐ¶Ï×ÔÊØÊý£¬²¢·µ»Ø
 		{
 			return 1;
 		}
@@ -61,20 +61,20 @@ public class P9_4 {
 	public static void main(String[] args) {
 		long i;
 
-		System.out.printf("ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+		System.out.printf("µÚÒ»ÖÖËã·¨¼ÆËã×ÔÊØÊý£º\n");
 		for(i=2;i<1000;i++)
 		{
-			if(zishounum1(i)==1)			//ï¿½ï¿½ï¿½Ãµï¿½Ò»ï¿½ï¿½ï¿½ã·¨
+			if(zishounum1(i)==1)			//µ÷ÓÃµÚÒ»ÖÖËã·¨
 			{
 				System.out.printf("%d ",i);
 			}
 		}
 		System.out.printf("\n");
 
-		System.out.printf("ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+		System.out.printf("µÚ¶þÖÖËã·¨¼ÆËã×ÔÊØÊý£º\n");
 		for(i=2;i<200000;i++)
 		{
-			if(zishounum2(i)==1)			//ï¿½ï¿½ï¿½ÃµÚ¶ï¿½ï¿½ï¿½ï¿½ã·¨
+			if(zishounum2(i)==1)			//µ÷ÓÃµÚ¶þÖÖËã·¨
 			{
 				System.out.printf("%d ",i);
 			}

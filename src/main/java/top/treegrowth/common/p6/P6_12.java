@@ -1,24 +1,24 @@
 package top.treegrowth.common.p6;
 
 public class P6_12 {
-	static void cPlus(double a,double b,double c,double d,double[] e,double[] f)		//ï¿½Ó·ï¿½
+	static void cPlus(double a,double b,double c,double d,double[] e,double[] f)		//¼Ó·¨
 	{
 		e[0]=a+c;
 		f[0]=b+d;
 	}
-	static void cMinus(double a,double b,double c,double d,double[] e,double[] f)	//ï¿½ï¿½ï¿½ï¿½
+	static void cMinus(double a,double b,double c,double d,double[] e,double[] f)	//¼õ·¨
 	{
 		e[0]=a-c;
 		f[0]=b-d;
 	}
 
-	static void cMul(double a,double b,double c,double d,double[] e,double[] f)		//ï¿½Ë·ï¿½
+	static void cMul(double a,double b,double c,double d,double[] e,double[] f)		//³Ë·¨
 	{
 		e[0]=a*c-b*d;
 		f[0]=a*d+b*c;
 	}
 
-	static void cDiv(double a,double b,double c,double d,double[] e,double[] f)		//ï¿½ï¿½ï¿½ï¿½
+	static void cDiv(double a,double b,double c,double d,double[] e,double[] f)		//³ý·¨
 	{
 		double sq;
 		sq=c*c+d*d;
@@ -28,16 +28,16 @@ public class P6_12 {
 	public static void main(String[] args) {
 		double a,b,c,d;
 		double[] e={0},f={0};
-		a=4;b=6;						//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½é²¿
-		c=2;d=-1;						//ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½é²¿
+		a=4;b=6;						//µÚÒ»¸ö¸´ÊýµÄÊµ²¿ºÍÐé²¿
+		c=2;d=-1;						//µÚ¶þ¸ö¸´ÊýµÄÊµ²¿ºÍÐé²¿
 
-		cPlus(a,b,c,d,e,f);			//ï¿½Ó·ï¿½
+		cPlus(a,b,c,d,e,f);			//¼Ó·¨
 		System.out.printf("(%f+%fi) + (%f+%fi)= %f+%fi\n",a,b,c,d,e[0],f[0]);
-		cMinus(a,b,c,d,e,f);			//ï¿½ï¿½ï¿½ï¿½
+		cMinus(a,b,c,d,e,f);			//¼õ·¨
 		System.out.printf("(%f+%fi) - (%f+%fi)= %f+%fi\n",a,b,c,d,e[0],f[0]);
-		cMul(a,b,c,d,e,f);				//ï¿½Ë·ï¿½
+		cMul(a,b,c,d,e,f);				//³Ë·¨
 		System.out.printf("(%f+%fi) * (%f+%fi)= %f+%fi\n",a,b,c,d,e[0],f[0]);
-		cDiv(a,b,c,d,e,f);				//ï¿½ï¿½ï¿½ï¿½
+		cDiv(a,b,c,d,e,f);				//³ý·¨
 		System.out.printf("(%f+%fi) / (%f+%fi)= %f+%fi\n",a,b,c,d,e[0],f[0]);
 	}
 

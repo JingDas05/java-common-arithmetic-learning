@@ -7,11 +7,11 @@ public class P6_4 {
 	static void polynomial_mul(double A[],int m,double B[],int n,double R[],int k)
 	{ 
 		int i,j;
-	    for (i=0; i<k; i++)						//ï¿½ï¿½Ê¼ï¿½ï¿½
+	    for (i=0; i<k; i++)						//³õÊ¼»¯
 		{
 			R[i]=0.0;
 		}
-	    for (i=0; i<m; i++)					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
+	    for (i=0; i<m; i++)					//¼ÆËã¸÷ÏîÏµÊý
 		{
 			for (j=0; j<n; j++)
 			{
@@ -26,11 +26,11 @@ public class P6_4 {
 	    double[] R=new double[9];
 	    DecimalFormat df = new DecimalFormat("0.0000000E000");
 
-	    polynomial_mul(A,6,B,4,R,9);			//ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½Ê½A(x)ï¿½ï¿½B(x)ï¿½Ë»ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½\n");
+	    polynomial_mul(A,6,B,4,R,9);			//µ÷ÓÃº¯ÊýÀ´¼ÆËã
+	    System.out.print("¶àÏîÊ½A(x)ºÍB(x)³Ë»ýµÄ¸÷ÏîÏµÊýÈçÏÂ£º\n");
 	    for (i=0; i<9; i++)
 		{
-			System.out.print(" R("+i+")="+df.format(R[i])+"\n");	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
+			System.out.print(" R("+i+")="+df.format(R[i])+"\n");	//Êä³ö¸÷ÏîÏµÊý
 		}
 	    System.out.print("\n");
 

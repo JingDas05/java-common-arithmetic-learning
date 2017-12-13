@@ -11,31 +11,31 @@ public class P6_25 {
 				C[i][j]=0;
 				for(l=0; l<k; l++)
 				{
-					C[i][j] += (A[i][l] * B[l][j]);	//ï¿½ï¿½ï¿½ï¿½Û¼ï¿½
+					C[i][j] += (A[i][l] * B[l][j]);	//Ïà³ËÀÛ¼Ó
 				}
 			}
 		}
 	}
 	public static void main(String[] args) {
-		double A[][]={{1.0,2.0,3.0},			//ï¿½ï¿½ï¿½ï¿½A
+		double A[][]={{1.0,2.0,3.0},			//¾ØÕóA
 				{4.0,5.0,6.0},
 				{7.0,8.0,9.0}};
-		double B[][]={{2.0,-2.0,1.0},			//ï¿½ï¿½ï¿½ï¿½B
+		double B[][]={{2.0,-2.0,1.0},			//¾ØÕóB
 				{1.0,3.0,9.0},
 				{17.0,-3.0,7.0}};
-		double[][] C=new double[3][3];						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½C
+		double[][] C=new double[3][3];						//½á¹û¾ØÕóC
 		int m,n,k,i,j;
-		m=3;								//ï¿½ï¿½ï¿½ï¿½
-		n=3;                                //ï¿½ï¿½ï¿½ï¿½
+		m=3;								//ÐÐÊý
+		n=3;                                //ÁÐÊý
 		k=3;
 
-		System.out.print("ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½Bï¿½ï¿½ËµÄ½ï¿½ï¿½Îªï¿½ï¿½\n");
-		matrixMul(A,B,m,n,k,C);				//ï¿½ï¿½ï¿½ï¿½
+		System.out.print("¾ØÕóAºÍBÏà³ËµÄ½á¹ûÎª£º\n");
+		matrixMul(A,B,m,n,k,C);				//ÔËËã
 		for(i=0;i<m;i++)
 		{
 			for(j=0;j<n;j++)
 			{
-				System.out.printf("%10.6f ",C[i][j]);		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				System.out.printf("%10.6f ",C[i][j]);		//Êä³ö½á¹û
 			}
 			System.out.print("\n");
 		}

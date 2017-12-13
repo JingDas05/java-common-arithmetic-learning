@@ -4,44 +4,44 @@ import java.util.Scanner;
 
 class GraphMatrix2 
 {	static final int  MaxNum=20; 
-    char[] Vertex=new char[MaxNum]; 			//ï¿½ï¿½ï¿½æ¶¥ï¿½ï¿½ï¿½ï¿½Ï¢(ï¿½ï¿½Å»ï¿½ï¿½ï¿½Ä¸)
-    int GType;						//Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(0:ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½1:ï¿½ï¿½ï¿½ï¿½Í¼)    
-    int VertexNum; 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-    int EdgeNum;					//ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½ 
-    int[][] EdgeWeight=new int[MaxNum][MaxNum]; //ï¿½ï¿½ï¿½ï¿½ßµï¿½È¨ 
-    int[] isTrav=new int[MaxNum]; 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾ 
-}	
+    char[] Vertex=new char[MaxNum]; 			//±£´æ¶¥µãÐÅÏ¢(ÐòºÅ»ò×ÖÄ¸)
+    int GType;						//Í¼µÄÀàÐÍ(0:ÎÞÏòÍ¼£¬1:ÓÐÏòÍ¼)    
+    int VertexNum; 					//¶¥µãµÄÊýÁ¿ 
+    int EdgeNum;					//±ßµÄÊýÁ¿ 
+    int[][] EdgeWeight=new int[MaxNum][MaxNum]; //±£´æ±ßµÄÈ¨ 
+    int[] isTrav=new int[MaxNum]; 				//±éÀú±êÖ¾ 
+}
 
 public class P8_5 {
-	static final int  MaxValue=65535; 				//ï¿½ï¿½ï¿½Öµ(ï¿½ï¿½ï¿½ï¿½ÎªÒ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
-	static int[] path=new int[GraphMatrix2.MaxNum];					//ï¿½ï¿½ï¿½ã¾­ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ã¼¯ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½
-	static int[] tmpvertex=new int[GraphMatrix2.MaxNum];				//ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ã¼¯ï¿½ï¿½
+	static final int  MaxValue=65535; 				//×î´óÖµ(¿ÉÉèÎªÒ»¸ö×î´óÕûÊý)
+	static int[] path=new int[GraphMatrix2.MaxNum];					//Á½µã¾­¹ýµÄ¶¥µã¼¯ºÏµÄÊý×é
+	static int[] tmpvertex=new int[GraphMatrix2.MaxNum];				//×î¶ÌÂ·¾¶µÄÆðÊ¼µã¼¯ºÏ
 	static Scanner input=new Scanner(System.in);
-	static void CreateGraph(GraphMatrix2 GM)		//ï¿½ï¿½ï¿½ï¿½ï¿½Ú½Ó¾ï¿½ï¿½ï¿½Í¼ 
+	static void CreateGraph(GraphMatrix2 GM)		//´´½¨ÁÚ½Ó¾ØÕóÍ¼ 
 	{
 	    int i,j,k;
 		int weight;							//È¨
-	    char EstartV,EendV; 					//ï¿½ßµï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ 
+	    char EstartV,EendV; 					//±ßµÄÆðÊ¼¶¥µã 
 
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢\n");
-	    for(i=0;i<GM.VertexNum;i++) 			//ï¿½ï¿½ï¿½ë¶¥ï¿½ï¿½ 
+	    System.out.printf("ÊäÈëÍ¼ÖÐ¸÷¶¥µãÐÅÏ¢\n");
+	    for(i=0;i<GM.VertexNum;i++) 			//ÊäÈë¶¥µã 
 	    {	        
-	        System.out.printf("ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:",i+1);
-	        GM.Vertex[i]=(input.next().toCharArray())[0]; 		//ï¿½ï¿½ï¿½æµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ 
+	        System.out.printf("µÚ%d¸ö¶¥µã:",i+1);
+	        GM.Vertex[i]=(input.next().toCharArray())[0]; 		//±£´æµ½¸÷¶¥µãÊý×éÔªËØÖÐ 
 	    }
-	    System.out.printf("ï¿½ï¿½ï¿½ë¹¹ï¿½É¸ï¿½ï¿½ßµÄ¶ï¿½ï¿½ã¼°È¨Öµ:\n"); 
-	    for(k=0;k<GM.EdgeNum;k++)  		//ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½Ï¢ 
+	    System.out.printf("ÊäÈë¹¹³É¸÷±ßµÄ¶¥µã¼°È¨Öµ:\n"); 
+	    for(k=0;k<GM.EdgeNum;k++)  		//ÊäÈë±ßµÄÐÅÏ¢ 
 	    {
-	        System.out.printf("ï¿½ï¿½%dï¿½ï¿½ï¿½ß£ï¿½",k+1);
+	        System.out.printf("µÚ%dÌõ±ß£º",k+1);
 	        EstartV=input.next().charAt(0);
 	        EendV=input.next().charAt(0);
 	        weight=input.nextInt();
-	        for(i=0;EstartV!=GM.Vertex[i];i++); 	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ 
-	        for(j=0;EendV!=GM.Vertex[j];j++); 	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½Ò½ï¿½ï¿½Õµï¿½ 
-	        GM.EdgeWeight[i][j]=weight; 		//ï¿½ï¿½Ó¦Î»ï¿½Ã±ï¿½ï¿½ï¿½È¨Öµï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
-	        if(GM.GType==0)  				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
+	        for(i=0;EstartV!=GM.Vertex[i];i++); 	//ÔÚÒÑÓÐ¶¥µãÖÐ²éÕÒÊ¼µã 
+	        for(j=0;EendV!=GM.Vertex[j];j++); 	//ÔÚÒÑÓÐ¶¥µãÖÐ²éÕÒ½áÖÕµã 
+	        GM.EdgeWeight[i][j]=weight; 		//¶ÔÓ¦Î»ÖÃ±£´æÈ¨Öµ£¬±íÊ¾ÓÐÒ»Ìõ±ß
+	        if(GM.GType==0)  				//ÈôÊÇÎÞÏòÍ¼
 			{
-	            GM.EdgeWeight[j][i]=weight;	//ï¿½Ú¶Ô½ï¿½Î»ï¿½Ã±ï¿½ï¿½ï¿½È¨Öµ  
+	            GM.EdgeWeight[j][i]=weight;	//ÔÚ¶Ô½ÇÎ»ÖÃ±£´æÈ¨Öµ  
 			}
 	    }
 	}
@@ -50,21 +50,21 @@ public class P8_5 {
 	{
 		int i,j;
 
-		for(i=0;i<GM.VertexNum;i++)  		//ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ 
+		for(i=0;i<GM.VertexNum;i++)  		//Çå¿Õ¾ØÕó 
 		{
 	        for(j=0;j<GM.VertexNum;j++)
 			{
-	            GM.EdgeWeight[i][j]=MaxValue; //ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½Ôªï¿½Øµï¿½ÖµÎªMaxValue
+	            GM.EdgeWeight[i][j]=MaxValue; //ÉèÖÃ¾ØÕóÖÐ¸÷ÔªËØµÄÖµÎªMaxValue
 			}
 		}
 	}
 	
-	static void OutGraph(GraphMatrix2 GM)			//ï¿½ï¿½ï¿½ï¿½Ú½Ó¾ï¿½ï¿½ï¿½ 
+	static void OutGraph(GraphMatrix2 GM)			//Êä³öÁÚ½Ó¾ØÕó 
 	{
 	    int i,j;
 	    for(j=0;j<GM.VertexNum;j++)
 		{
-	        System.out.printf("\t%c",GM.Vertex[j]);          //ï¿½Úµï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ 
+	        System.out.printf("\t%c",GM.Vertex[j]);          //ÔÚµÚ1ÐÐÊä³ö¶¥µãÐÅÏ¢ 
 		}
 	    System.out.printf("\n");
 	    for(i=0;i<GM.VertexNum;i++) 
@@ -72,49 +72,49 @@ public class P8_5 {
 	        System.out.printf("%c",GM.Vertex[i]);
 	        for(j=0;j<GM.VertexNum;j++)
 	        {
-	            if(GM.EdgeWeight[i][j]==MaxValue) //ï¿½ï¿½È¨ÖµÎªï¿½ï¿½ï¿½Öµ 
+	            if(GM.EdgeWeight[i][j]==MaxValue) //ÈôÈ¨ÖµÎª×î´óÖµ 
 				{
-	                System.out.printf("\tZ");          		//ï¿½ï¿½Zï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½
+	                System.out.printf("\tZ");          		//ÒÔZ±íÊ¾ÎÞÇî´ó
 				}
 	            else
 				{
-	                System.out.printf("\t%d",GM.EdgeWeight[i][j]); //ï¿½ï¿½ï¿½ï¿½ßµï¿½È¨Öµ
+	                System.out.printf("\t%d",GM.EdgeWeight[i][j]); //Êä³ö±ßµÄÈ¨Öµ
 				}
 	        }
 	        System.out.printf("\n");
 	    }             
 	}
 	
-	static void DistMin(GraphMatrix2 GM,int vend)			//ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ã·¨
+	static void DistMin(GraphMatrix2 GM,int vend)			//×î¶ÌÂ·¾¶Ëã·¨
 	{
-	    int[] weight=new int[GraphMatrix2.MaxNum];						//Ä³ï¿½ï¿½Ö¹ï¿½ãµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    int[] weight=new int[GraphMatrix2.MaxNum];						//Ä³ÖÕÖ¹µãµ½¸÷¶¥µãµÄ×î¶ÌÂ·¾¶³¤¶È
 	    int i,j,k,min;
 
 	    vend--; 
 
-	    for(i=0;i<GM.VertexNum;i++) 			//ï¿½ï¿½Ê¼weightï¿½ï¿½ï¿½ï¿½ 
+	    for(i=0;i<GM.VertexNum;i++) 			//³õÊ¼weightÊý×é 
 	    {
-	        weight[i]=GM.EdgeWeight[vend][i]; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡È¨Öµ 
+	        weight[i]=GM.EdgeWeight[vend][i]; 	//±£´æ×îÐ¡È¨Öµ 
 	    }
-	    for(i=0;i<GM.VertexNum;i++) 			//ï¿½ï¿½Ê¼pathï¿½ï¿½ï¿½ï¿½ 
+	    for(i=0;i<GM.VertexNum;i++) 			//³õÊ¼pathÊý×é 
 	    {
-	        if(weight[i]<MaxValue && weight[i]>0) //ï¿½ï¿½Ð§È¨Öµ 
+	        if(weight[i]<MaxValue && weight[i]>0) //ÓÐÐ§È¨Öµ 
 			{
-	            path[i]=vend; 				//ï¿½ï¿½ï¿½ï¿½ï¿½
+	            path[i]=vend; 				//±£´æ±ß
 			}
 	    }
-	    for(i=0;i<GM.VertexNum;i++) 			//ï¿½ï¿½Ê¼tmpvertexï¿½ï¿½ï¿½ï¿½ 
+	    for(i=0;i<GM.VertexNum;i++) 			//³õÊ¼tmpvertexÊý×é 
 	    {
-	        tmpvertex[i]=0; 					//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ã¼¯ï¿½ï¿½Îªï¿½ï¿½ 
+	        tmpvertex[i]=0; 					//³õÊ¼»¯¶¥µã¼¯ºÏÎª¿Õ 
 	    }
 
-	    tmpvertex[vend]=1; 					//Ñ¡ï¿½ë¶¥ï¿½ï¿½vend
+	    tmpvertex[vend]=1; 					//Ñ¡Èë¶¥µãvend
 	    weight[vend]=0;  
 	    for(i=0;i<GM.VertexNum;i++)
 	    {
 	        min=MaxValue; 
 	        k=vend; 
-	        for(j=0;j<GM.VertexNum;j++) 		//ï¿½ï¿½ï¿½ï¿½Î´ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡È¨Öµ 
+	        for(j=0;j<GM.VertexNum;j++) 		//²éÕÒÎ´ÓÃ¶¥µãµÄ×îÐ¡È¨Öµ 
 			{
 	            if(tmpvertex[j]==0 && weight[j]<min)
 	            {
@@ -122,8 +122,8 @@ public class P8_5 {
 	                k=j;
 	            }
 			}
-	        tmpvertex[k]=1;   				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½kÑ¡ï¿½ï¿½
-	        for(j=0;j<GM.VertexNum;j++) 		//ï¿½Ô¶ï¿½ï¿½ï¿½kÎªï¿½Ð¼ï¿½ã£¬ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½È¨Öµ 
+	        tmpvertex[k]=1;   				//½«¶¥µãkÑ¡Èë
+	        for(j=0;j<GM.VertexNum;j++) 		//ÒÔ¶¥µãkÎªÖÐ¼äµã£¬ÖØÐÂ¼ÆËãÈ¨Öµ 
 			{
 	            if(tmpvertex[j]==0 && weight[k]+GM.EdgeWeight[k][j]<weight[j])  
 	            {
@@ -135,52 +135,52 @@ public class P8_5 {
 	}
 	
 	public static void main(String[] args) {
-		GraphMatrix2 GM=new GraphMatrix2(); //ï¿½ï¿½ï¿½å±£ï¿½ï¿½ï¿½Ú½Ó±ï¿½á¹¹ï¿½ï¿½Í¼ 
+		GraphMatrix2 GM=new GraphMatrix2(); //¶¨Òå±£´æÁÚ½Ó±í½á¹¹µÄÍ¼ 
 	    String go;
 		int vend;
 		int i,k;
 
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
+		System.out.printf("Çó½â×î¶ÌÂ·¾¶ÎÊÌâ£¡\n");
 		
 		do{
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
-			GM.GType=input.nextInt(); 			//Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-			System.out.printf("ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
-			GM.VertexNum=input.nextInt(); 			//ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-			System.out.printf("ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½:");
-			GM.EdgeNum=input.nextInt(); 			//ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ 
-			ClearGraph(GM);					//ï¿½ï¿½ï¿½Í¼
-			CreateGraph(GM); 				//ï¿½ï¿½ï¿½ï¿½ï¿½Ú½Ó±ï¿½á¹¹ï¿½ï¿½Í¼
+		System.out.printf("ÇëÏÈÊäÈëÊäÈëÉú³ÉÍ¼µÄÀàÐÍ:");
+			GM.GType=input.nextInt(); 			//Í¼µÄÖÖÀà
+			System.out.printf("ÊäÈëÍ¼µÄ¶¥µãÊýÁ¿:");
+			GM.VertexNum=input.nextInt(); 			//ÊäÈëÍ¼¶¥µãÊý 
+			System.out.printf("ÊäÈëÍ¼µÄ±ßÊýÁ¿:");
+			GM.EdgeNum=input.nextInt(); 			//ÊäÈëÍ¼±ßÊý 
+			ClearGraph(GM);					//Çå¿ÕÍ¼
+			CreateGraph(GM); 				//Éú³ÉÁÚ½Ó±í½á¹¹µÄÍ¼
 
-			System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
+			System.out.printf("\nÇëÊäÈë½áÊøµã:");
 			vend=input.nextInt();
 	        DistMin(GM,vend); 
 			
 			vend--;
-			System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½ãµ½ï¿½ï¶¥ï¿½ï¿½%cï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ö±ï¿½Îª(ï¿½ï¿½Ê¼ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½):\n",GM.Vertex[vend]);
-			for(i=0;i<GM.VertexNum;i++)			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			System.out.printf("\n¸÷¶¥µãµ½´ï¶¥µã%cµÄ×î¶ÌÂ·¾¶·Ö±ðÎª(ÆðÊ¼µã - ½áÊøµã):\n",GM.Vertex[vend]);
+			for(i=0;i<GM.VertexNum;i++)			//Êä³ö½á¹û
 			{
 				if(tmpvertex[i]==1)
 				{
 					k=i;            
 					while(k!=vend)
 					{
-						System.out.printf("ï¿½ï¿½ï¿½ï¿½%c - ",GM.Vertex[k]);
+						System.out.printf("¶¥µã%c - ",GM.Vertex[k]);
 						k=path[k];
 					}
-					System.out.printf("ï¿½ï¿½ï¿½ï¿½%c\n",GM.Vertex[k]);
+					System.out.printf("¶¥µã%c\n",GM.Vertex[k]);
 				}
 				else
 				{
-					System.out.printf("%c - %c:ï¿½ï¿½Â·ï¿½ï¿½\n",GM.Vertex[i],GM.Vertex[vend]);
+					System.out.printf("%c - %c:ÎÞÂ·¾¶\n",GM.Vertex[i],GM.Vertex[vend]);
 				}
 			}
 			
-		 System.out.print("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(y/n)?");
+		 System.out.print("\n¼ÌÐøÍæÂð(y/n)?");
 		 go=input.next();
 		}while(go.equalsIgnoreCase("y"));
 	  
-		System.out.printf("ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+		System.out.printf("ÓÎÏ·½áÊø£¡\n");
 
 	}
 

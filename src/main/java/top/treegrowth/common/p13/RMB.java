@@ -7,12 +7,12 @@ import java.util.Scanner;
 public final class RMB 
 {   
      private double amount = 0.0D;   
-     private static final String NUM = "ï¿½ï¿½Ò¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½Æ¾ï¿½";   
-     private static final String UNIT = "Çªï¿½ï¿½Ê°ï¿½ï¿½";   
-     private static final String GRADEUNIT = "Çªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";   
-     private static final String DOTUNIT = "ï¿½Ç·ï¿½ï¿½ï¿½";   
+     private static final String NUM = "ÁãÒ¼·¡ÈþËÁÎéÂ½Æâ°Æ¾Á";   
+     private static final String UNIT = "Çª°ÛÊ°¸ö";   
+     private static final String GRADEUNIT = "ÇªÍòÒÚÕ×";   
+     private static final String DOTUNIT = "½Ç·ÖÀå";   
      private static final int GRADE = 4;  
-     private static final String SIGN = "ï¿½ï¿½";   
+     private static final String SIGN = "£¤";   
      private static final NumberFormat nf = new DecimalFormat("#0.###");   
    
      private RMB(double amount) 
@@ -23,12 +23,12 @@ public final class RMB
      
      public static String toBigAmt(double amount) 
      {   
-         nf.setMinimumFractionDigits(3);//Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½   
-         String amt = nf.format(amount);//ï¿½ï¿½doubleï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½,Êµï¿½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   
+         nf.setMinimumFractionDigits(3);//Ð¡Êýµãºó²»×ãµÄ²¹Áã   
+         String amt = nf.format(amount);//½«doubleÀàÐÍµÄÊý¸ñÊ½»¯²¢×ª»»³É×Ö·û´®,Êµ¼ÊÉÏ½øÐÐÁËËÄÉáÎåÈë   
          System.out.println(amt);   
          Double d = new Double(amount);   
-         String dotPart = ""; //È¡Ð¡ï¿½ï¿½Î»   
-         String intPart = ""; //È¡ï¿½ï¿½ï¿½ï¿½Î»   
+         String dotPart = ""; //È¡Ð¡ÊýÎ»   
+         String intPart = ""; //È¡ÕûÊýÎ»   
    
          int dotPos;   
          if ((dotPos = amt.indexOf('.')) != -1) 
@@ -37,7 +37,7 @@ public final class RMB
              dotPart = amt.substring(dotPos + 1);   
  
              if(dotPart.length()>4)
-             { //ï¿½ï¿½ï¿½ï¿½4Î»Ö±ï¿½Ó½ï¿½È¡   
+             { //³¬¹ý4Î»Ö±½Ó½ØÈ¡   
                  dotPart = dotPart.substring(0,4);   
              }   
          } 
@@ -47,20 +47,20 @@ public final class RMB
          }   
    
          if (intPart.length() > 16)   
-             throw new InternalError("ï¿½ï¿½ï¿½ï¿½Ì«ï¿½ï¿½ï¿½Þ·ï¿½×ªï¿½ï¿½ï¿½ï¿½");
+             throw new InternalError("Êý¶îÌ«´ó£¬ÎÞ·¨×ª»»¡£");
 
          String intBig = intToBig(intPart);   
          String dotBig = dotToBig(dotPart);   
    
-         //ï¿½ï¿½ï¿½Â´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä£ï¿½ï¿½ï¿½ï¿½ÚºÃ¶ï¿½ï¿½Ë¡ï¿½   
+         //ÒÔÏÂ´úÂëÉÔ×öÐÞ¸Ä£¬ÏÖÔÚºÃ¶àÁË¡£   
    
          if ((dotBig.length() == 0) && (intBig.length() != 0)) 
          {   
-             return intBig + "Ôªï¿½ï¿½";   
+             return intBig + "ÔªÕû";   
          } 
          else if ((dotBig.length() == 0) && (intBig.length() == 0)) 
          {   
-             return intBig + "ï¿½ï¿½Ôª";   
+             return intBig + "ÁãÔª";   
          } 
          else if ((dotBig.length() != 0) && (intBig.length() != 0)) 
          {   
@@ -77,7 +77,7 @@ public final class RMB
    
      /**  
   
-      * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¼ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½  
+      * ÓÃÀ´´¦Àí¼¸½Ç¼¸·Ö¼¸Àå  
   
       * @param dotPart  
   
@@ -87,7 +87,7 @@ public final class RMB
    
      private static String dotToBig(String dotPart) 
      {   
-         //ï¿½Ãµï¿½×ªï¿½ï¿½ï¿½ï¿½Ä´ï¿½Ð´ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½   
+         //µÃµ½×ª»»ºóµÄ´óÐ´£¨Ð¡Êý²¿·Ö£©   
          String strRet = "";   
          for (int i = 0; i < dotPart.length() && i < 3; i++) 
          {   
@@ -106,7 +106,7 @@ public final class RMB
   
      /**  
   
-      * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôª ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ï¸ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½  
+      * ÓÃÀ´´¦Àí¶àÉÙÔª £¬Õâ¸öÒª×ÐÏ¸¿¼ÂÇ²ÅÐÐ  
   
       * @param intPart  
   
@@ -116,39 +116,39 @@ public final class RMB
    
      private static String intToBig(String intPart) 
      {   
-         //ï¿½Ãµï¿½×ªï¿½ï¿½ï¿½ï¿½Ä´ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½   
-         int grade; //ï¿½ï¿½ï¿½ï¿½   
+         //µÃµ½×ª»»ºóµÄ´óÐ´£¨ÕûÊý²¿·Ö£©   
+         int grade; //¼¶³¤   
          String result = "";   
          String strTmp = "";   
-        //ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   
+        //µÃµ½µ±¼¶³¤   
          grade = intPart.length() / GRADE;   
    
-         //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î³ï¿½ï¿½ï¿½   
+         //µ÷Õû¼¶´Î³¤¶È   
          if (intPart.length() % GRADE != 0)   
              grade += 1;   
-        //ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½Ù´ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½   
+        //¶ÔÃ¿¼¶Êý×Ö´¦Àí£¬ÏÈ´¦Àí×î¸ß¼¶£¬È»ºóÔÙ´¦ÀíµÍ¼¶µÄ   
          for (int i = grade; i >= 1; i--) 
          {   
-             strTmp = getNowGradeVal(intPart, i);//È¡ï¿½Ãµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   
-             result += getSubUnit(strTmp);//×ªï¿½ï¿½ï¿½ï¿½Ð´   
+             strTmp = getNowGradeVal(intPart, i);//È¡µÃµ±Ç°¼¶´ÎÊý×Ö   
+             result += getSubUnit(strTmp);//×ª»»´óÐ´   
    
              //System.out.println(strTmp+"|"+getSubUnit(strTmp));   
    
-             result = dropZero(result);//ï¿½ï¿½ï¿½ï¿½ È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   
+             result = dropZero(result);//³ýÁã È¥µôÁ¬ÐøµÄÁã   
    
              //System.out.println("result="+result);   
    
-             //ï¿½Ó¼ï¿½ï¿½Îµï¿½Î»   
+             //¼Ó¼¶´Îµ¥Î»   
    
-             if (i > 1) //Ä©Î»ï¿½ï¿½ï¿½Óµï¿½Î»   
+             if (i > 1) //Ä©Î»²»¼Óµ¥Î»   
    
-                 //ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   
+                 //µ¥Î»²»ÄÜÏàÁ¬Ðø   
    
-                 //×¢ï¿½â£ºï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Òªï¿½ï¿½ï¿½â´¦ï¿½ï¿½(wmjï¿½Þ¸Ä´ï¿½bug)   
+                 //×¢Òâ£ºÁ¬Ðø4¸öÁãµÄÊ±ºòÒªÌØÊâ´¦Àí(wmjÐÞ¸Ä´Ëbug)   
    
-                 if(getSubUnit(strTmp).equals("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"))
+                 if(getSubUnit(strTmp).equals("ÁãÁãÁãÁã"))
                  {   
-                     result = result+"ï¿½ï¿½";   
+                     result = result+"Áã";   
                   }
                  else
                  {   
@@ -162,7 +162,7 @@ public final class RMB
     private static String getNowGradeVal(String strVal, int grade) 
      {   
    
-         //ï¿½Ãµï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ÎµÄ´ï¿½   
+         //µÃµ½µ±Ç°¼¶´ÎµÄ´®   
    
          String rst;   
    
@@ -184,7 +184,7 @@ public final class RMB
    
     private static String getSubUnit(String strVal) 
      {   
-         //ï¿½ï¿½Öµ×ªï¿½ï¿½   
+         //ÊýÖµ×ª»»   
          String rst = "";   
   
          for (int i = 0; i < strVal.length(); i++) 
@@ -194,17 +194,17 @@ public final class RMB
    
              if (num == 0) 
              {   
-                 //ï¿½ï¿½ï¿½ã¡±ï¿½ï¿½ï¿½ï¿½ï¿½â´¦ï¿½ï¿½   
-                 if (i != strVal.length()) //×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä©Î»ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½   
-                     rst += "ï¿½ï¿½";   
+                 //¡°Áã¡±×÷ÌØÊâ´¦Àí   
+                 if (i != strVal.length()) //×ª»»ºóÊýÄ©Î»²»ÄÜÎªÁã   
+                     rst += "Áã";   
               } 
              else 
              {   
                  //If IntKey = 1 And i = 2 Then   
    
-                 //ï¿½ï¿½Ò¼Ê°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â´¦ï¿½ï¿½   
+                 //¡°Ò¼Ê°¡±×÷ÌØÊâ´¦Àí   
    
-                 //ï¿½ï¿½Ò¼Ê°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   
+                 //¡°Ò¼Ê°¡±ºÏÀí   
    
                  //Else   
    
@@ -212,9 +212,9 @@ public final class RMB
    
                  //End If   
    
-                 //×·ï¿½Óµï¿½Î»   
+                 //×·¼Óµ¥Î»   
    
-                 if (i != strVal.length() - 1)//ï¿½ï¿½Î»ï¿½ï¿½ï¿½Óµï¿½Î»   
+                 if (i != strVal.length() - 1)//¸öÎ»²»¼Óµ¥Î»   
    
                      rst += UNIT.substring(i + 4 - strVal.length(), i + 4  
    
@@ -240,10 +240,10 @@ public final class RMB
    
      private static String dropZero(String strVal) 
      {   
-         //È¥ï¿½ï¿½ï¿½ï¿½ï¿½ÌµÄ¡ï¿½ï¿½ã¡±   
+         //È¥³ýÁ¬¼ÌµÄ¡°Áã¡±   
          String strRst;   
-         String strBefore; //Ç°Ò»Î»ï¿½ï¿½ï¿½Ö·ï¿½   
-         String strNow; //ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Ö·ï¿½   
+         String strBefore; //Ç°Ò»Î»ÖÃ×Ö·û   
+         String strNow; //ÏÖÔÚÎ»ÖÃ×Ö·û   
    
         strBefore = strVal.substring(0, 1);   
         strRst = strBefore;   
@@ -252,16 +252,16 @@ public final class RMB
          {   
              strNow = strVal.substring(i, i + 1);   
    
-             if (strNow.equals("ï¿½ï¿½") && strBefore.equals("ï¿½ï¿½"))   
+             if (strNow.equals("Áã") && strBefore.equals("Áã"))   
    
-                 ;//Í¬Ê±Îªï¿½ï¿½   
+                 ;//Í¬Ê±ÎªÁã   
               else  
                   strRst += strNow;   
               strBefore = strNow;   
           }   
          
-        //Ä©Î»È¥ï¿½ï¿½   
-        if (strRst.substring(strRst.length() - 1, strRst.length()).equals("ï¿½ï¿½"))   
+        //Ä©Î»È¥Áã   
+        if (strRst.substring(strRst.length() - 1, strRst.length()).equals("Áã"))   
    
              strRst = strRst.substring(0, strRst.length() - 1);   
    
@@ -273,10 +273,10 @@ public final class RMB
      {  
     	 String  rmb;
     	 double  str;
-    	 System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+    	 System.out.println("ÇëÊäÈë½ð¶îÊý£º");
          Scanner scanner = new Scanner(System.in);
          str = scanner.nextDouble();
-         System.out.println("×ªï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½Îªï¿½ï¿½");
+         System.out.println("×ª»»ºóµÄ½ð¶îÎª£º");
          
          rmb=RMB.toBigAmt(str);
          System.out.println(rmb);

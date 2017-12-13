@@ -1,73 +1,73 @@
 package top.treegrowth.common.p10;
 
 public class P10_9 {
-	static int iCount = 0;						//È«ï¿½Ö±ï¿½ï¿½ï¿½
-	static int[] WeiZhi=new int[8];						//È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static int iCount = 0;						//È«¾Ö±äÁ¿
+	static int[] WeiZhi=new int[8];						//È«¾ÖÊý×é
 
-	static void Output()						//ï¿½ï¿½ï¿½ï¿½ï¿½
+	static void Output()						//Êä³ö½â
 	{
 	   int i,j,flag=1;
-	   System.out.printf("ï¿½ï¿½%2dï¿½Ö·ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ê¾ï¿½Êºï¿½):\n", ++iCount);//ï¿½ï¿½ï¿½ï¿½ï¿½Å¡ï¿½ 
+	   System.out.printf("µÚ%2dÖÖ·½°¸(¡ï±íÊ¾»Êºó):\n", ++iCount);//Êä³öÐòºÅ¡£ 
 	   System.out.printf("  ");
 	   for(i=1;i<=8;i++)
 	   {
-	       System.out.printf("ï¿½x");
+	       System.out.printf("¨x");
 	   }
 	   System.out.printf("\n");
 	   for (i = 0; i < 8; i++)
 	   {
-	       System.out.printf("ï¿½ï¿½");
+	       System.out.printf("¨Š");
 	       for (j = 0; j < 8; j++)
 	       {
 	           if(WeiZhi[i]-1 == j)
 			   {
-	               System.out.printf("ï¿½ï¿½");			//ï¿½Êºï¿½ï¿½Î»ï¿½ï¿½
+	               System.out.printf("¡ï");			//»ÊºóµÄÎ»ÖÃ
 			   }
 	           else
 	           {
 	               if (flag<0)
 				   {
-	                   System.out.printf("     ");		//ï¿½ï¿½ï¿½
+	                   System.out.printf("     ");		//Æå¸ñ
 				   }
 	               else
 				   {
-	                   System.out.printf("ï¿½ï¿½");    		//ï¿½ï¿½ï¿½            
+	                   System.out.printf("¨€");    		//Æå¸ñ            
 				   }
 	           }
 	           flag=-1*flag;
 	       }
-	       System.out.printf("ï¿½ï¿½\n");
+	       System.out.printf("¨‡\n");
 	       flag=-1*flag;
 	   }
 	   System.out.printf("  ");
 	   for(i=1;i<=8;i++)
 	   {
-	       System.out.printf("ï¿½ï¿½");
+	       System.out.printf("¨‰");
 	   }
 	   System.out.printf("\n");  
 	}
 
-	static void EightQueen(int n)				// ï¿½ã·¨
+	static void EightQueen(int n)				// Ëã·¨
 	{
 	   int i,j;
-	   int ct;							//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Í»
-	   if (n == 8)						//ï¿½ï¿½8ï¿½ï¿½ï¿½Êºï¿½ï¿½Ñ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	   int ct;							//ÓÃÓÚÅÐ¶ÏÊÇ·ñ³åÍ»
+	   if (n == 8)						//Èô8¸ö»ÊºóÒÑ·ÅÖÃÍê³É
 	   {
-		  Output(); 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½
+		  Output(); 					//Êä³öÇó½âµÄ½á¹û
 		  return;
 	   }
-	   for (i = 1; i <= 8; i++)				//ï¿½ï¿½Ì½
+	   for (i = 1; i <= 8; i++)				//ÊÔÌ½
 	   { 
-		  WeiZhi[n] = i;					//ï¿½Ú¸ï¿½ï¿½ÐµÄµï¿½iï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½
-		  //ï¿½Ïµï¿½nï¿½ï¿½ï¿½Êºï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Êºï¿½ï¿½Î³É¹ï¿½ï¿½ï¿½
+		  WeiZhi[n] = i;					//ÔÚ¸ÃÁÐµÄµÚiÐÐÉÏ·ÅÖÃ
+		  //¶ÏµÚn¸ö»ÊºóÊÇ·ñÓëÇ°Ãæ»ÊºóÐÎ³É¹¥»÷
 		  ct=1;
 		for (j = 0; j < n; j++) 
 		{
-	 	  if (WeiZhi[j] == WeiZhi[n])		// ï¿½Î³É¹ï¿½ï¿½ï¿½
+	 	  if (WeiZhi[j] == WeiZhi[n])		// ÐÎ³É¹¥»÷
 		  {
 			 ct=0;
 		  }
-	 	  else if (Math.abs(WeiZhi[j] - WeiZhi[n]) == (n - j))// ï¿½Î³É¹ï¿½ï¿½ï¿½
+	 	  else if (Math.abs(WeiZhi[j] - WeiZhi[n]) == (n - j))// ÐÎ³É¹¥»÷
 		  {
 			 ct=0;
 		  }
@@ -76,15 +76,15 @@ public class P10_9 {
 		  }
 		}
 
-		  if (ct==1)					//Ã»ï¿½Ð³ï¿½Í»ï¿½ï¿½ï¿½Í¿ï¿½Ê¼ï¿½ï¿½Ò»ï¿½Ðµï¿½ï¿½ï¿½Ì½
-			 EightQueen(n + 1); 		//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
+		  if (ct==1)					//Ã»ÓÐ³åÍ»£¬¾Í¿ªÊ¼ÏÂÒ»ÁÐµÄÊÔÌ½
+			 EightQueen(n + 1); 		//µÝ¹éµ÷ÓÃ
 	   }
 	}
 	public static void main(String[] args) 
 	{
-		 System.out.printf("ï¿½Ë»Êºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n"); 
-		   System.out.printf("ï¿½Ë»Êºï¿½ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½:\n"); 
-		   EightQueen(0);					//ï¿½ï¿½ï¿½
+		 System.out.printf("°Ë»ÊºóÎÊÌâÇó½â£¡\n"); 
+		   System.out.printf("°Ë»ÊºóÅÅÁÐ·½°¸:\n"); 
+		   EightQueen(0);					//Çó½â
 
 	}
 

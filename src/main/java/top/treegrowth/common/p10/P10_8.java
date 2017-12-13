@@ -12,39 +12,39 @@ class Coordinate
 	   x=a;
 	   y=b;
    }
-}						//ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ 
+}						//ÆåÅÌÉÏµÄ×ø±ê 
 
 
 public class P10_8 {
 	static int[][] chessboard=new int[8][8];	
-	static int curstep;						//ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static int curstep;						//ÂíÌøµÄ²½ÖèĞòºÅ
 	 
 	
 
-	//ï¿½ï¿½ï¿½ï¿½ßµÄ°Ë¸ï¿½ï¿½ï¿½ï¿½ï¿½
+	//Âí¿É×ßµÄ°Ë¸ö·½Ïò
 	static Coordinate[] fangxiang={new Coordinate(-2, 1), new Coordinate(-1, 2),
 									new Coordinate(1, 2), new Coordinate(2, 1),
 									new Coordinate(2, -1), new Coordinate(1, -2),
 									new Coordinate(-1, -2),new Coordinate(-2, -1)};	
 
-	static void Move(Coordinate curpos) 			//ï¿½ï¿½Ì¤ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static void Move(Coordinate curpos) 			//ÂíÌ¤ÆåÅÌËã·¨
 	{
 		Coordinate next=new Coordinate(0,0);
 
 	   int i,j;
-	   if (curpos.x < 0 || curpos.x > 7 || curpos.y < 0 || curpos.y > 7)	//Ô½ï¿½ï¿½ 
+	   if (curpos.x < 0 || curpos.x > 7 || curpos.y < 0 || curpos.y > 7)	//Ô½½ç 
 	   {
 		  return;
 	   }
-	   if (chessboard[curpos.x][curpos.y]!=0)	//ï¿½ï¿½ï¿½ß¹ï¿½ 
+	   if (chessboard[curpos.x][curpos.y]!=0)	//ÒÑ×ß¹ı 
 	   {
 		  return;	
 	   }
-	   chessboard[curpos.x][curpos.y] = curstep;	//ï¿½ï¿½ï¿½æ²½ï¿½ï¿½ 
+	   chessboard[curpos.x][curpos.y] = curstep;	//±£´æ²½Êı 
 	   curstep++;
-	   if (curstep > 64)					//ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	   if (curstep > 64)					//ÆåÅÌÎ»ÖÃ¶¼×ßÍêÁË 
 	   {
-		   for (i = 0; i < 8; i++)			//ï¿½ï¿½ï¿½ï¿½ß·ï¿½
+		   for (i = 0; i < 8; i++)			//Êä³ö×ß·¨
 		   {
 	           for (j = 0; j < 8; j++)
 			   {
@@ -57,7 +57,7 @@ public class P10_8 {
 	   } 
 	   else
 	   {
-		  for (i = 0; i < 8; i++)			// 8ï¿½ï¿½ï¿½ï¿½ï¿½ÜµÄ·ï¿½ï¿½ï¿½
+		  for (i = 0; i < 8; i++)			// 8¸ö¿ÉÄÜµÄ·½Ïò
 		  {
 	
 			 next.x = curpos.x + fangxiang[i].x;
@@ -72,8 +72,8 @@ public class P10_8 {
 		  }
 	   }
 
-	   chessboard[curpos.x][curpos.y] = 0; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	   curstep--; 						//ï¿½ï¿½ï¿½Ù²ï¿½ï¿½ï¿½ 
+	   chessboard[curpos.x][curpos.y] = 0; 	//Çå³ı²½ÊıĞòºÅ 
+	   curstep--; 						//¼õÉÙ²½Êı 
 	}
 
 	public static void main(String[] args) 
@@ -81,19 +81,19 @@ public class P10_8 {
 		int i, j;
 		   Coordinate start=new Coordinate(0,0);
 
-		   System.out.print("ï¿½ï¿½Ì¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-		   System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ê¼Î»ï¿½ï¿½(x,y):");
+		   System.out.print("ÂíÌ¤ÆåÅÌÎÊÌâÇó½â£¡\n");
+		   System.out.print("ÇëÏÈÊäÈëÂíµÄÒ»¸öÆğÊ¼Î»ÖÃ(x,y):");
 		   Scanner input=new Scanner(System.in);
 		   start.x=input.nextInt();
-		   start.y=input.nextInt();//ï¿½ï¿½Ê¼Î»ï¿½ï¿½
+		   start.y=input.nextInt();//ÆğÊ¼Î»ÖÃ
 
 		   if (start.x < 1 || start.y < 1 || start.x > 8 || start.y > 8)	
-		   {								//Ô½ï¿½ï¿½
-			  System.out.print("ï¿½ï¿½Ê¼Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡\n");
+		   {								//Ô½½ç
+			  System.out.print("ÆğÊ¼Î»ÖÃÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë£¡\n");
 			  System.out.print("over!");
 		   }
 
-		   for(i=0;i<8;i++)					//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½Ôªï¿½ï¿½×´Ì¬ 
+		   for(i=0;i<8;i++)					//³õÊ¼»¯ÆåÅÌ¸÷µ¥Ôª¸ñ×´Ì¬ 
 		   {
 			   for(j=0;j<8;j++)
 			   {
@@ -103,9 +103,9 @@ public class P10_8 {
 		   
 		   start.x--;
 		   start.y--;
-		   curstep = 1;						//ï¿½ï¿½1ï¿½ï¿½ 
+		   curstep = 1;						//µÚ1²½ 
 
-		   Move(start);						//ï¿½ï¿½ï¿½
+		   Move(start);						//Çó½â
 
 
 	}

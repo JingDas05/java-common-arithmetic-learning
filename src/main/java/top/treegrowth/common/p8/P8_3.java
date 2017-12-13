@@ -2,11 +2,11 @@ package top.treegrowth.common.p8;
 
 import java.util.Scanner;
 
-class  LinkList2            //ï¿½Úµï¿½ï¿½ï¿½
+class  LinkList2            //½ÚµãÀà
 {
-   int  no ;          //ï¿½ï¿½ï¿½ï¿½
+   int  no ;          //ÐòÁÐ
    int psw;   
-   LinkList2 next;         //ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Úµï¿½
+   LinkList2 next;         //ÏÂÒ»¸ö½Úµã
 
    public LinkList2(int no,int psw) 
    { 
@@ -14,7 +14,7 @@ class  LinkList2            //ï¿½Úµï¿½ï¿½ï¿½
 	  this.psw=psw;
     }
 
-  public LinkList2(int no,int psw,LinkList2 next)   //ï¿½ï¿½ï¿½ì·½ï¿½ï¿½
+  public LinkList2(int no,int psw,LinkList2 next)   //¹¹Ôì·½·¨
   {
    this.no=no;
    this.psw=psw;
@@ -23,7 +23,7 @@ class  LinkList2            //ï¿½Úµï¿½ï¿½ï¿½
 }
 
 public class P8_3 {
-	static  LinkList2 head=null,tail=null;      // Í·Ö¸ï¿½ë£¬Î²Ö¸ï¿½ï¿½
+	static  LinkList2 head=null,tail=null;      // Í·Ö¸Õë£¬Î²Ö¸Õë
 	int size=0;
 
     public void addhead(int i,int psw)   
@@ -42,7 +42,7 @@ public class P8_3 {
         size++;
     }
    
-   static  void CircleFun(LinkList2 list, int m)					//ï¿½ã·¨
+   static  void CircleFun(LinkList2 list, int m)					//Ëã·¨
 	{
 	    LinkList2 p ,q;
 	    int i;
@@ -51,7 +51,7 @@ public class P8_3 {
 		{
 			q=q.next;  
 		}
-	    System.out.printf("ï¿½ï¿½Ï·ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½Ë³ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½\n") ;
+	    System.out.printf("ÓÎÏ·Õß°´ÕÕÈçÏÂµÄË³Ðò³öÁÐ¡£\n") ;
 	    while(p.next != p)
 		{
 			for(i=0;i<m-1;i++)
@@ -59,37 +59,37 @@ public class P8_3 {
 				q = p;
 				p = p.next;
 			}
-			q.next = p.next;						//É¾ï¿½ï¿½pÖ¸ï¿½ï¿½Ä½ï¿½ï¿½
-			System.out.printf("ï¿½ï¿½%dï¿½ï¿½ï¿½Ë³ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª%dï¿½ï¿½\n",p.no,p.psw );
-			m = p.psw;							//ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			q.next = p.next;						//É¾³ýpÖ¸ÏòµÄ½áµã
+			System.out.printf("µÚ%d¸öÈË³öÁÐ£¬ÆäÊÖÖÐµÄ³öÁÐÊý×ÖÎª%d¡£\n",p.no,p.psw );
+			m = p.psw;							//ÖØÖÃ³öÁÐÊý×Ö
 			p=null;				
 			p = q.next;				
 	    }
-	    System.out.printf("\nï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª%dï¿½ï¿½",p.no,p.psw);
+	    System.out.printf("\n×îºóÒ»¸öÈËÊÇ%d£¬ÆäÊÖÖÐµÄ³öÁÐÊý×ÖÎª%d¡£",p.no,p.psw);
 	}
 	public static void main(String[] args)
 	{
 		  P8_3 LL=new P8_3();
 		  int e,baoshu;
-		  System.out.printf("Ô¼Éªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-		  System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼Éªï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+		  System.out.printf("Ô¼Éª·ò»·ÎÊÌâÇó½â£¡\n");
+		  System.out.printf("ÇëÊäÈëÔ¼Éª·ò»·ÖÐµÄÈËÊý£º\n");
 		  Scanner input=new Scanner(System.in);
-		  int  num=input.nextInt();							//ï¿½ï¿½ï¿½ï¿½Ô¼Éªï¿½ò»·µï¿½ï¿½ï¿½ï¿½ï¿½
+		  int  num=input.nextInt();							//ÊäÈëÔ¼Éª·ò»·µÄÈËÊý
 
-		  System.out.printf("ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½\n");
+		  System.out.printf("°´ÕÕË³ÐòÊäÈëÃ¿¸öÈËÊÖÖÐµÄ³öÁÐÊý×Ö£º\n");
 		  e=input.nextInt();
 		    
 		  LL.addhead(1,e);
 
-		  for (int i=2; i<=num;i++ )         //ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		  for (int i=2; i<=num;i++ )         //¹¹ÔìÑ­»·Á´±í
 		  { 
 			       e=input.nextInt();
 		           LL.addtail(i,e);
 		  }
 		  
-		  System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Î³ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ö£ï¿½\n");
+		  System.out.printf("ÇëÊäÈëµÚÒ»´Î³öÁÐµÄÊý×Ö£º\n");
 		  baoshu=input.nextInt();		
-		  CircleFun(head,baoshu) ;						//ï¿½ï¿½ï¿½Ô¼Éªï¿½ï¿½
+		  CircleFun(head,baoshu) ;						//Çó½âÔ¼Éª·ò»·
 		  System.out.printf("\n");
 
 	}

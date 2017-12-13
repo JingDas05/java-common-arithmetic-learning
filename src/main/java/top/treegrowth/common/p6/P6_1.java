@@ -2,15 +2,15 @@ package top.treegrowth.common.p6;
 
 public class P6_1 {
 	
-	static int LeapYear(int year)					//ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½
+	static int LeapYear(int year)					//ÅĞ¶ÏÈòÄê
 	{
 		if((year%400==0) || (year%100!=0) && (year%4==0)) 
 		{
-			return 1;						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ò·µ»ï¿½1
+			return 1;						//ÊÇÈòÄê,Ôò·µ»Ø1
 		}
 		else
 		{
-			return 0;						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ò·µ»ï¿½0
+			return 0;						//²»ÊÇÈòÄê,Ôò·µ»Ø0
 		}
 	}
 	
@@ -20,12 +20,12 @@ public class P6_1 {
 		int year;
 		int count=0;
 		
-		System.out.print("2000ï¿½êµ½3000ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½\n");
+		System.out.print("2000Äêµ½3000ÄêÖ®¼äËùÓĞµÄÈòÄêÈçÏÂ£º\n");
 		for(year=2000;year<=3000;year++)
 		{
 			if(LeapYear(year)==1)
 			{
-				System.out.print(year+" ");			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				System.out.print(year+" ");			//Êä³öÈòÄêÄê·İ
 				count++;
 				if(count%16==0)
 					System.out.print("\n");

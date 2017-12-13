@@ -10,43 +10,43 @@ public class P5_3 {
 	 */
 	public static void main(String[] args) {
 		int i;
-	    SLType SL=new SLType();         		//ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-		Data pdata;				//ï¿½ï¿½ï¿½ï¿½ï¿½ã±£ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    SLType SL=new SLType();         		//¶¨ÒåË³Ðò±í±äÁ¿ 
+		Data pdata;				//¶¨Òå½áµã±£´æÖ¸Õë±äÁ¿ 
 		Scanner input=new Scanner(System.in);
-		System.out.print("Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾!\n"); 
+		System.out.print("Ë³Ðò±í²Ù×÷ÑÝÊ¾!\n"); 
 		
-	    SL.SLInit(SL);       			//ï¿½ï¿½Ê¼ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ 
+	    SL.SLInit(SL);       			//³õÊ¼»¯Ë³Ðò±í 
 	    
-		System.out.print("ï¿½ï¿½Ê¼ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!\n");
+		System.out.print("³õÊ¼»¯Ë³Ðò±íÍê³É!\n");
 
 	    do 
-		{                    		//Ñ­ï¿½ï¿½ï¿½ï¿½Ó½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	        System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÓµÄ½ï¿½ï¿½(Ñ§ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½"); 
+		{                    		//Ñ­»·Ìí¼Ó½áµãÊý¾Ý 
+	        System.out.print("ÊäÈëÌí¼ÓµÄ½áµã(Ñ§ºÅ ÐÕÃû ÄêÁä)£º"); 
 	    	Data data=new Data();  
 	        data.key=input.next();
 	        data.name=input.next();
 	        data.age=input.nextInt();
-	        if(data.age>0)               //ï¿½ï¿½ï¿½ï¿½ï¿½ä²»Îª0 
+	        if(data.age>0)               //ÈôÄêÁä²»Îª0 
 	        {	
-	            if(SL.SLAdd(SL,data)==0)   //ï¿½ï¿½ï¿½ï¿½Ó½ï¿½ï¿½Ê§ï¿½ï¿½ 
+	            if(SL.SLAdd(SL,data)==0)   //ÈôÌí¼Ó½áµãÊ§°Ü 
 				{
-	                break;            //ï¿½Ë³ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ 
+	                break;            //ÍË³öËÀÑ­»· 
 				}
 	        }
-		   else   				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0 
+		   else   				//ÈôÄêÁäÎª0 
 		   {
-	            break;          		//ï¿½Ë³ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½
+	            break;          		//ÍË³öËÀÑ­»·
 		   }
 	    }while(true);
-	    System.out.print("\nË³ï¿½ï¿½ï¿½ï¿½ÐµÄ½ï¿½ï¿½Ë³ï¿½ï¿½Îªï¿½ï¿½\n");
-	    SL.SLAll(SL);                  //ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    System.out.print("\nË³Ðò±íÖÐµÄ½áµãË³ÐòÎª£º\n");
+	    SL.SLAll(SL);                  //ÏÔÊ¾ËùÓÐ½áµãÊý¾Ý 
 	    
-	    System.out.print("\nÒªÈ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½");
-	    i=input.nextInt(); //ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½    
-	    pdata=SL.SLFindByNum(SL,i);  //ï¿½ï¿½ï¿½ï¿½Å²ï¿½ï¿½Ò½ï¿½ï¿½ 
-	    if(!pdata.equals(null))        			//ï¿½ï¿½ï¿½ï¿½ï¿½ØµÄ½ï¿½ï¿½Ö¸ï¿½ë²»ÎªNULL
+	    System.out.print("\nÒªÈ¡³ö½áµãµÄÐòºÅ£º");
+	    i=input.nextInt(); //ÊäÈë½áÕ¼µãÐòºÅ    
+	    pdata=SL.SLFindByNum(SL,i);  //°´ÐòºÅ²éÕÒ½áµã 
+	    if(!pdata.equals(null))        			//Èô·µ»ØµÄ½áµãÖ¸Õë²»ÎªNULL
 		{ 
-	        System.out.print("ï¿½ï¿½"+i+"ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½<"+pdata.key+" "+pdata.name+" "+pdata.age+">");
+	        System.out.print("µÚ"+i+"¸ö½áµãÎª£º<"+pdata.key+" "+pdata.name+" "+pdata.age+">");
 		}
 
 	}
@@ -54,61 +54,61 @@ public class P5_3 {
 }
 
 class Data{
-	String key;                 //ï¿½ï¿½ï¿½Ä¹Ø¼ï¿½ï¿½ï¿½ 
+	String key;                 //½áµãµÄ¹Ø¼ü×Ö 
 	String name;
     int age;
-}    					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+}    					//¶¨Òå½áµãÀàÐÍ
 
-class SLType    				//ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½á¹¹
+class SLType    				//¶¨ÒåË³Ðò±í½á¹¹
 {	static final int MAXLEN=100;
-    Data[] ListData=new Data[MAXLEN+1];	//ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½Ä½á¹¹ï¿½ï¿½ï¿½ï¿½ 
-    int ListLen;              		//Ë³ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+    Data[] ListData=new Data[MAXLEN+1];	//±£´æË³Ðò±íµÄ½á¹¹Êý×é 
+    int ListLen;              		//Ë³Ðò±íÒÑ´æ½áµãµÄÊýÁ¿ 
     
-    void SLInit(SLType SL) 			//ï¿½ï¿½Ê¼ï¿½ï¿½Ë³ï¿½ï¿½ï¿½
+    void SLInit(SLType SL) 			//³õÊ¼»¯Ë³Ðò±í
     {
-        SL.ListLen=0;    			//ï¿½ï¿½Ê¼ï¿½ï¿½Îªï¿½Õ±ï¿½
+        SL.ListLen=0;    			//³õÊ¼»¯Îª¿Õ±í
     }
 
     int SLLength(SLType SL)  		
     {
-        return SL.ListLen;    		//ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        return SL.ListLen;    		//·µ»ØË³Ðò±íµÄÔªËØÊýÁ¿
     }
 
-    int SLAdd(SLType SL,Data data)  //ï¿½ï¿½ï¿½ï¿½Ôªï¿½Øµï¿½Ë³ï¿½ï¿½ï¿½Î²ï¿½ï¿½
+    int SLAdd(SLType SL,Data data)  //Ôö¼ÓÔªËØµ½Ë³Ðò±íÎ²²¿
     {
-        if(SL.ListLen==MAXLEN)  	//Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+        if(SL.ListLen==MAXLEN)  	//Ë³Ðò±íÒÑÂú 
         {
-            System.out.print("Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó½ï¿½ï¿½ï¿½Ë£ï¿½\n");
+            System.out.print("Ë³Ðò±íÒÑÂú£¬²»ÄÜÔÙÌí¼Ó½áµãÁË£¡\n");
             return 0;    
         }
         SL.ListData[++SL.ListLen]=data;
         return 1;
     }
 
-    Data SLFindByNum(SLType SL,int n)  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½
+    Data SLFindByNum(SLType SL,int n)  //¸ù¾ÝÐòºÅ·µ»ØÊý¾ÝÔªËØ
     {
-        if(n<1 || n>SL.ListLen+1)  		//Ôªï¿½ï¿½ï¿½ï¿½Å²ï¿½ï¿½ï¿½È·
+        if(n<1 || n>SL.ListLen+1)  		//ÔªËØÐòºÅ²»ÕýÈ·
         {
-            System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½Å´ï¿½ï¿½ó£¬²ï¿½ï¿½Ü·ï¿½ï¿½Ø½ï¿½ã£¡\n");
-            return null;              	//ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ò·µ»ï¿½0
+            System.out.print("½áµãÐòºÅ´íÎó£¬²»ÄÜ·µ»Ø½áµã£¡\n");
+            return null;              	//²»³É¹¦£¬Ôò·µ»Ø0
         } 
         return SL.ListData[n];
     }
 
-    int SLFindByCont(SLType SL,String key)  		//ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½Ö²ï¿½Ñ¯ï¿½ï¿½ï¿½ 
+    int SLFindByCont(SLType SL,String key)  		//°´¹Ø¼ü×Ö²éÑ¯½áµã 
     {
         int i;
         for(i=1;i<=SL.ListLen;i++)
     	{
-           	if(SL.ListData[i].key.compareTo(key)==0) //ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+           	if(SL.ListData[i].key.compareTo(key)==0) //Èç¹ûÕÒµ½ËùÐè½áµã 
     		{
-                return i;        					//ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+                return i;        					//·µ»Ø½áµãÐòºÅ 
     		}
     	}
-        return 0;  								//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ò·µ»ï¿½0 
+        return 0;  								//ËÑË÷Õû¸ö±íºóÈÔÃ»ÓÐÕÒµ½£¬Ôò·µ»Ø0 
     }
 
-    int SLAll(SLType SL)  						//ï¿½ï¿½Ê¾Ë³ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ 
+    int SLAll(SLType SL)  						//ÏÔÊ¾Ë³Ðò±íÖÐµÄËùÓÐ½áµã 
     {
         int i;
         for(i=1;i<=SL.ListLen;i++)

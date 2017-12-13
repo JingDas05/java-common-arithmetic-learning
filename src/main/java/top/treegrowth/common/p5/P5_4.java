@@ -10,73 +10,74 @@ public class P5_4 {
 	    String key;
 	    Scanner input=new Scanner(System.in);
 	    
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ý¡ï¿½\n"); 
+	    System.out.print("Á´±í²âÊÔ!\nÏÈÊäÈëÁ´±íÖÐµÄÊý¾Ý¡£\n"); 
 	    do
 		{
-	    	System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÓµÄ½ï¿½ï¿½(Ñ§ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½"); 
+	    	System.out.print("ÊäÈëÌí¼ÓµÄ½áµã(Ñ§ºÅ ÐÕÃû ÄêÁä)£º"); 
 		    Data1 data=new Data1();  
 		    data.key=input.next();
 		       
 	        if(data.key.equals("0")) 
 			{
-				break; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½
+				break; //ÈôÊäÈë0£¬ÔòÍË³ö
 			}
 			else
 			{	CLType t=new CLType();
 				data.name=input.next();
 			    data.age=input.nextInt();
-				head=t.CLAddEnd(head,data);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î²ï¿½ï¿½ï¿½ï¿½Ó½ï¿½ï¿½
+				head=t.CLAddEnd(head,data);//ÔÚÁ´±íÎ²²¿Ìí¼Ó½áµã
 			}
 	    }while(true);   
-	    head.CLAllNode(head); 							//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ð½ï¿½ï¿½
+	    head.CLAllNode(head); 							//ÏÔÊ¾ËùÓÐ½áµã
 	 
-	    System.out.print("\nï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½Ò£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¹Ø¼ï¿½ï¿½ï¿½:");
-	    key=input.next();								//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¹Ø¼ï¿½ï¿½ï¿½ 
-	    node=head.CLFindNode(head,key);					//ï¿½ï¿½ï¿½Ã²ï¿½ï¿½Òºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½Ö¸ï¿½ï¿½ 
-	    if(node!=null)									//ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ð§ 
+	    System.out.print("\nÑÝÊ¾ÔÚÁ´±íÖÐ²éÕÒ£¬ÊäÈë²éÕÒ¹Ø¼ü×Ö:");
+	    key=input.next();								//ÊäÈë²éÕÒ¹Ø¼ü×Ö 
+	    node=head.CLFindNode(head,key);					//µ÷ÓÃ²éÕÒº¯Êý£¬·µ»Ø½áµãÖ¸Õë 
+	    if(node!=null)									//Èô·µ»Ø½áµãÖ¸ÕëÓÐÐ§ 
 	    {
-	        Data1 nodeData=node.nodeData;				//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	        System.out.println("ï¿½Ø¼ï¿½ï¿½ï¿½"+key+"ï¿½ï¿½Ó¦ï¿½Ä½ï¿½ï¿½Îª:("+nodeData.key+" "+nodeData.name+" "+nodeData.age+")");        
+	        Data1 nodeData=node.nodeData;				//»ñÈ¡½áµãµÄÊý¾Ý 
+	        System.out.println("¹Ø¼ü×Ö"+key+"¶ÔÓ¦µÄ½áµãÎª:("+nodeData.key+" "+nodeData.name+" "+nodeData.age+")");        
 	    }
-		else										//ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ð§ 
+		else										//Èô½áµãÖ¸ÕëÎÞÐ§ 
 		{
-	        System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½Òµï¿½ï¿½Ø¼ï¿½ï¿½ï¿½Îª"+key+"ï¿½Ä½ï¿½ã£¡\n"); 
+	        System.out.print("ÔÚÁ´±íÖÐÎ´ÕÒµ½¹Ø¼ü×ÖÎª"+key+"µÄ½áµã£¡\n"); 
 		}
 
 	}
 
 }
+
 class Data1
 {
-    String key;								//ï¿½Ø¼ï¿½ï¿½ï¿½
+    String key;								//¹Ø¼ü×Ö
     String name;
     int age;
 }
 
-class   CLType						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á¹¹
+class   CLType						//¶¨ÒåÁ´±í½á¹¹
 {
     Data1 nodeData=new Data1();
     CLType nextNode;
     
-    CLType CLAddEnd(CLType head,Data1 nodeData)  	//×·ï¿½Ó½ï¿½ï¿½ 
+    CLType CLAddEnd(CLType head,Data1 nodeData)  	//×·¼Ó½áµã 
     {
         CLType node,htemp;
 //        if(!(node=(CLType *)malloc(sizeof(CLType))))
 //        {
-//            printf("ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ê§ï¿½Ü£ï¿½\n"); 
-//            return NULL;  							//ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ê§ï¿½ï¿½ 
+//            printf("ÉêÇëÄÚ´æÊ§°Ü£¡\n"); 
+//            return NULL;  							//·ÖÅäÄÚ´æÊ§°Ü 
 //        }
 
         node=new CLType();
-    	node.nodeData=nodeData; 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-    		node.nextNode=null;  				//ï¿½ï¿½ï¿½Ã½ï¿½ï¿½Ö¸ï¿½ï¿½Îªï¿½Õ£ï¿½ï¿½ï¿½Îªï¿½ï¿½Î² 
-    		if(head==null)  						//Í·Ö¸ï¿½ï¿½ 
+    	node.nodeData=nodeData; 				//±£´æÊý¾Ý 
+    		node.nextNode=null;  				//ÉèÖÃ½áµãÖ¸ÕëÎª¿Õ£¬¼´Îª±íÎ² 
+    		if(head==null)  						//Í·Ö¸Õë 
     		{
     			head=node;
     			return head;
     		}
     		htemp=head;
-    		while(htemp.nextNode!=null) 			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä©Î² 
+    		while(htemp.nextNode!=null) 			//²éÕÒÁ´±íµÄÄ©Î² 
     		{
     			htemp=htemp.nextNode;
     		}
@@ -85,45 +86,45 @@ class   CLType						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á¹¹
     	}
     
 
-    CLType CLFindNode(CLType head,String key) 		//ï¿½ï¿½ï¿½Ò½ï¿½ï¿½
+    CLType CLFindNode(CLType head,String key) 		//²éÕÒ½áµã
     {
         CLType htemp;
-        htemp=head;       							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·Ö¸ï¿½ï¿½ 
-        while(htemp!=null)      							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ 
+        htemp=head;       							//±£´æÁ´±íÍ·Ö¸Õë 
+        while(htemp!=null)      							//Èô½áµãÓÐÐ§£¬Ôò½øÐÐ²éÕÒ 
         {
-            if(htemp.nodeData.key.equals(key)) 		//ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½ë´«ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ 
+            if(htemp.nodeData.key.equals(key)) 		//Èô½áµã¹Ø¼ü×ÖÓë´«Èë¹Ø¼ü×ÖÏàÍ¬ 
     		{
-                return htemp;  						//ï¿½ï¿½ï¿½Ø¸Ã½ï¿½ï¿½Ö¸ï¿½ï¿½ 
+                return htemp;  						//·µ»Ø¸Ã½áµãÖ¸Õë 
     		}
-            htemp=htemp.nextNode; 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ 
+            htemp=htemp.nextNode; 					//´¦ÀíÏÂÒ»½áµã 
         }
-        return null; 								//ï¿½ï¿½ï¿½Ø¿ï¿½Ö¸ï¿½ï¿½ 
+        return null; 								//·µ»Ø¿ÕÖ¸Õë 
     }
 
-    int CLLength(CLType head)						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    int CLLength(CLType head)						//¼ÆËãÁ´±í³¤¶È
     {
         CLType htemp;
         int Len=0;
         htemp=head;
-        while(htemp!=null)      							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+        while(htemp!=null)      							//±éÀúÕû¸öÁ´±í 
         {
-            Len++; 								//ï¿½Û¼Ó½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-            htemp=htemp.nextNode;					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ 
+            Len++; 								//ÀÛ¼Ó½áµãÊýÁ¿ 
+            htemp=htemp.nextNode;					//´¦ÀíÏÂÒ»½áµã 
         }
-        return Len;									//ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+        return Len;									//·µ»Ø½áµãÊýÁ¿ 
     }
 
-    void CLAllNode(CLType head) 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+    void CLAllNode(CLType head) 					//±éÀúÁ´±í 
     {
         CLType htemp;
         Data1 nodeData;
         htemp=head;
-        System.out.print("ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+CLLength(head)+"ï¿½ï¿½ï¿½ï¿½ã¡£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½\n"); 
-        while(htemp!=null) 								//Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ 
+        System.out.print("µ±Ç°Á´±í¹²ÓÐ"+CLLength(head)+"¸ö½áµã¡£Á´±íËùÓÐÊý¾ÝÈçÏÂ£º\n"); 
+        while(htemp!=null) 								//Ñ­»·´¦ÀíÁ´±íÃ¿¸ö½áµã 
         {
-            nodeData=htemp.nodeData;				//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-            System.out.println("ï¿½ï¿½ï¿½("+nodeData.key+" "+nodeData.name+" "+nodeData.age+")"); 
-            htemp=htemp.nextNode;					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ 
+            nodeData=htemp.nodeData;				//»ñÈ¡½áµãÊý¾Ý 
+            System.out.println("½áµã("+nodeData.key+" "+nodeData.name+" "+nodeData.age+")"); 
+            htemp=htemp.nextNode;					//´¦ÀíÏÂÒ»½áµã 
         }
     }
 }

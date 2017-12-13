@@ -9,14 +9,14 @@ public class P6_7 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int i,j;											//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int i,j;											//ÉùÃ÷±äÁ¿
 
-		Random r=new Random(); 			        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		Random r=new Random(); 			        //Ëæ»úÖÖ×Ó
 		for(j=0;j<10;j++)
 		{
 			for(i=0;i<10;i++)
 			{
-				System.out.printf("%3d  ",r.nextInt(100));						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				System.out.printf("%3d  ",r.nextInt(100));						//Êä³öËæ»úÊý
 			}
 			System.out.print("\n");
 		}

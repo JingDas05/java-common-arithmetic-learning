@@ -1,29 +1,29 @@
 package top.treegrowth.common.p6;
 
 public class P6_22 {
-	static double jiShuPI() 			//ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static double jiShuPI() 			//¼¶ÊýËã·¨
 	{
 		double PI,temp;
 	    int n,m;
-		n=1;					//ï¿½ï¿½ï¿½ï¿½
-		m=3;					//ï¿½ï¿½Ä¸
-		temp=2;				//ï¿½ï¿½ï¿½ï¿½
-		PI=2;				//ï¿½ï¿½Ê¼ï¿½ï¿½PI
+		n=1;					//·Ö×Ó
+		m=3;					//·ÖÄ¸
+		temp=2;				//¾«¶È
+		PI=2;				//³õÊ¼»¯PI
 
-	    while(temp>1e-15)		//ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ 
+	    while(temp>1e-15)		//ÊýÁÐ´óÓÚÖ¸¶¨µÄ¾«¶È 
 	    {
-	        temp=temp*n/m;		//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Öµ 
-	        PI+=temp;			//ï¿½ï¿½Óµï¿½piï¿½ï¿½ 
-	        n++;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1 
-	        m+=2;				//ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½2 
+	        temp=temp*n/m;		//¼ÆËãÒ»¸öÏîµÄÖµ 
+	        PI+=temp;			//Ìí¼Óµ½piÖÐ 
+	        n++;				//·Ö×ÓÔö¼Ó1 
+	        m+=2;				//·ÖÄ¸Ôö¼Ó2 
 	    }
-		return PI;				//ï¿½ï¿½ï¿½ï¿½PI
+		return PI;				//·µ»ØPI
 	}
 	public static void main(String[] args) {
 		double PI;
 
-	    PI=jiShuPI();			//ï¿½ï¿½ï¿½ï¿½
-	    System.out.println("PI="+PI); 		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    PI=jiShuPI();			//¼ÆËã
+	    System.out.println("PI="+PI); 		//Êä³ö½á¹û 
 
 	}
 

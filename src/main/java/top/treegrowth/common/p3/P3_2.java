@@ -18,11 +18,11 @@ public class P3_2 {
 		}
 	}
 	public static void main(String[] args) {
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡");
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º");
+		System.out.println("µÝÍÆËã·¨Çó½âÍÃ×Ó²ú×ÐÎÊÌâ£¡");
+		System.out.print("ÇëÏÈÊäÈëÊ±¼ä£º");
 		Scanner input=new Scanner(System.in);
-		int n=input.nextInt();						//Ê±ï¿½ï¿½
-		int num=fibonacci(n);					//ï¿½ï¿½ï¿½
-	    System.out.println("ï¿½ï¿½ï¿½ï¿½"+n+"ï¿½Âµï¿½Ê±ï¿½ä£¬ï¿½ï¿½ï¿½Ü·ï¿½Ö³ï¿½ï¿½"+num+"ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½");
+		int n=input.nextInt();						//Ê±¼ä
+		int num=fibonacci(n);					//Çó½â
+	    System.out.println("¾­¹ý"+n+"ÔÂµÄÊ±¼ä£¬¹²ÄÜ·±Ö³³É"+num+"¶ÔÍÃ×Ó£¡");
 	}
 }

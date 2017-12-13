@@ -6,14 +6,14 @@ import java.util.Random;
 public class P6_6 {
 
 	public static void main(String[] args) {
-		int i,j;											//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int i,j;											//ÉùÃ÷±äÁ¿
 
-		Random r=new Random(10); 			        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		Random r=new Random(10); 			        //Ëæ»úÖÖ×Ó
 		for(j=0;j<10;j++)
 		{
 			for(i=0;i<10;i++)
 			{
-				System.out.printf("%11d  ",r.nextInt());						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				System.out.printf("%11d  ",r.nextInt());						//Êä³öËæ»úÊý
 			}
 			System.out.print("\n");
 		}

@@ -5,33 +5,33 @@ import java.util.Scanner;
 
 public class P11_4 {
 	
-	static final int ROWLEN=10; 						//ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	static final int COLLEN=10; 						//ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	static final int DEAD=0; 							//ï¿½ï¿½Ï¸ï¿½ï¿½ 
-	static final int ALIVE=1; 							//ï¿½ï¿½Ï¸ï¿½ï¿½ 
-	static int[][] cell=new int[ROWLEN][COLLEN]; 					//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½×´Ì¬
-	static int[][] celltemp=new int[ROWLEN][COLLEN]; 				//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ïµï¿½Ç°ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½×´Ì¬
+	static final int ROWLEN=10; 						//¶þÎ¬¿Õ¼äÐÐÊý 
+	static final int COLLEN=10; 						//¶þÎ¬¿Õ¼äÁÐÊý 
+	static final int DEAD=0; 							//ËÀÏ¸°û 
+	static final int ALIVE=1; 							//»îÏ¸°û 
+	static int[][] cell=new int[ROWLEN][COLLEN]; 					//µ±Ç°ÉúÃüÏ¸°ûµÄ×´Ì¬
+	static int[][] celltemp=new int[ROWLEN][COLLEN]; 				//ÓÃÓÚÅÐ¶Ïµ±Ç°µÄÏ¸°ûµÄÏÂÒ»¸ö×´Ì¬
 	
-	static void initcell() 								//ï¿½ï¿½Ê¼ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½Ö²ï¿½
+	static void initcell() 								//³õÊ¼»¯Ï¸°û·Ö²¼
 	{
 	   int row, col;
 	   Scanner input=new Scanner(System.in);
-	   for (row = 0; row < ROWLEN; row++) //ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Îªï¿½ï¿½×´Ì¬ 
+	   for (row = 0; row < ROWLEN; row++) //ÏÈÈ«²¿³õÊ¼»¯ÎªËÀ×´Ì¬ 
 	   {
 		  for (col = 0; col < COLLEN; col++)
 		  {
 			 cell[row][col] = DEAD;
 		  }
 	   }
-	   System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½(-1 -1)ï¿½ï¿½ï¿½ï¿½:\n");
+	   System.out.printf("ÇëÏÈÊäÈëÒ»×é»îÏ¸°ûµÄ×ø±êÎ»ÖÃ£¬ÊäÈë(-1 -1)½áÊø:\n");
 	   while (true)
 	   {
-		  System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½");
+		  System.out.printf("ÇëÊäÈëÒ»¸ö»îÏ¸°ûµÄ×ø±êÎ»ÖÃ£º");
 		  row=input.nextInt();
-		  col=input.nextInt(); 			//ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+		  col=input.nextInt(); 			//ÊäÈë»îÏ¸°û×ø±ê 
 		  if (0 <= row && row < ROWLEN && 0 <= col && col < COLLEN)
 		  {
-			 cell[row][col] = ALIVE; 				//ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ 
+			 cell[row][col] = ALIVE; 				//±£´æ»îÏ¸°û 
 		  }
 		  else if (row == -1 || col == -1)
 		  {
@@ -39,12 +39,12 @@ public class P11_4 {
 		  }
 		  else
 		  {
-			 System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê³¬ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½\n"); 
+			 System.out.printf("ÊäÈë×ø±ê³¬¹ý·¶Î§¡£\n"); 
 		  }
 	   }
 	}
 	
-	static int LinSum(int row, int col) 					//Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	static int LinSum(int row, int col) 					//Í³¼ÆËÄÖÜÏ¸°ûÊýÁ¿ 
 	{
 	   int count = 0, c, r;
 
@@ -54,45 +54,45 @@ public class P11_4 {
 		  {
 			 if (r < 0 || r >= ROWLEN || c < 0 || c >= COLLEN) 
 			 {
-				continue; 						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ 
+				continue; 						//´¦ÀíÏÂÒ»¸öµ¥Ôª¸ñ 
 			 }
-			 if (cell[r][c] == ALIVE)				//ï¿½ï¿½ï¿½Îªï¿½ï¿½Ï¸ï¿½ï¿½
+			 if (cell[r][c] == ALIVE)				//Èç¹ûÎª»îÏ¸°û
 			 {
-				count++; 						//ï¿½ï¿½ï¿½Ó»ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+				count++; 						//Ôö¼Ó»îÏ¸°ûµÄÊýÁ¿ 
 			 }
 		  }
 		  
 	   }
-	   if (cell[row][col] == ALIVE) 					//ï¿½ï¿½Ç°ï¿½ï¿½Ôªï¿½ï¿½Îªï¿½ï¿½Ï¸ï¿½ï¿½ 
+	   if (cell[row][col] == ALIVE) 					//µ±Ç°µ¥Ôª¸ñÎª»îÏ¸°û 
 	   {
 		  count--; 
 	   }
-	   return count; 							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü»ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	   return count; 							//·µ»ØËÄÖÜ»îÏ¸°û×ÜÊý 
 	}
 	
-	static void OutCell() 								//ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾Ï¸ï¿½ï¿½×´Ì¬ 
+	static void OutCell() 								//Êä³öÏÔÊ¾Ï¸°û×´Ì¬ 
 	{
 	   int row, col;
 
-	   System.out.printf("\nÏ¸ï¿½ï¿½×´Ì¬\n");
-	   System.out.printf("ï¿½ï¿½");	 
-	   for (col = 0; col < COLLEN -1; col++)			//ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
+	   System.out.printf("\nÏ¸°û×´Ì¬\n");
+	   System.out.printf("©°");	 
+	   for (col = 0; col < COLLEN -1; col++)			//Êä³öÒ»ÐÐ
 	   {
-		   System.out.printf("ï¿½ï¿½ï¿½ï¿½");
+		   System.out.printf("©¤©Ð");
 	   }
-	   System.out.printf("ï¿½ï¿½ï¿½ï¿½\n");
+	   System.out.printf("©¤©´\n");
 	   for (row = 0; row < ROWLEN; row++)
 	   {
-		   System.out.printf("ï¿½ï¿½");	
-		  for (col = 0; col < COLLEN; col++)			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ 
+		   System.out.printf("©¦");	
+		  for (col = 0; col < COLLEN; col++)			//Êä³ö¸÷µ¥Ôª¸ñÖÐÏ¸°ûµÄÉú´æ×´Ì¬ 
 		  {
 			  switch(cell[row][col])
 			  {
 			  case ALIVE:
-				  System.out.printf("ï¿½ï¿½");					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½
+				  System.out.printf("¡ñ©¦");					//¡ñ´ú±í»îÏ¸°û
 				  break;
 			  case DEAD:
-				  System.out.printf("ï¿½ï¿½");					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ 
+				  System.out.printf("¡ð©¦");					//¡ð´ú±íËÀÏ¸°û 
 				  break;
 			  default:
 				  ;
@@ -102,23 +102,23 @@ public class P11_4 {
 
 		  if (row < ROWLEN - 1)
 		  {
-			  System.out.printf("ï¿½ï¿½");	
-			 for (col = 0; col < COLLEN - 1; col++)	//ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ 
+			  System.out.printf("©À");	
+			 for (col = 0; col < COLLEN - 1; col++)	//Êä³öÒ»ÐÐ 
 			 {
-				 System.out.printf("ï¿½ï¿½ï¿½ï¿½");
+				 System.out.printf("©¤©à");
 			 }
-			 System.out.printf("ï¿½ï¿½ï¿½ï¿½\n");
+			 System.out.printf("©¤©È\n");
 		  }
 	   }
-	   System.out.printf("ï¿½ï¿½");
-	   for (col = 0; col < COLLEN - 1; col++)			//ï¿½ï¿½ï¿½Ò»ï¿½ÐµÄºï¿½ï¿½ï¿½ 
+	   System.out.printf("©¸");
+	   for (col = 0; col < COLLEN - 1; col++)			//×îºóÒ»ÐÐµÄºáÏß 
 	   {
-		   System.out.printf("ï¿½ï¿½ï¿½ï¿½");
+		   System.out.printf("©¤©Ø");
 	   }
-	   System.out.printf("ï¿½ï¿½ï¿½ï¿½\n");   
+	   System.out.printf("©¤©¼\n");   
 	}
 	
-	static void cellfun()								//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ã·¨
+	static void cellfun()								//ÉúÃüÓÎÏ·Ëã·¨
 	{
 	   int row, col,sum;
 	   int count=0;
@@ -127,16 +127,16 @@ public class P11_4 {
 		  {
 			 for (col = 0; col < COLLEN; col++)
 			 {
-				switch (LinSum(row, col)) 		//ï¿½ï¿½ï¿½Ü»ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+				switch (LinSum(row, col)) 		//ËÄÖÜ»îÏ¸°ûÊýÁ¿ 
 				{
 				case 2:
-				   celltemp[row][col] = cell[row][col]; //ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ô­ï¿½ï¿½ 
+				   celltemp[row][col] = cell[row][col]; //±£³ÖÏ¸°ûÔ­Ñù 
 				   break;
 				case 3:
-				   celltemp[row][col] = ALIVE; 		//ï¿½ï¿½ï¿½ï¿½ 
+				   celltemp[row][col] = ALIVE; 		//¸´»î 
 				   break;
 				default:
-				   celltemp[row][col] = DEAD; 		//ï¿½ï¿½È¥ 
+				   celltemp[row][col] = DEAD; 		//ËÀÈ¥ 
 				}
 			 }
 		  }
@@ -151,33 +151,33 @@ public class P11_4 {
 		  {
 		      for (col = 0; col < COLLEN; col++)
 			  {
-			     if(cell[row][col] == ALIVE) 	//ï¿½ï¿½ï¿½Ç»ï¿½Ï¸ï¿½ï¿½ 
+			     if(cell[row][col] == ALIVE) 	//ÈôÊÇ»îÏ¸°û 
 				 {
-	                 count++; 				//ï¿½Û¼Ó»ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	                 count++; 				//ÀÛ¼Ó»îÏ¸°ûÊýÁ¿ 
 				 }
 			  }
 		  }
 		  sum=count;
 
-	      OutCell(); 						//ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ç°Ï¸ï¿½ï¿½×´Ì¬ 
-	      System.out.printf("ï¿½ï¿½Ç°×´Ì¬ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½\n",sum); 
+	      OutCell(); 						//Êä³öÏÔÊ¾µ±Ç°Ï¸°û×´Ì¬ 
+	      System.out.printf("µ±Ç°×´Ì¬ÏÂ£¬¹²ÓÐ%d¸ö»îÏ¸°û¡£\n",sum); 
 	}
 	
 	public static void main(String[] args) {
 		String go;
 		Scanner input=new Scanner(System.in);
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½\n");
-		   initcell(); 							//ï¿½ï¿½Ê¼ï¿½ï¿½
-		   OutCell();   						//ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Ï¸ï¿½ï¿½×´Ì¬ 
-//		   printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ï·,ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½\n");
+		System.out.printf("ÉúÃüÓÎÏ·£¡\n");
+		   initcell(); 							//³õÊ¼»¯
+		   OutCell();   						//Êä³ö³õÊ¼Ï¸°û×´Ì¬ 
+//		   printf("°´ÈÎÒâ¼ü¿ªÊ¼ÓÎÏ·,½øÐÐÏ¸°û×ª»»¡£\n");
 //		   getch(); 
 		   do{
-	       cellfun();						//ï¿½ï¿½Ê¼ï¿½ï¿½Ï· 
+	       cellfun();						//¿ªÊ¼ÓÎÏ· 
 	       
-	       System.out.print("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½×´Ì¬(y/n)?");
+	       System.out.print("\n¼ÌÐøÉú³ÉÏÂÒ»´ÎÏ¸°ûµÄ×´Ì¬(y/n)?");
 	       go=input.next();
 		   }while(go.equalsIgnoreCase("y"));
-		   System.out.println("ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		   System.out.println("ÓÎÏ·½áÊø£¡");
 
 	}
 

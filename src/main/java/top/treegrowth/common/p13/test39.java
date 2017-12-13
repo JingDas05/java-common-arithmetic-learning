@@ -2,7 +2,7 @@ package top.treegrowth.common.p13;
 
 import java.util.HashSet;
 import java.util.Iterator; 
-import java.util.Set; 
+import java.util.Set;
 
 
 public class test39 
@@ -38,24 +38,24 @@ public class test39
 					if(m>987)
 					{
 						set.remove(k);continue;
-					}//ï¿½ï¿½ï¿½ï¿½Ñ³ï¿½ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½Ã»ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ 
+					}//Èç¹ûÒÑ³¬³ö·¶Î§£¬Ã»±ØÒªÔÙÍùÏÂÅÐ¶Ï 
 					t1=m%10; if(t1==0) 
 					{
 						set.remove(k);
 						continue;
-					} //ï¿½ï¿½Î»ï¿½ï¿½ 
+					} //¸öÎ»Êý 
 					t2=(m%100)/10; 
 					if(t2==0) 
 					{
 						set.remove(k);
 						continue;
-					} //Ê®Î»ï¿½ï¿½ 
+					} //Ê®Î»Êý 
 					t3=m/100;  
 					if(t3==0) 
 					{
 						set.remove(k);
 						continue;
-					}//ï¿½ï¿½Î»ï¿½ï¿½ 
+					}//°ÙÎ»Êý 
 					if(set.contains(t1))
 					{
 						set.remove(k);

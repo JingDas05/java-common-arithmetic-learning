@@ -4,30 +4,30 @@ import java.util.Scanner;
 
 
 public class P6_20 {
-	static void cyclotomic(int n)			//ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ã·¨
+	static void cyclotomic(int n)			//¸îÔ²ÊõËã·¨
 	{
 		int i,s;
 		double k,len;
 		i=0;
-		k=3.0;					//ï¿½ï¿½Öµ
-		len=1.0;					//ï¿½ß³ï¿½ï¿½ï¿½Öµ
-		s=6;						//ï¿½ï¿½Ê¼ï¿½Ú½ï¿½ï¿½ï¿½6ï¿½ï¿½ï¿½ï¿½
+		k=3.0;					//³õÖµ
+		len=1.0;					//±ß³¤³õÖµ
+		s=6;						//³õÊ¼ÄÚ½ÓÕý6±ßÐÎ
 
 		while(i<=n)
 	    {
-	        System.out.printf("ï¿½ï¿½%2dï¿½ï¿½ï¿½Ð¸ï¿½,Îªï¿½ï¿½%5dï¿½ï¿½ï¿½ï¿½,PI=%.24f\n",i,s,k*Math.sqrt(len));
-	        s*=2;					//ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ 
-	        len=2-Math.sqrt(4-len); 		//ï¿½Ú½Ó¶ï¿½ï¿½ï¿½ÎµÄ±ß³ï¿½ 
+	        System.out.printf("µÚ%2d´ÎÇÐ¸î,ÎªÕý%5d±ßÐÎ,PI=%.24f\n",i,s,k*Math.sqrt(len));
+	        s*=2;					//±ßÊý¼Ó±¶ 
+	        len=2-Math.sqrt(4-len); 		//ÄÚ½Ó¶à±ßÐÎµÄ±ß³¤ 
 	        i++;
 	        k*=2.0;        
 	    } 
 	}
 	public static void main(String[] args) {
 		int n;
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½:");
+	    System.out.print("ÊäÈëÇÐ¸î´ÎÊý:");
 	    Scanner input=new Scanner(System.in);
-	    n=input.nextInt(); 			//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½
-		cyclotomic(n);				//ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½
+	    n=input.nextInt(); 			//ÊäÈëÇÐ¸î´ÎÊý
+		cyclotomic(n);				//¼ÆËãÃ¿´ÎÇÐ¸îµÄÔ²ÖÜÂÊ
 
 	}
 

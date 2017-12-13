@@ -1,20 +1,20 @@
 package top.treegrowth.common.p6;
 
 public class P6_16 {
-	static void cSin(double a,double b,double[] e,double[] f)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static void cSin(double a,double b,double[] e,double[] f)	//¸´ÕýÏÒ
 	{
 		double p,q;
 	    p=Math.exp(b); 
 		q=1/p;
-	    e[0]=Math.sin(a)*(p+q)/2.0; 						//Êµï¿½ï¿½
-		f[0]=Math.cos(a)*(p-q)/2.0;						//ï¿½é²¿
+	    e[0]=Math.sin(a)*(p+q)/2.0; 						//Êµ²¿
+		f[0]=Math.cos(a)*(p-q)/2.0;						//Ðé²¿
 	}
 	public static void main(String[] args) {
 		double a,b;
 		double[] e={0},f={0};
-		a=1.0;b=4.0;							//ï¿½ï¿½Ê¼ï¿½ï¿½
+		a=1.0;b=4.0;							//³õÊ¼»¯
 
-		cSin(a,b,e,f);						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		cSin(a,b,e,f);						//¸´ÕýÏÒÔËËã
 		System.out.printf("sin(%f+%fi)= %f+%fi\n",a,b,e[0],f[0]);
 
 	}

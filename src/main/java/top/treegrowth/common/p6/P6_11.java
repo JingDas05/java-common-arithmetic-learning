@@ -4,28 +4,28 @@ public class P6_11 {
 	static double rand01(double[] r)
 	{
 	    double base,u,v,p,temp1,temp2,temp3;
-	    base=256.0;					//ï¿½ï¿½ï¿½ï¿½
+	    base=256.0;					//»ùÊı
 		u=17.0; 
 		v=139.0;
 
-		temp1=u*(r[0])+v;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
-		temp2=(int)(temp1/base);			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		temp3=temp1-temp2*base;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		r[0]=temp3;						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½Îªï¿½ï¿½Ò»ï¿½ï¿½Ê¹ï¿½ï¿½
-		p=r[0]/base;						//ï¿½ï¿½ï¿½ï¿½ï¿½
+		temp1=u*(r[0])+v;				//¼ÆËã×ÜÖµ
+		temp2=(int)(temp1/base);			//¼ÆËãÉÌ
+		temp3=temp1-temp2*base;		//¼ÆËãÓàÊı
+		r[0]=temp3;						//¸üĞÂËæ»úÖÖ×Ó£¬ÎªÏÂÒ»´ÎÊ¹ÓÃ
+		p=r[0]/base;						//Ëæ»úÊı
 
 	    return p;
 	}
-	static double randZT(double u,double t, double[] r)	//ï¿½ï¿½Ì¬ï¿½Ö²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static double randZT(double u,double t, double[] r)	//ÕıÌ¬·Ö²¼µÄËæ»úÊı
 	{
 		int i;
 		double total=0.0;
 		double result;
 		for(i=0;i<12;i++)
 		{
-			total+=rand01(r);				//ï¿½Û¼ï¿½
+			total+=rand01(r);				//ÀÛ¼Ó
 		}
-		result=u+t*(total-6.0);				//ï¿½ï¿½ï¿½ï¿½ï¿½
+		result=u+t*(total-6.0);				//Ëæ»úÊı
 		return result;
 	}
 	public static void main(String[] args) {
@@ -35,8 +35,8 @@ public class P6_11 {
 		u=2.0;
 		t=3.5;
 
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½10ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½Ö²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
-	    for (i=0; i<10; i++)				//Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    System.out.print("²úÉú10¸öÕıÌ¬·Ö²¼µÄËæ»úÊı£º\n");
+	    for (i=0; i<10; i++)				//Ñ­»·µ÷ÓÃ
 		{
 	       System.out.printf("%10.5f\n",randZT(u,t,r));
 		}

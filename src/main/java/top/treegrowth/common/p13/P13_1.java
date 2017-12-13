@@ -18,10 +18,10 @@ public class P13_1
 	  	String[] args2={"-d","s1.mz","t2.txt"};
 	  	String[] args3;
 	  	Scanner input=new Scanner(System.in);
-	  	System.out.println("Ñ¹ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½Ê¾ï¿½ï¿½");
+	  	System.out.println("Ñ¹Ëõ½âÑ¹ËõËã·¨ÑÝÊ¾£¡");
 	  	String go;
 	  	do{
-	  	System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ë¹¦ï¿½Ü£ï¿½0ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+	  	System.out.print("ÇëÊäÈë¹¦ÄÜ£¨0£ºÑ¹Ëõ£¬1£º½âÑ¹Ëõ£©£º");
 	  	int s=input.nextInt();
 	  	if(s==0){
 	  		args3=args1;
@@ -32,10 +32,10 @@ public class P13_1
 	  	
 	  	P13_1 a=new P13_1(args3);
         a.run(args3);
-        System.out.println("ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½(y/n):");
+        System.out.println("¼ÌÐøÖ´ÐÐ(y/n):");
         go=input.next();
 	  	}while(go.equalsIgnoreCase("y"));
-	  	System.out.println("ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+	  	System.out.println("ÑÝÊ¾½áÊø£¡");
         return ;
     }
 
@@ -307,7 +307,7 @@ public class P13_1
         }
         
   }
-}  
+}
 
 
 class OutDictionaryException extends Exception

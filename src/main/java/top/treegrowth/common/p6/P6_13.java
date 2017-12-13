@@ -1,19 +1,19 @@
 package top.treegrowth.common.p6;
 
 public class P6_13 {
-	static void cMul(double a,double b,double c,double d,double[] e,double[] f)		//ï¿½Ë·ï¿½
+	static void cMul(double a,double b,double c,double d,double[] e,double[] f)		//³Ë·¨
 	{
 		e[0]=a*c-b*d;
 		f[0]=a*d+b*c;
 	}
-	static void cPowN(double a,double b,int n,double[] e,double[] f)			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static void cPowN(double a,double b,int n,double[] e,double[] f)			//ÃÝÔËËã
 	{
 		double result;
 		int i;
 		e[0]=a;
 		f[0]=b;
 
-		if(n==1)											//1ï¿½ï¿½ï¿½ï¿½Îªï¿½ä±¾ï¿½ï¿½
+		if(n==1)											//1´ÎÃÝÎªÆä±¾Éí
 		{
 			return;
 		}
@@ -21,7 +21,7 @@ public class P6_13 {
 		{
 			for(i=1;i<n;i++)
 			{
-				cMul(e[0],f[0],a,b,e,f);							//ï¿½ï¿½ï¿½ÆµÃµï¿½nï¿½ï¿½ï¿½ï¿½
+				cMul(e[0],f[0],a,b,e,f);							//µÝÍÆµÃµ½n´ÎÃÝ
 			}
 		}
 	}
@@ -29,11 +29,11 @@ public class P6_13 {
 		double a,b;
 		double[] e={0},f={0};
 		int n;
-		a=1;b=1;											//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½é²¿
-		n=5;												//ï¿½Ý´ï¿½
+		a=1;b=1;											//³õÊ¼»¯¸´ÊýµÄÊµ²¿ºÍÐé²¿
+		n=5;												//ÃÝ´Î
 
-		cPowN(a,b,n,e,f);									//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		System.out.printf("(%f+%fi)ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½= %f+%fi\n",a,b,n,e[0],f[0]);
+		cPowN(a,b,n,e,f);									//ÃÝÔËËã
+		System.out.printf("(%f+%fi)µÄ%d´ÎÃÝ= %f+%fi\n",a,b,n,e[0],f[0]);
 
 	}
 

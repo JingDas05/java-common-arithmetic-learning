@@ -2,28 +2,28 @@ package top.treegrowth.common.p2;
 
 import java.util.Scanner;
 
-class CBTType 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+class CBTType 				//¶¨Òå¶þ²æÊ÷½áµãÀàÐÍ 
 {
-    String data;				//Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-    CBTType left;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
-    CBTType right;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
+    String data;				//ÔªËØÊý¾Ý
+    CBTType left;				//×ó×ÓÊ÷½áµãÖ¸Õë
+    CBTType right;			//ÓÒ×ÓÊ÷½áµãÖ¸Õë
 }
 
 
 public class P2_5 {
 	static final int MAXLEN=20;
 	 static Scanner input=new Scanner(System.in);
-	 CBTType InitTree()  						//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ 
+	 CBTType InitTree()  						//³õÊ¼»¯¶þ²æÊ÷µÄ¸ù 
 	{
 	CBTType node;
 	
-	    if((node=new CBTType())!=null) //ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½
+	    if((node=new CBTType())!=null) //ÉêÇëÄÚ´æ
 	    {
-	        System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n");
+	        System.out.printf("ÇëÏÈÊäÈëÒ»¸ö¸ù½áµãÊý¾Ý:\n");
 	        node.data=input.next();
 	        node.left=null;
 	        node.right=null;
-//			if(node!=null) 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã²»Îªï¿½ï¿½ 
+//			if(node!=null) 					//Èç¹û¶þ²æÊ÷¸ù½áµã²»Îª¿Õ 
 //			{
 				return node;
 //			}
@@ -35,61 +35,61 @@ public class P2_5 {
 	    return null;
 	}
 
-	void AddTreeNode(CBTType treeNode)			//ï¿½ï¿½Ó½ï¿½ï¿½
+	void AddTreeNode(CBTType treeNode)			//Ìí¼Ó½áµã
 	{
-		// pnodeï¿½ï¿½Òªï¿½ï¿½ÓµÄ½Úµï¿½
+		// pnodeÊÇÒªÌí¼ÓµÄ½Úµã
 	     CBTType pnode,parent;
-	     // ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
+	     // ¸¸½ÚµãÊý¾Ý
 	     String data;
 	     int menusel;
 
-	    if((pnode=new CBTType())!=null) //ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½
+	    if((pnode=new CBTType())!=null) //·ÖÅäÄÚ´æ
 	    {
-	        System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n");
+	        System.out.printf("ÊäÈë¶þ²æÊ÷½áµãÊý¾Ý:\n");
 	         
 	       pnode.data=input.next();
-	        pnode.left=null; 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ 
+	        pnode.left=null; 					//ÉèÖÃ×óÓÒ×ÓÊ÷Îª¿Õ 
 	        pnode.right=null;
 
-	        System.out.printf("ï¿½ï¿½ï¿½ï¿½Ã½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
+	        System.out.printf("ÊäÈë¸Ã½áµãµÄ¸¸½áµãÊý¾Ý:");
 	        data=input.next();
 	
-	        parent=TreeFindNode(treeNode,data);	//ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ÝµÄ½ï¿½ï¿½ 
-	        if(parent==null)							//ï¿½ï¿½ï¿½Î´ï¿½Òµï¿½
+	        parent=TreeFindNode(treeNode,data);	//²éÕÒÖ¸¶¨Êý¾ÝµÄ½áµã 
+	        if(parent==null)							//Èç¹ûÎ´ÕÒµ½
 	        {
-	            System.out.printf("Î´ï¿½Òµï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½!\n");
-	            pnode=null; 					//ï¿½Í·Å´ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½Ú´ï¿½ 
+	            System.out.printf("Î´ÕÒµ½¸Ã¸¸½áµã!\n");
+	            pnode=null; 					//ÊÍ·Å´´½¨µÄ½áµãÄÚ´æ 
 	            return;
 	         }
-	         System.out.printf("1.ï¿½ï¿½Ó¸Ã½ï¿½ãµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n2.ï¿½ï¿½Ó¸Ã½ï¿½ãµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+	         System.out.printf("1.Ìí¼Ó¸Ã½áµãµ½×ó×ÓÊ÷\n2.Ìí¼Ó¸Ã½áµãµ½ÓÒ×ÓÊ÷\n");
 	         do
 			 {
-	            menusel=input.nextInt();					//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½
+	            menusel=input.nextInt();					//ÊäÈëÑ¡ÔñÏî
 	        
 	            if(menusel==1 || menusel==2)
 				{
 					if(parent==null)
 					{
-						System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½!\n");
+						System.out.printf("²»´æÔÚ¸¸½áµã£¬ÇëÏÈÉèÖÃ¸¸½áµã!\n");
 					} 
 					else
 					{
 						switch(menusel)
 						{
-							case 1: 			//ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ 
-								if(parent.left!=null) 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ 
+							case 1: 			//Ìí¼Óµ½×ó½áµã 
+								if(parent.left!=null) 	//×ó×ÓÊ÷²»Îª¿Õ 
 					            {
-	                				System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã²»Îªï¿½ï¿½!\n");
+	                				System.out.printf("×ó×ÓÊ÷½áµã²»Îª¿Õ!\n");
 	            				}
 								else
 								{
 	                				parent.left=pnode;
 								}
 	            				break;
-							case 2:			//ï¿½ï¿½Óµï¿½ï¿½Ò½ï¿½ï¿½
-								if( parent.right!=null) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ 
+							case 2:			//Ìí¼Óµ½ÓÒ½áµã
+								if( parent.right!=null) //ÓÒ×ÓÊ÷²»Îª¿Õ 
 								{
-								    System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã²»Îªï¿½ï¿½!\n"); 
+								    System.out.printf("ÓÒ×ÓÊ÷½áµã²»Îª¿Õ!\n"); 
 								}
 								else
 								{
@@ -97,7 +97,7 @@ public class P2_5 {
 								}
 								break;
 							default:
-								System.out.printf("ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½!\n");
+								System.out.printf("ÎÞÐ§²ÎÊý!\n");
 						}
 					}
 				}
@@ -105,7 +105,7 @@ public class P2_5 {
 	    }
 	}
 	
-	CBTType TreeFindNode(CBTType treeNode,String data) 	//ï¿½ï¿½ï¿½Ò½ï¿½ï¿½
+	CBTType TreeFindNode(CBTType treeNode,String data) 	//²éÕÒ½áµã
 	{
 	CBTType ptr;
 
@@ -120,7 +120,7 @@ public class P2_5 {
 	            return treeNode; 
 			}
 	        else
-			{										// ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½ 
+			{										// ·Ö±ðÏò×óÓÒ×ÓÊ÷µÝ¹é²éÕÒ 
 	            if((ptr=TreeFindNode(treeNode.left,data))!=null)
 				{
 	                return ptr;
@@ -137,11 +137,11 @@ public class P2_5 {
 	    } 
 	}
 
-	CBTType TreeLeftNode(CBTType treeNode) 	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	CBTType TreeLeftNode(CBTType treeNode) 	//»ñÈ¡×ó×ÓÊ÷
 	{
 	    if(treeNode!=null)
 		{
-	        return treeNode.left;					//ï¿½ï¿½ï¿½ï¿½Öµ
+	        return treeNode.left;					//·µ»ØÖµ
 		}
 	    else
 		{
@@ -149,11 +149,11 @@ public class P2_5 {
 		}
 	}
 	
-	CBTType TreeRightNode(CBTType treeNode) 	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	CBTType TreeRightNode(CBTType treeNode) 	//»ñÈ¡ÓÒ×ÓÊ÷
 	{
 	    if(treeNode!=null)
 		{
-	        return treeNode.right;				//ï¿½ï¿½ï¿½ï¿½Öµ
+	        return treeNode.right;				//·µ»ØÖµ
 		}
 	    else
 		{
@@ -161,7 +161,7 @@ public class P2_5 {
 		}
 	}
 
-	int TreeIsEmpty(CBTType treeNode)			//ï¿½Ð¶Ï¿ï¿½ï¿½ï¿½
+	int TreeIsEmpty(CBTType treeNode)			//ÅÐ¶Ï¿ÕÊ÷
 	{
 	    if(treeNode!=null)
 		{
@@ -173,18 +173,18 @@ public class P2_5 {
 		}
 	}
 
-	int TreeDepth(CBTType treeNode) 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int TreeDepth(CBTType treeNode) 				//¼ÆËã¶þ²æÊ÷Éî¶È
 	{
 	int depleft,depright;
 
 	    if(treeNode==null)
 		{
-	        return 0; //ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+	        return 0; //¶ÔÓÚ¿ÕÊ÷£¬Éî¶ÈÎª0
 		}
 	    else
 	    {
-	        depleft = TreeDepth(treeNode.left); 		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½)
-	        depright = TreeDepth(treeNode.right); 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½)
+	        depleft = TreeDepth(treeNode.left); 		//×ó×ÓÊ÷Éî¶È (µÝ¹éµ÷ÓÃ)
+	        depright = TreeDepth(treeNode.right); 	//ÓÒ×ÓÊ÷Éî¶È (µÝ¹éµ÷ÓÃ)
 	        if(depleft>depright)
 			{
 	           return depleft + 1; 
@@ -196,99 +196,99 @@ public class P2_5 {
 	    } 
 	}
 
-	void ClearTree(CBTType treeNode) 		// ï¿½ï¿½Õ¶ï¿½ï¿½ï¿½ï¿½ï¿½
+	void ClearTree(CBTType treeNode) 		// Çå¿Õ¶þ²æÊ÷
 	{
 	     if(treeNode!=null)
 	     {
-	         ClearTree(treeNode.left); 		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	         ClearTree(treeNode.right);		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	         treeNode=null;					//ï¿½Í·Åµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½Ú´ï¿½ 
+	         ClearTree(treeNode.left); 		//Çå¿Õ×ó×ÓÊ÷ 
+	         ClearTree(treeNode.right);		//Çå¿ÕÓÒ×ÓÊ÷ 
+	         treeNode=null;					//ÊÍ·Åµ±Ç°½áµãËùÕ¼ÄÚ´æ 
 //	         treeNode=null;
 	     }
 	}
 
-	void TreeNodeData(CBTType p) 			//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	void TreeNodeData(CBTType p) 			//ÏÔÊ¾½áµãÊý¾Ý
 	{
-	     System.out.printf("%s ",p.data); 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	     System.out.printf("%s ",p.data); 				//Êä³ö½áµãÊý¾Ý
 	}
 	
 	
-	void LevelTree(CBTType treeNode) 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	void LevelTree(CBTType treeNode) 	//°´²ã±éÀú 
 	{
 	     CBTType p;
-	     CBTType[] q=new CBTType[MAXLEN]; 										//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ë³ï¿½ï¿½Õ» 
+	     CBTType[] q=new CBTType[MAXLEN]; 										//¶¨ÒåÒ»¸öË³ÐòÕ» 
 	     int head=0,tail=0;
 
-	     if(treeNode!=null)												//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ë²»Îªï¿½ï¿½     
+	     if(treeNode!=null)												//Èç¹û¶ÓÊ×Ö¸Õë²»Îª¿Õ     
 	     {
-	         tail=(tail+1)%MAXLEN;									//ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½Î²ï¿½ï¿½ï¿½ 
-	         q[tail] = treeNode;										//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½
+	         tail=(tail+1)%MAXLEN;									//¼ÆËãÑ­»·¶ÓÁÐ¶ÓÎ²ÐòºÅ 
+	         q[tail] = treeNode;										//½«¶þ²æÊ÷¸ùÖ¸Õë½ø¶Ó
 	     }
-	     while(head!=tail) 											//ï¿½ï¿½ï¿½Ð²ï¿½Îªï¿½Õ£ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ 
+	     while(head!=tail) 											//¶ÓÁÐ²»Îª¿Õ£¬½øÐÐÑ­»· 
 	     {
-	         head=(head+1)%MAXLEN; 								//ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	         p=q[head]; 											//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ 
-	         TreeNodeData(p);										//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ 
-	         if(p.left!=null) 										//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	         head=(head+1)%MAXLEN; 								//¼ÆËãÑ­»·¶ÓÁÐµÄ¶ÓÊ×ÐòºÅ 
+	         p=q[head]; 											//»ñÈ¡¶ÓÊ×ÔªËØ 
+	         TreeNodeData(p);										//´¦Àí¶ÓÊ×ÔªËØ 
+	         if(p.left!=null) 										//Èç¹û½áµã´æÔÚ×ó×ÓÊ÷
 	         {
-	             tail=(tail+1)%MAXLEN;								//ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¶ï¿½Î²ï¿½ï¿½ï¿½ 
-	             q[tail]=p.left;										//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	             tail=(tail+1)%MAXLEN;								//¼ÆËãÑ­»·¶ÓÁÐµÄ¶ÓÎ²ÐòºÅ 
+	             q[tail]=p.left;										//½«×ó×ÓÊ÷Ö¸Õë½ø¶Ó 
 	         }
 	                 
-	         if(p.right!=null)										//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	         if(p.right!=null)										//Èç¹û½áµã´æÔÚÓÒ×ÓÊ÷ 
 	         {
-	             tail=(tail+1)%MAXLEN;								//ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¶ï¿½Î²ï¿½ï¿½ï¿½ 
-	             q[tail]=p.right;										//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	             tail=(tail+1)%MAXLEN;								//¼ÆËãÑ­»·¶ÓÁÐµÄ¶ÓÎ²ÐòºÅ 
+	             q[tail]=p.right;										//½«ÓÒ×ÓÊ÷Ö¸Õë½ø¶Ó 
 	         }
 	     }
 	}
 	
 
-	void DLRTree(CBTType treeNode)  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	void DLRTree(CBTType treeNode)  //ÏÈÐò±éÀú 
 	{     
 	     if(treeNode!=null)	
 	     {
-	         TreeNodeData(treeNode); 							//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	         TreeNodeData(treeNode); 							//ÏÔÊ¾½áµãµÄÊý¾Ý 
 	         DLRTree(treeNode.left);
 	         DLRTree(treeNode.right);
 	     }
 	}
 
-	void LDRTree(CBTType treeNode)  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	void LDRTree(CBTType treeNode)  //ÖÐÐò±éÀú 
 	{
 	     if(treeNode!=null) 
 	     {
-	         LDRTree(treeNode.left); 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	         TreeNodeData(treeNode);								//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	         LDRTree(treeNode.right); 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	         LDRTree(treeNode.left); 					//ÖÐÐò±éÀú×ó×ÓÊ÷
+	         TreeNodeData(treeNode);								//ÏÔÊ¾½áµãÊý¾Ý 
+	         LDRTree(treeNode.right); 				//ÖÐÐò±éÀúÓÒ×ÓÊ÷
 	     }
 	}
 	
-	void LRDTree(CBTType treeNode) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	void LRDTree(CBTType treeNode) //ºóÐò±éÀú
 	{
 	     if(treeNode!=null)
 	     {
-	         LRDTree(treeNode.left); 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	         LRDTree(treeNode.right); 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	         TreeNodeData(treeNode);								//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	         LRDTree(treeNode.left); 					//ºóÐò±éÀú×ó×ÓÊ÷ 
+	         LRDTree(treeNode.right); 				//ºóÐò±éÀúÓÒ×ÓÊ÷
+	         TreeNodeData(treeNode);								//ÏÔÊ¾½áµãÊý¾Ý
 	     }
 	}
 	
 	public static void main(String[] args) {
-		CBTType root=null; 		//rootÎªÖ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ 
+		CBTType root=null; 		//rootÎªÖ¸Ïò¶þ²æÊ÷¸ù½áµãµÄÖ¸Õë 
 	    int menusel;
 	    P2_5 t=new P2_5();
-		//ï¿½ï¿½ï¿½Ã¸ï¿½Ôªï¿½ï¿½
+		//ÉèÖÃ¸ùÔªËØ
 		root=t.InitTree();
-		//ï¿½ï¿½Ó½ï¿½ï¿½
+		//Ìí¼Ó½áµã
 		do{
-	        System.out.printf("ï¿½ï¿½Ñ¡ï¿½ï¿½Ëµï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½\n");
-	        System.out.printf("0.ï¿½Ë³ï¿½\t");			//ï¿½ï¿½Ê¾ï¿½Ëµï¿½
-	        System.out.printf("1.ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½\n");
+	        System.out.printf("ÇëÑ¡Ôñ²Ëµ¥Ìí¼Ó¶þ²æÊ÷µÄ½áµã\n");
+	        System.out.printf("0.ÍË³ö\t");			//ÏÔÊ¾²Ëµ¥
+	        System.out.printf("1.Ìí¼Ó¶þ²æÊ÷µÄ½áµã\n");
 			menusel=input.nextInt();
 	        switch(menusel)
 			{
-				case 1:			//ï¿½ï¿½Ó½ï¿½ï¿½
+				case 1:			//Ìí¼Ó½áµã
 					t.AddTreeNode(root);
 					break;
 				case 0:
@@ -298,35 +298,35 @@ public class P2_5 {
 			}
 		}while(menusel!=0);
 
-		//ï¿½ï¿½ï¿½ï¿½
+		//±éÀú
 	    do{
-	        System.out.printf("ï¿½ï¿½Ñ¡ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½Ê¾ï¿½Ë³ï¿½:\n");
-	        System.out.printf("1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DLR\t");	//ï¿½ï¿½Ê¾ï¿½Ëµï¿½
-	        System.out.printf("2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½LDR\n");
-	        System.out.printf("3.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½LRD\t");
-	        System.out.printf("4.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+	        System.out.printf("ÇëÑ¡Ôñ²Ëµ¥±éÀú¶þ²æÊ÷,ÊäÈë0±íÊ¾ÍË³ö:\n");
+	        System.out.printf("1.ÏÈÐò±éÀúDLR\t");	//ÏÔÊ¾²Ëµ¥
+	        System.out.printf("2.ÖÐÐò±éÀúLDR\n");
+	        System.out.printf("3.ºóÐò±éÀúLRD\t");
+	        System.out.printf("4.°´²ã±éÀú\n");
 	        menusel=input.nextInt();
 	        switch(menusel)
 			{
 	        case 0:
 	             break;
-	        case 1:				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	             System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DLRï¿½Ä½ï¿½ï¿½ï¿½ï¿½");
+	        case 1:				//ÏÈÐò±éÀú
+	             System.out.printf("\nÏÈÐò±éÀúDLRµÄ½á¹û£º");
 	             t.DLRTree(root);
 	             System.out.printf("\n");
 	             break;
-	        case 2:				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	             System.out.printf("\nï¿½ï¿½ï¿½ï¿½LDRï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½");
+	        case 2:				//ÖÐÐò±éÀú 
+	             System.out.printf("\nÖÐÐòLDR±éÀúµÄ½á¹û£º");
 	             t.LDRTree(root);
 	             System.out.printf("\n");
 	             break;
-	        case 3:				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	             System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½LRDï¿½Ä½ï¿½ï¿½ï¿½ï¿½");
+	        case 3:				//ºóÐò±éÀú 
+	             System.out.printf("\nºóÐò±éÀúLRDµÄ½á¹û£º");
 	             t.LRDTree(root);
 	             System.out.printf("\n");
 	             break;
-	        case 4:				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	             System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½");
+	        case 4:				//°´²ã±éÀú
+	             System.out.printf("\n°´²ã±éÀúµÄ½á¹û£º");
 	             t.LevelTree(root);
 	             System.out.printf("\n");
 	             break;
@@ -334,10 +334,10 @@ public class P2_5 {
 				;
 	        }
 	    }while(menusel!=0);
-		//ï¿½ï¿½ï¿½
-		System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:%d\n",t.TreeDepth(root));
+		//Éî¶È
+		System.out.printf("\n¶þ²æÊ÷Éî¶ÈÎª:%d\n",t.TreeDepth(root));
 
-	    t.ClearTree(root);			//ï¿½ï¿½Õ¶ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    t.ClearTree(root);			//Çå¿Õ¶þ²æÊ÷ 
 	    root=null;
 
 

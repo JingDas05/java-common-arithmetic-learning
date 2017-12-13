@@ -12,41 +12,41 @@ class DATA3
 class StackType
 {
 	static final int MAXLEN=50;
-    DATA3[] data=new DATA3[MAXLEN+1]; 						//ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ 
-    int top; 								//Õ»ï¿½ï¿½ 
+    DATA3[] data=new DATA3[MAXLEN+1]; 						//Êý¾ÝÔªËØ 
+    int top; 								//Õ»¶¥ 
     
     StackType STInit()
     {
     	StackType p;
     	
-        if((p=new StackType())!=null) 	//ï¿½ï¿½ï¿½ï¿½Õ»ï¿½Ú´ï¿½ 
+        if((p=new StackType())!=null) 	//ÉêÇëÕ»ÄÚ´æ 
         {
-            p.top=0; 							//ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½Îª0 
-            return p;							//ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Õ»ï¿½ï¿½Ö¸ï¿½ï¿½ 
+            p.top=0; 							//ÉèÖÃÕ»¶¥Îª0 
+            return p;							//·µ»ØÖ¸ÏòÕ»µÄÖ¸Õë 
         }
         return null;
     }
 
-    boolean STIsEmpty(StackType s) 					//ï¿½Ð¶ï¿½Õ»ï¿½Ç·ï¿½Îªï¿½ï¿½ 
+    boolean STIsEmpty(StackType s) 					//ÅÐ¶ÏÕ»ÊÇ·ñÎª¿Õ 
     {
     	boolean t;
     	t=(s.top==0);
         return t;
     }
 
-    boolean STIsFull(StackType s) 					//ï¿½Ð¶ï¿½Õ»ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½
+    boolean STIsFull(StackType s) 					//ÅÐ¶ÏÕ»ÊÇ·ñÒÑÂú
     {
     	boolean t;
     	t=(s.top==MAXLEN);
         return t;
     }
 
-    void STClear(StackType s)  					//ï¿½ï¿½ï¿½Õ» 
+    void STClear(StackType s)  					//Çå¿ÕÕ» 
     {
         s.top=0;
     }
 
-    void STFree(StackType s) 					//ï¿½Í·ï¿½Õ»ï¿½ï¿½Õ¼ï¿½Ã¿Õ¼ï¿½ 
+    void STFree(StackType s) 					//ÊÍ·ÅÕ»ËùÕ¼ÓÃ¿Õ¼ä 
     {
         if(s!=null)
     	{
@@ -54,33 +54,33 @@ class StackType
     	}
     }
 
-    int PushST(StackType s,DATA3 data)			//ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ 
+    int PushST(StackType s,DATA3 data)			//ÈëÕ»²Ù×÷ 
     {
          if((s.top+1)>MAXLEN)
          {
-             System.out.print("Õ»ï¿½ï¿½ï¿½!\n"); 
+             System.out.print("Õ»Òç³ö!\n"); 
              return 0;
          }
-         s.data[++s.top]=data;					//ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½Õ»
+         s.data[++s.top]=data;					//½«ÔªËØÈëÕ»
          return 1; 
     }
 
-    DATA3 PopST(StackType s) 					//ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ 
+    DATA3 PopST(StackType s) 					//³öÕ»²Ù×÷ 
     {
          if(s.top==0)
          {
-             System.out.print("Õ»Îªï¿½ï¿½!\n");
+             System.out.print("Õ»Îª¿Õ!\n");
 //             
              System.exit(0);
          }
          return (s.data[s.top--]);
     }
 
-    DATA3 PeekST(StackType s) 					//ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    DATA3 PeekST(StackType s) 					//¶ÁÕ»¶¥Êý¾Ý
     {
          if(s.top==0)
          {
-             System.out.printf("Õ»Îªï¿½ï¿½!\n");
+             System.out.printf("Õ»Îª¿Õ!\n");
 //             
              System.exit(0);
          }
@@ -94,10 +94,10 @@ public class P2_3 {
 		StackType st=new StackType();
 	    DATA3 data1=new DATA3();    
 
-	    StackType stack=st.STInit();  						//ï¿½ï¿½Ê¼ï¿½ï¿½Õ»
+	    StackType stack=st.STInit();  						//³õÊ¼»¯Õ»
 	    Scanner input=new Scanner(System.in);
-	    System.out.print("ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
-	    System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½:"); 
+	    System.out.print("ÈëÕ»²Ù×÷£º\n");
+	    System.out.println("ÊäÈëÐÕÃû ÄêÁä½øÐÐÈëÕ»²Ù×÷:"); 
 		do
 		{
 			DATA3 data=new DATA3();
@@ -105,7 +105,7 @@ public class P2_3 {
 			
 			if(data.name.equals("0")) 
 			{
-				break; 						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½
+				break; 						//ÈôÊäÈë0£¬ÔòÍË³ö
 			}
 			else
 			{
@@ -115,16 +115,16 @@ public class P2_3 {
 		}while(true);
 		
 		String temp="1";
-		System.out.println("ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½Õ»ï¿½ï¿½ï¿½ï¿½:");
+		System.out.println("³öÕ»²Ù×÷:°´ÈÎÒâ·Ç0¼ü½øÐÐ³öÕ»²Ù×÷:");
 		temp=input.next();
 		while(!temp.equals("0"))
 		{
 		   	data1=st.PopST(stack);
-			System.out.printf("ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(%s,%d)\n" ,data1.name,data1.age);	
+			System.out.printf("³öÕ»µÄÊý¾ÝÊÇ(%s,%d)\n" ,data1.name,data1.age);	
 			temp=input.next();
 		}
-		System.out.println("ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½");
-	    st.STFree(st); 							//ï¿½Í·ï¿½Õ»ï¿½ï¿½Õ¼ï¿½ÃµÄ¿Õ¼ï¿½ 
+		System.out.println("²âÊÔ½áÊø£¡");
+	    st.STFree(st); 							//ÊÍ·ÅÕ»ËùÕ¼ÓÃµÄ¿Õ¼ä 
 
 	}
 

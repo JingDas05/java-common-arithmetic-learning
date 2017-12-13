@@ -1,30 +1,30 @@
 package top.treegrowth.common.p9;
 
 public class P9_1 {
-	static void Perfectnum(long fanwei)		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ã·¨
+	static void Perfectnum(long fanwei)		//¼ÆËãÍêÈ«ÊýËã·¨
 	{
-	    long[] p=new long[300]; 				//ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    long[] p=new long[300]; 				//±£´æ·Ö½âµÄÒò×Ó 
 		long i,j,sum,num;
 		int k,count;
 
-		for(i=1;i<fanwei;i++)			//Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿1ï¿½ï¿½ï¿½ï¿½
+		for(i=1;i<fanwei;i++)			//Ñ­»·´¦ÀíÃ¿1¸öÊý
 		{
 			count=0;
 			num=i;
 			sum=num;
-			for(j=1;j<num;j++)		//Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿1ï¿½ï¿½ï¿½ï¿½
+			for(j=1;j<num;j++)		//Ñ­»·´¦ÀíÃ¿1¸öÊý
 			{
 				if(num % j==0)
 				{
-					p[count++]=j;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½countï¿½ï¿½ï¿½ï¿½1
-					sum=sum-j;	//ï¿½ï¿½È¥Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+					p[count++]=j;	//±£´æÒò×Ó£¬¼ÆÊýÆ÷countÔö¼Ó1
+					sum=sum-j;	//¼õÈ¥Ò»¸öÒò×Ó
 				}
 			}
 			if(sum==0)
 			{
-	            System.out.printf("%4dï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",num);
-	            System.out.printf("%d=%d",num,p[0]); 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	            for(k=1;k<count;k++) 		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	            System.out.printf("%4dÊÇÒ»¸öÍêÈ«Êý,Òò×ÓÊÇ",num);
+	            System.out.printf("%d=%d",num,p[0]); 	//Êä³öÍêÊý
+	            for(k=1;k<count;k++) 		//Êä³öÒò×Ó
 				{
 	                System.out.printf("+%d",p[k]);
 				}
@@ -35,9 +35,9 @@ public class P9_1 {
 	public static void main(String[] args) {
 		long fanwei;
 
-		fanwei=10000;					//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Î§
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½%dÖ®ï¿½Úµï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½\n",fanwei);
-		Perfectnum(fanwei);				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½
+		fanwei=10000;					//³õÊ¼»¯·¶Î§
+		System.out.printf("²éÕÒ%dÖ®ÄÚµÄÍêÈ«Êý£º\n",fanwei);
+		Perfectnum(fanwei);				//²éÕÒÍêÈ«Êý
 
 	}
 

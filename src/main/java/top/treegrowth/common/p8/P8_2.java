@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 
 public class P8_2 {
-	static final int Num=41; 						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	static final int KillMan=3; 						//ï¿½ï¿½É±ï¿½ß±ï¿½ï¿½ï¿½
+	static final int Num=41; 						//×ÜÈËÊı
+	static final int KillMan=3; 						//×ÔÉ±Õß±¨Êı
 
-	static void Josephus(int alive)					//Ô¼Éªï¿½ï¿½ï¿½ã·¨
+	static void Josephus(int alive)					//Ô¼Éª·ò»·Ëã·¨
 	{
 	    int[] man=new int[Num];
 	    int count=1;
@@ -16,35 +16,35 @@ public class P8_2 {
 	    while(count<=Num)
 	    {
 	        do{
-	            pos=(pos+1) % Num;  		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	            pos=(pos+1) % Num;  		//»·´¦Àí
 	            if(man[pos]==0)
 	                i++;
-	            if(i==KillMan) 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É±
+	            if(i==KillMan) 				//¸ÃÈË×ÔÉ±
 	            {
 	                i=0;
 	                break;
 	            }
 	        }while(true);
 	        man[pos]=count;
-			System.out.printf("ï¿½ï¿½%2dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É±ï¿½ï¿½Ô¼Éªï¿½ò»·±ï¿½ï¿½Îª%2d",pos+1,man[pos]);
+			System.out.printf("µÚ%2d¸öÈË×ÔÉ±£¡Ô¼Éª·ò»·±àºÅÎª%2d",pos+1,man[pos]);
 			if(count%2==1)
 			{
 				System.out.printf(" -> ");
 			}
 			else
 			{
-				System.out.printf(" ->\n");				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				System.out.printf(" ->\n");				//Êä³ö»»ĞĞ
 			}
 	        count++;
 	    }
 	    System.out.printf("\n");
-	    System.out.printf("ï¿½ï¿½%dï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½Ê¼Î»ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n",alive);
+	    System.out.printf("Õâ%dĞèÒª´æ»îµÄÈË³õÊ¼Î»ÖÃÓ¦ÅÅÔÚÒÔÏÂĞòºÅ:\n",alive);
 	    alive=Num-alive;
 	    for(i=0;i<Num;i++)
 		{
 	        if(man[i]>alive)
 			{
-	            System.out.printf("ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½:%d,Ô¼Éªï¿½ò»·±ï¿½ï¿½:%d\n",i+1,man[i]);
+	            System.out.printf("³õÊ¼±àºÅ:%d,Ô¼Éª·ò»·±àºÅ:%d\n",i+1,man[i]);
 			}
 		}
 	    System.out.printf("\n");
@@ -53,9 +53,9 @@ public class P8_2 {
 	{
 		int alive;
 		Scanner input=new Scanner(System.in);
-	    System.out.printf("Ô¼Éªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!\n");
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½:");		
-	    alive=input.nextInt();			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½
+	    System.out.printf("Ô¼Éª·ò»·ÎÊÌâÇó½â!\n");
+		System.out.printf("ÊäÈëĞèÒªÁô´æµÄÈËµÄÊıÁ¿:");		
+	    alive=input.nextInt();			//ÊäÈëÁô´æµÄÈËµÄÊıÁ¿
 		Josephus(alive);
 
 	}

@@ -10,32 +10,32 @@ public class P6_3 {
 	    double result,temp,tt;
 	    result=0.0; 
 		tt=1.0;
-	    for(i=0;i<m;i++)						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+	    for(i=0;i<m;i++)						//µÝÍÆÇóÖµ
 		{
 	    	temp=a[i][n-1]*tt;
-	        for(j=n-2;j>=0;j--)					//ï¿½Ú²ï¿½Äµï¿½ï¿½ï¿½ï¿½ã·¨
+	        for(j=n-2;j>=0;j--)					//ÄÚ²ãµÄµÝÍÆËã·¨
 			{
 	        	 temp=temp*y+a[i][j]*tt;
 			}
 	        result+=temp; 
 			tt*=x;
 	      }
-	    return result;						//ï¿½ï¿½ï¿½Ø½ï¿½ï¿½
+	    return result;						//·µ»Ø½á¹û
 	}
 	public static void main(String[] args) 
 	{
 		double result;
 		double x,y;
 		DecimalFormat df = new DecimalFormat("0.000E000"); 
-	    double a[][]={{1.0,2.0,3.0,4.0,5.0},		//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ïµï¿½ï¿½
+	    double a[][]={{1.0,2.0,3.0,4.0,5.0},		//³õÊ¼»¯¶þÎ¬¶àÏîÊ½µÄÏµÊý
 	                    {6.0,7.0,8.0,9.0,10.0},
 	                    {11.0,12.0,13.0,14.0,15.0},
 	                    {16.0,17.0,18.0,19.0,20.0}};
 
-		x=0.5;							//ï¿½ï¿½ï¿½ï¿½Öµï¿½Äµï¿½
+		x=0.5;							//´ýÇóÖµµÄµã
 		y=-2.0;
-	    System.out.print("ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Öµï¿½ï¿½\n");
-	    result=polynomial2D(a,4,5,x,y);			//ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    System.out.print("¶þÎ¬¶àÏîÊ½ÇóÖµ£º\n");
+	    result=polynomial2D(a,4,5,x,y);			//µ÷ÓÃº¯Êý¼ÆËã
 	    System.out.print("p("+x+","+y+")="+df.format(result)+"\n");
 	    System.out.print("\n");
 

@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 
 public class P6_19 {
-	static long fact(int n)								//ï¿½ï¿½×³Ëºï¿½ï¿½ï¿½
+	static long fact(int n)								//Çó½×³Ëº¯Êý
 	{
 	    if(n<=1)
 	        return 1;
 	    else
-	        return n*fact(n-1);			//ï¿½Ý¹ï¿½
+	        return n*fact(n-1);			//µÝ¹é
 	}
 	public static void main(String[] args) {
-int i;									//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+int i;									//ÉùÃ÷±äÁ¿
 		
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½×³Ëµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"); 
+	    System.out.print("ÇëÊäÈëÒªÇó½×³ËµÄÒ»¸öÕûÊý£º"); 
 	    Scanner input=new Scanner(System.in);
-	    i=input.nextInt();							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	    System.out.println(i+"ï¿½Ä½×³Ë½ï¿½ï¿½Îªï¿½ï¿½"+fact(i)); 		//ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½
+	    i=input.nextInt();							//ÊäÈëÊý¾Ý
+	    System.out.println(i+"µÄ½×³Ë½á¹ûÎª£º"+fact(i)); 		//µ÷ÓÃº¯Êý
 
 	}
 

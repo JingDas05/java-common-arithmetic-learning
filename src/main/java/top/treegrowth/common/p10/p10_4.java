@@ -4,31 +4,31 @@ import java.util.Scanner;
 
 
 public class p10_4 {
-	static int peach(int n) 					//ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ã·¨
+	static int peach(int n) 					//ºï×Ó³ÔÌÒËã·¨
 	{
 		int pe;
 	    if(n==1)
 		{
-	        return 1;  					//ï¿½ï¿½10ï¿½ï¿½ï¿½Ö»Ê£1ï¿½ï¿½ï¿½ï¿½
+	        return 1;  					//µÚ10Ìì¾ÍÖ»Ê£1¸öÁË
 		}
 	    else
 		{
-			pe=(peach(n-1)+1)*2; 		//Ç°Ò»ï¿½ï¿½ï¿½Ü±Èºï¿½1ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½1
+			pe=(peach(n-1)+1)*2; 		//Ç°Ò»Ìì×Ü±Èºó1Ìì¶àÒ»°ë¼Ó1
 		}
 	    return pe; 
 	}
 	public static void main(String[] args) 
 	{
-		int n; 						//ï¿½ï¿½ï¿½ï¿½ 
-	    int peachnum; 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+		int n; 						//ÌìÊı 
+	    int peachnum; 				//×î³õÌÒ×ÓÊı 
 
-	    System.out.printf("ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
+	    System.out.printf("ºï×Ó³ÔÌÒÎÊÌâÇó½â£¡\n");
+		System.out.printf("ÊäÈëÌìÊı:");
 	    Scanner input=new Scanner(System.in);
 		n=input.nextInt(); 
 		
-	    peachnum=peach(n);				//ï¿½ï¿½ï¿½
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:%dï¿½ï¿½ï¿½ï¿½\n",peachnum);
+	    peachnum=peach(n);				//Çó½â
+	    System.out.printf("×î³õµÄÌÒ×ÓÊıÎª:%d¸ö¡£\n",peachnum);
 
 	}
 

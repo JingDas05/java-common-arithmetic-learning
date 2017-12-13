@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class P5_1 {
 	static final int N=15;
-	static int searchFun(int a[],int n,int x)					//Ë³ï¿½ï¿½ï¿½ï¿½Òºï¿½ï¿½ï¿½
+	static int searchFun(int a[],int n,int x)					//Ë³Ðò²éÕÒº¯Êý
 	{
 	    int i,f=-1;
 
@@ -14,7 +14,7 @@ public class P5_1 {
 		    if(x==a[i])
 		    {
 				f=i;
-				break;						//ï¿½Ë³ï¿½
+				break;						//ÍË³ö
 			}
 		}
 
@@ -27,29 +27,29 @@ public class P5_1 {
 
 	    for(i=0;i<N;i++)
 		{
-			shuzu[i]=(int)(100+Math.random()*(100+1));;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			shuzu[i]=(int)(100+Math.random()*(100+1));;			//²úÉúÊý×é
 		}
 		
-		System.out.print("Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½Ê¾ï¿½ï¿½\n");
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n");
+		System.out.print("Ë³Ðò²éÕÒËã·¨ÑÝÊ¾£¡\n");
+	    System.out.print("Êý¾ÝÐòÁÐ:\n");
 	    for(i=0;i<N;i++)
 		{
-	        System.out.print(" "+shuzu[i]);					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	        System.out.print(" "+shuzu[i]);					//Êä³öÐòÁÐ
 		}
 		System.out.print("\n\n");
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½:");
+	    System.out.print("ÊäÈëÒª²éÕÒµÄÊý:");
 	    Scanner input=new Scanner(System.in);
-	    x=input.nextInt();							//ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½
+	    x=input.nextInt();							//ÊäÈëÒª²éÕÒµÄÊý
 
-	    n=searchFun(shuzu,N,x);					//ï¿½ï¿½ï¿½ï¿½
+	    n=searchFun(shuzu,N,x);					//²éÕÒ
 
-	    if(n<0)								//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò½ï¿½ï¿½
+	    if(n<0)								//Êä³ö²éÕÒ½á¹û
 		{
-			System.out.println("Ã»ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½:"+x);
+			System.out.println("Ã»ÕÒµ½Êý¾Ý:"+x);
 		}
 		else
 		{
-			System.out.println("ï¿½ï¿½ï¿½ï¿½:"+x+" Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½"+(n+1)+" ï¿½ï¿½Ôªï¿½Ø´ï¿½ï¿½ï¿½");
+			System.out.println("Êý¾Ý:"+x+" Î»ÓÚÊý×éµÄµÚ"+(n+1)+" ¸öÔªËØ´¦¡£");
 		}
 
 	}

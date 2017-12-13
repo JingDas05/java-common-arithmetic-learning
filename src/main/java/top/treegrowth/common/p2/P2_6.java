@@ -2,137 +2,128 @@ package top.treegrowth.common.p2;
 
 import java.util.Scanner;
 
-class GraphMatrix
-{	static final int MaxNum=20;
-	static final int MaxValue=65535;
-    char[] Vertex=new char[MaxNum]; 			//ï¿½ï¿½ï¿½æ¶¥ï¿½ï¿½ï¿½ï¿½Ï¢(ï¿½ï¿½Å»ï¿½ï¿½ï¿½Ä¸)
-    int GType;						//Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(0:ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½1:ï¿½ï¿½ï¿½ï¿½Í¼)    
-    int VertexNum; 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-    int EdgeNum;					//ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½ 
-    int[][] EdgeWeight=new int[MaxNum][MaxNum]; //ï¿½ï¿½ï¿½ï¿½ßµï¿½È¨ 
-    int[] isTrav=new int[MaxNum]; 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾ 
+class GraphMatrix {
+    static final int MaxNum = 20;
+    static final int MaxValue = 65535;
+    char[] Vertex = new char[MaxNum];            //±£´æ¶¥µãÐÅÏ¢(ÐòºÅ»ò×ÖÄ¸)
+    int GType;                        //Í¼µÄÀàÐÍ(0:ÎÞÏòÍ¼£¬1:ÓÐÏòÍ¼)
+    int VertexNum;                    //¶¥µãµÄÊýÁ¿
+    int EdgeNum;                    //±ßµÄÊýÁ¿
+    int[][] EdgeWeight = new int[MaxNum][MaxNum]; //±£´æ±ßµÄÈ¨
+    int[] isTrav = new int[MaxNum];                //±éÀú±êÖ¾
 }
 
 public class P2_6 {
-	static Scanner input=new Scanner(System.in);
-	static void CreateGraph(GraphMatrix GM)		//ï¿½ï¿½ï¿½ï¿½ï¿½Ú½Ó¾ï¿½ï¿½ï¿½Í¼ 
-	{
-	    int i,j,k;
-		int weight;							//È¨
-	    char EstartV,EendV; 					//ï¿½ßµï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ 
+    static Scanner input = new Scanner(System.in);
 
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢\n");
-	    for(i=0;i<GM.VertexNum;i++) 			//ï¿½ï¿½ï¿½ë¶¥ï¿½ï¿½ 
-	    {	        
-	        System.out.printf("ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:",i+1);
-	        GM.Vertex[i]=(input.next().toCharArray())[0]; 		//ï¿½ï¿½ï¿½æµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ 
-	    }
-	    System.out.printf("ï¿½ï¿½ï¿½ë¹¹ï¿½É¸ï¿½ï¿½ßµÄ¶ï¿½ï¿½ã¼°È¨Öµ:\n"); 
-	    for(k=0;k<GM.EdgeNum;k++)  		//ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½Ï¢ 
-	    {
-	        System.out.printf("ï¿½ï¿½%dï¿½ï¿½ï¿½ß£ï¿½",k+1);
-	        EstartV=input.next().charAt(0);
-	        EendV=input.next().charAt(0);
-	        weight=input.nextInt();
-	        for(i=0;EstartV!=GM.Vertex[i];i++); 	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ 
-	        for(j=0;EendV!=GM.Vertex[j];j++); 	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½Ò½ï¿½ï¿½Õµï¿½ 
-	        GM.EdgeWeight[i][j]=weight; 		//ï¿½ï¿½Ó¦Î»ï¿½Ã±ï¿½ï¿½ï¿½È¨Öµï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
-	        if(GM.GType==0)  				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
-			{
-	            GM.EdgeWeight[j][i]=weight;	//ï¿½Ú¶Ô½ï¿½Î»ï¿½Ã±ï¿½ï¿½ï¿½È¨Öµ  
-			}
-	    }
-	}
-	
-	static void ClearGraph(GraphMatrix GM)
-	{
-		int i,j;
+    static void CreateGraph(GraphMatrix GM)        //´´½¨ÁÚ½Ó¾ØÕóÍ¼
+    {
+        int i, j, k;
+        int weight;                            //È¨
+        char EstartV, EendV;                    //±ßµÄÆðÊ¼¶¥µã
 
-		for(i=0;i<GM.VertexNum;i++)  		//ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ 
-		{
-	        for(j=0;j<GM.VertexNum;j++)
-			{
-	            GM.EdgeWeight[i][j]=GraphMatrix.MaxValue; //ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½Ôªï¿½Øµï¿½ÖµÎªMaxValue
-			}
-		}
-	}
-	
-	static void OutGraph(GraphMatrix GM)			//ï¿½ï¿½ï¿½ï¿½Ú½Ó¾ï¿½ï¿½ï¿½ 
-	{
-	    int i,j;
-	    for(j=0;j<GM.VertexNum;j++)
-		{
-	        System.out.printf("\t%c",GM.Vertex[j]);          //ï¿½Úµï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ 
-		}
-	    System.out.printf("\n");
-	    for(i=0;i<GM.VertexNum;i++) 
-	    {
-	        System.out.printf("%c",GM.Vertex[i]);
-	        for(j=0;j<GM.VertexNum;j++)
-	        {
-	            if(GM.EdgeWeight[i][j]==GraphMatrix.MaxValue) //ï¿½ï¿½È¨ÖµÎªï¿½ï¿½ï¿½Öµ 
-				{
-	                System.out.printf("\tZ");          		//ï¿½ï¿½Zï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½
-				}
-	            else
-				{
-	                System.out.printf("\t%d",GM.EdgeWeight[i][j]); //ï¿½ï¿½ï¿½ï¿½ßµï¿½È¨Öµ
-				}
-	        }
-	        System.out.printf("\n");
-	    }             
-	}
-	
-	static  void DeepTraOne(GraphMatrix GM,int n) 	//ï¿½Óµï¿½nï¿½ï¿½ï¿½ï¿½ã¿ªÊ¼ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½Í¼ 
-	{
-	    int i;
-	    GM.isTrav[n]=1; 					//ï¿½ï¿½Ç¸Ã¶ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½ï¿½ 
-	    System.out.printf("->%c",GM.Vertex[n]);			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+        System.out.printf("ÊäÈëÍ¼ÖÐ¸÷¶¥µãÐÅÏ¢\n");
+        for (i = 0; i < GM.VertexNum; i++)            //ÊäÈë¶¥µã
+        {
+            System.out.printf("µÚ%d¸ö¶¥µã:", i + 1);
+            GM.Vertex[i] = (input.next().toCharArray())[0];        //±£´æµ½¸÷¶¥µãÊý×éÔªËØÖÐ
+        }
+        System.out.printf("ÊäÈë¹¹³É¸÷±ßµÄ¶¥µã¼°È¨Öµ:\n");
+        for (k = 0; k < GM.EdgeNum; k++)        //ÊäÈë±ßµÄÐÅÏ¢
+        {
+            System.out.printf("µÚ%dÌõ±ß£º", k + 1);
+            EstartV = input.next().charAt(0);
+            EendV = input.next().charAt(0);
+            weight = input.nextInt();
+            for (i = 0; EstartV != GM.Vertex[i]; i++) ;    //ÔÚÒÑÓÐ¶¥µãÖÐ²éÕÒÊ¼µã
+            for (j = 0; EendV != GM.Vertex[j]; j++) ;    //ÔÚÒÑÓÐ¶¥µãÖÐ²éÕÒ½áÖÕµã
+            GM.EdgeWeight[i][j] = weight;        //¶ÔÓ¦Î»ÖÃ±£´æÈ¨Öµ£¬±íÊ¾ÓÐÒ»Ìõ±ß
+            if (GM.GType == 0)                //ÈôÊÇÎÞÏòÍ¼
+            {
+                GM.EdgeWeight[j][i] = weight;    //ÔÚ¶Ô½ÇÎ»ÖÃ±£´æÈ¨Öµ
+            }
+        }
+    }
 
-	    //ï¿½ï¿½Ó´ï¿½ï¿½ï¿½Úµï¿½Ä²ï¿½ï¿½ï¿½ 
-	    for(i=0;i<GM.VertexNum;i++)
-		{
-	        if(GM.EdgeWeight[n][i]!=GraphMatrix.MaxValue && GM.isTrav[n]==0)
-			{
-	            DeepTraOne(GM,i); 			//ï¿½Ý¹ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ 
-			}
-		}
-	}
-	
-	static void DeepTraGraph(GraphMatrix GM) 		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ 
-	{
-	    int i;
+    static void ClearGraph(GraphMatrix GM) {
+        int i, j;
 
-	    for(i=0;i<GM.VertexNum;i++) 			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾ 
-		{
-	        GM.isTrav[i]=0;
-		}
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"); 
-	    for(i=0;i<GM.VertexNum;i++)
-		{
-	        if(GM.isTrav[i]==0) 				//ï¿½ï¿½ï¿½Ãµï¿½Î´ï¿½ï¿½ï¿½ï¿½ 
-			{
-	            DeepTraOne(GM,i); 			//ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-			}
-		}
-	    System.out.printf("\n"); 
-	}
-	
-	public static void main(String[] args) {
-		GraphMatrix GM=new GraphMatrix(); 					//ï¿½ï¿½ï¿½å±£ï¿½ï¿½ï¿½Ú½Ó±ï¿½á¹¹ï¿½ï¿½Í¼ 
+        for (i = 0; i < GM.VertexNum; i++)        //Çå¿Õ¾ØÕó
+        {
+            for (j = 0; j < GM.VertexNum; j++) {
+                GM.EdgeWeight[i][j] = GraphMatrix.MaxValue; //ÉèÖÃ¾ØÕóÖÐ¸÷ÔªËØµÄÖµÎªMaxValue
+            }
+        }
+    }
 
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
-	    GM.GType=input.nextInt();			//Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
-	    GM.VertexNum=input.nextInt();		//ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½:");
-	    GM.EdgeNum=input.nextInt();			//ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ 
-		ClearGraph(GM);					//ï¿½ï¿½ï¿½Í¼
-	    CreateGraph(GM); 					//ï¿½ï¿½ï¿½ï¿½ï¿½Ú½Ó±ï¿½á¹¹ï¿½ï¿½Í¼
-	    System.out.printf("ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ú½Ó¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n");
-	    OutGraph(GM);					//ï¿½ï¿½ï¿½ï¿½Ú½Ó¾ï¿½ï¿½ï¿½             
-	    DeepTraGraph(GM); 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ 
+    static void OutGraph(GraphMatrix GM)            //Êä³öÁÚ½Ó¾ØÕó
+    {
+        int i, j;
+        for (j = 0; j < GM.VertexNum; j++) {
+            System.out.printf("\t%c", GM.Vertex[j]);          //ÔÚµÚ1ÐÐÊä³ö¶¥µãÐÅÏ¢
+        }
+        System.out.printf("\n");
+        for (i = 0; i < GM.VertexNum; i++) {
+            System.out.printf("%c", GM.Vertex[i]);
+            for (j = 0; j < GM.VertexNum; j++) {
+                if (GM.EdgeWeight[i][j] == GraphMatrix.MaxValue) //ÈôÈ¨ÖµÎª×î´óÖµ
+                {
+                    System.out.printf("\tZ");                //ÒÔZ±íÊ¾ÎÞÇî´ó
+                } else {
+                    System.out.printf("\t%d", GM.EdgeWeight[i][j]); //Êä³ö±ßµÄÈ¨Öµ
+                }
+            }
+            System.out.printf("\n");
+        }
+    }
 
-	}
+    static void DeepTraOne(GraphMatrix GM, int n)    //´ÓµÚn¸ö½áµã¿ªÊ¼£¬Éî¶È±éÀúÍ¼
+    {
+        int i;
+        GM.isTrav[n] = 1;                    //±ê¼Ç¸Ã¶¥µãÒÑ´¦Àí¹ý
+        System.out.printf("->%c", GM.Vertex[n]);            //Êä³ö½áµãÊý¾Ý
+
+        //Ìí¼Ó´¦Àí½ÚµãµÄ²Ù×÷
+        for (i = 0; i < GM.VertexNum; i++) {
+            if (GM.EdgeWeight[n][i] != GraphMatrix.MaxValue && GM.isTrav[n] == 0) {
+                DeepTraOne(GM, i);            //µÝ¹é½øÐÐ±éÀú
+            }
+        }
+    }
+
+    static void DeepTraGraph(GraphMatrix GM)        //Éî¶ÈÓÅÏÈ±éÀú
+    {
+        int i;
+
+        for (i = 0; i < GM.VertexNum; i++)            //Çå³ý¸÷¶¥µã±éÀú±êÖ¾
+        {
+            GM.isTrav[i] = 0;
+        }
+        System.out.printf("Éî¶ÈÓÅÏÈ±éÀú½áµã:");
+        for (i = 0; i < GM.VertexNum; i++) {
+            if (GM.isTrav[i] == 0)                //Èô¸ÃµãÎ´±éÀú
+            {
+                DeepTraOne(GM, i);            //µ÷ÓÃº¯Êý±éÀú
+            }
+        }
+        System.out.printf("\n");
+    }
+
+    public static void main(String[] args) {
+        GraphMatrix GM = new GraphMatrix();                    //¶¨Òå±£´æÁÚ½Ó±í½á¹¹µÄÍ¼
+
+        System.out.printf("ÊäÈëÉú³ÉÍ¼µÄÀàÐÍ:");
+        GM.GType = input.nextInt();            //Í¼µÄÖÖÀà
+        System.out.printf("ÊäÈëÍ¼µÄ¶¥µãÊýÁ¿:");
+        GM.VertexNum = input.nextInt();        //ÊäÈëÍ¼¶¥µãÊý
+        System.out.printf("ÊäÈëÍ¼µÄ±ßÊýÁ¿:");
+        GM.EdgeNum = input.nextInt();            //ÊäÈëÍ¼±ßÊý
+        ClearGraph(GM);                    //Çå¿ÕÍ¼
+        CreateGraph(GM);                    //Éú³ÉÁÚ½Ó±í½á¹¹µÄÍ¼
+        System.out.printf("¸ÃÍ¼µÄÁÚ½Ó¾ØÕóÊý¾ÝÈçÏÂ:\n");
+        OutGraph(GM);                    //Êä³öÁÚ½Ó¾ØÕó
+        DeepTraGraph(GM);                //Éî¶ÈÓÅÏÈËÑË÷±éÀúÍ¼
+
+    }
 
 }

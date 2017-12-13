@@ -3,117 +3,117 @@ package top.treegrowth.common.p10;
 import java.util.ArrayList;
 import java.util.List;
 
- //ï¿½ï¿½ï¿½Ü¹ï¿½ï¿½ï¿½ï¿½ï¿½
+//ÇàÍÜ¹ýºÓÀà
 class FrogOverRiver
 {
-      //ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½
-      public  List<Frog> initializeFrogQueue()
-     {
-    	  List<Frog> frogQueue = new ArrayList<Frog>();
-          frogQueue.add(new Frog(0, "ï¿½ï¿½1", Frog.frogDirection.ï¿½ï¿½ï¿½ï¿½, false));
-          frogQueue.add(new Frog(1, "ï¿½ï¿½2", Frog.frogDirection.ï¿½ï¿½ï¿½ï¿½, true));
-          frogQueue.add(new Frog(2, "ï¿½ï¿½3", Frog.frogDirection.ï¿½ï¿½ï¿½ï¿½, true));
-          frogQueue.add(new Frog(3));
-          frogQueue.add(new Frog(4, "ï¿½ï¿½1", Frog.frogDirection.ï¿½ï¿½ï¿½ï¿½, true));
-          frogQueue.add(new Frog(5, "ï¿½ï¿½2", Frog.frogDirection.ï¿½ï¿½ï¿½ï¿½, true));
-          frogQueue.add(new Frog(6, "ï¿½ï¿½3", Frog.frogDirection.ï¿½ï¿½ï¿½ï¿½, false));
-          return frogQueue;
-     }
-        
-      //ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½Î³ï¿½Ò»ï¿½ï¿½ï¿½ÂµÄ¶ï¿½ï¿½ï¿½
-      private List<Frog> editFrogQueue(List<Frog> frogQueue, String frogName, int oldEmptyPositonID, int newEmptyPositonID)
-      {
-     	  List<Frog> newFrogQueue = new ArrayList<Frog>();
-          for(int i=0;i<frogQueue.size();i++)
-          {
-              Frog frog=(Frog)frogQueue.get(i);
-           	  Frog newFrog = new Frog(frog);
-              if (newFrog.isEmpty)
-                   newFrog.position = newEmptyPositonID;
-              if (newFrog.frogName == frogName)
-              {
-                   newFrog.position = oldEmptyPositonID;
-              }
-  
-              newFrog.canJump = false;
-              if ((newEmptyPositonID - newFrog.position) > 0 && (newEmptyPositonID - newFrog.position) < 3 && newFrog.direction == Frog.frogDirection.ï¿½ï¿½ï¿½ï¿½)
-                      newFrog.canJump = true;
-  
-              if ((newFrog.position - newEmptyPositonID) > 0 && (newFrog.position - newEmptyPositonID) < 3 && newFrog.direction == Frog.frogDirection.ï¿½ï¿½ï¿½ï¿½)
-                      newFrog.canJump = true;
-  
-              newFrogQueue.add(newFrog);
-          }
-              return newFrogQueue;
-      }
-  
-     //ï¿½Ç·ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã¶Ô»ï¿½,ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½Î»ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½3
-     private boolean isComplete(List<Frog> frogQueue)
-     {
-          return (frogQueue.get(0).position > 3 && frogQueue.get(1).position > 3 && frogQueue.get(2).position > 3);
-     }
-  
-    //ï¿½Ç·ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,Ö»Òªï¿½Ð¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Ã»ï¿½Ð´ïµ½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ô»ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½Ç¿ï¿½ï¿½ÆµÝ¹ï¿½
-    private boolean canFrogJump(List<Frog> frogQueue)
-   {
-   	   for(int i=0;i<frogQueue.size();i++)
-       {
-   		  Frog frog=(Frog)frogQueue.get(i);
-          if (frog.canJump)
-          return true;
-        }
-        return false;
-    } 
-      
-    // ï¿½ï¿½È¡ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-    public String frogJump(List<Frog> frogQueue, int emptyPositionId)  //ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½,ï¿½ï¿½Î»ï¿½Ã±ï¿½ï¿½
+     //³õÊ¼»¯ÇàÍÜ¶ÓÁÐ
+     public  List<Frog> initializeFrogQueue()
     {
-       	String frogJumpInfo = "";
-        for(int i=0;i<frogQueue.size();i++)
-        {
-        	Frog frog=(Frog)frogQueue.get(i);
-            //ï¿½Ç¿ï¿½Î»ï¿½ï¿½               
-            if (frog.isEmpty)
-                continue;
-            if (!frog.canJump)
-                continue;
-                 
-            frogJumpInfo ="ï¿½ï¿½ï¿½ï¿½" + frog.frogName + " " + frog.direction + "ï¿½ï¿½ï¿½ï¿½" + (emptyPositionId + 1) + "\r\n";
-           
-            int newPositionId = frog.position;
-            List<Frog> newFrogQueue = this.editFrogQueue(frogQueue, frog.frogName, emptyPositionId, newPositionId);
-   
-            //Ö»Òªï¿½Ü¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÍµÝ¹ï¿½
-            if (this.canFrogJump(newFrogQueue))
-            {
-                frogJumpInfo += this.frogJump(newFrogQueue, newPositionId);
-            }
-            else
-            {
-               if (this.isComplete(newFrogQueue))
-               {
-                   frogJumpInfo = frogJumpInfo + "ï¿½É¹ï¿½";
-                   break;
-               }
-            }
-            if (frogJumpInfo.contains("ï¿½É¹ï¿½"))
-                     break;
+         List<Frog> frogQueue = new ArrayList<Frog>();
+         frogQueue.add(new Frog(0, "×ó1", Frog.frogDirection.ÏòÓÒ, false));
+         frogQueue.add(new Frog(1, "×ó2", Frog.frogDirection.ÏòÓÒ, true));
+         frogQueue.add(new Frog(2, "×ó3", Frog.frogDirection.ÏòÓÒ, true));
+         frogQueue.add(new Frog(3));
+         frogQueue.add(new Frog(4, "ÓÒ1", Frog.frogDirection.Ïò×ó, true));
+         frogQueue.add(new Frog(5, "ÓÒ2", Frog.frogDirection.Ïò×ó, true));
+         frogQueue.add(new Frog(6, "ÓÒ3", Frog.frogDirection.Ïò×ó, false));
+         return frogQueue;
+    }
+
+     //µ±Ò»¸öÇàÍÜÌø¶¯ºó,ÐÎ³ÉÒ»¸öÐÂµÄ¶ÓÁÐ
+     private List<Frog> editFrogQueue(List<Frog> frogQueue, String frogName, int oldEmptyPositonID, int newEmptyPositonID)
+     {
+          List<Frog> newFrogQueue = new ArrayList<Frog>();
+         for(int i=0;i<frogQueue.size();i++)
+         {
+             Frog frog=(Frog)frogQueue.get(i);
+                Frog newFrog = new Frog(frog);
+             if (newFrog.isEmpty)
+                  newFrog.position = newEmptyPositonID;
+             if (newFrog.frogName == frogName)
+             {
+                  newFrog.position = oldEmptyPositonID;
              }
-             //Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-             return frogJumpInfo;
+
+             newFrog.canJump = false;
+             if ((newEmptyPositonID - newFrog.position) > 0 && (newEmptyPositonID - newFrog.position) < 3 && newFrog.direction == Frog.frogDirection.ÏòÓÒ)
+                     newFrog.canJump = true;
+
+             if ((newFrog.position - newEmptyPositonID) > 0 && (newFrog.position - newEmptyPositonID) < 3 && newFrog.direction == Frog.frogDirection.Ïò×ó)
+                     newFrog.canJump = true;
+
+             newFrogQueue.add(newFrog);
          }
+             return newFrogQueue;
      }
+
+    //ÊÇ·ñÒÑ¾­Íê³ÉÎ»ÖÃ¶Ô»»,¼´Ç°Èý¸öÇàÍÜµÄÎ»ÖÃ¶¼´óÓÚ3
+    private boolean isComplete(List<Frog> frogQueue)
+    {
+         return (frogQueue.get(0).position > 3 && frogQueue.get(1).position > 3 && frogQueue.get(2).position > 3);
+    }
+
+   //ÊÇ·ñ»¹ÓÐ¿ÉÒÔÌø¶¯µÄÇàÍÜ,Ö»ÒªÓÐ¿ÉÒÔÌø¶¯µÄ,¾ÍÃ»ÓÐ´ïµ½×îºóµÄ×´Ì¬£¬µ«¶¼²»¿ÉÒÔÌø¶¯ÁËÒ²²»Ò»¶¨¶Ô»»ÍêÁË£¬ÕâÀïÖ»ÊÇ¿ØÖÆµÝ¹é
+   private boolean canFrogJump(List<Frog> frogQueue)
+  {
+         for(int i=0;i<frogQueue.size();i++)
+      {
+            Frog frog=(Frog)frogQueue.get(i);
+         if (frog.canJump)
+         return true;
+       }
+       return false;
+   }
+
+   // »ñÈ¡ÇàÍÜµÄÌø¶¯²½Öè
+   public String frogJump(List<Frog> frogQueue, int emptyPositionId)  //µ±Ç°ÇàÍÜ¶ÓÁÐ,¿ÕÎ»ÖÃ±àºÅ
+   {
+          String frogJumpInfo = "";
+       for(int i=0;i<frogQueue.size();i++)
+       {
+           Frog frog=(Frog)frogQueue.get(i);
+           //ÊÇ¿ÕÎ»ÖÃ
+           if (frog.isEmpty)
+               continue;
+           if (!frog.canJump)
+               continue;
+
+           frogJumpInfo ="ÇàÍÜ" + frog.frogName + " " + frog.direction + "Ìøµ½" + (emptyPositionId + 1) + "\r\n";
+
+           int newPositionId = frog.position;
+           List<Frog> newFrogQueue = this.editFrogQueue(frogQueue, frog.frogName, emptyPositionId, newPositionId);
+
+           //Ö»ÒªÄÜ¼ÌÐøÌø¾ÍµÝ¹é
+           if (this.canFrogJump(newFrogQueue))
+           {
+               frogJumpInfo += this.frogJump(newFrogQueue, newPositionId);
+           }
+           else
+           {
+              if (this.isComplete(newFrogQueue))
+              {
+                  frogJumpInfo = frogJumpInfo + "³É¹¦";
+                  break;
+              }
+           }
+           if (frogJumpInfo.contains("³É¹¦"))
+                    break;
+            }
+            //Ñ­»·½áÊø
+            return frogJumpInfo;
+        }
+    }
 
 
 class Frog
 {
-	static enum frogDirection { ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ };
+	static enum frogDirection { Ïò×ó, ÏòÓÒ };
 
-    public String frogName;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-    public int position;    //ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
-    public frogDirection direction; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
-    public boolean canJump;//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-    public boolean isEmpty = false; //ï¿½Ç·ï¿½ï¿½Ç¿Õ¸ï¿½
+    public String frogName;//ÇàÍÜÃû³Æ
+    public int position;    //ÇàÍÜÎ»ÖÃ
+    public frogDirection direction; //ÇàÍÜÌø¶¯µÄ·½Ïò
+    public boolean canJump;//ÊÇ·ñ¿ÉÒÔÌø
+    public boolean isEmpty = false; //ÊÇ·ñÊÇ¿Õ¸ñ
  
     public Frog(int positon, String frogName, frogDirection direction, boolean canJump)
     {
@@ -125,7 +125,7 @@ class Frog
  
     public Frog(int positon)
     {
-        this.frogName = "ï¿½ï¿½";
+        this.frogName = "¿Õ";
         this.position = positon;
         this.canJump = false;
         this.isEmpty = true;

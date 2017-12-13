@@ -4,31 +4,31 @@ import java.util.Scanner;
 
 
 public class P10_6 {
-	static long count; 						//ï¿½Æ¶ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ 
+	static long count; 						//ÒÆ¶¯µÄ´ÎÊý 
 
-	static void hanoi(int n,char a,char b,char c) 	//ï¿½ï¿½Åµï¿½ï¿½ï¿½ã·¨ 
+	static void hanoi(int n,char a,char b,char c) 	//ººÅµËþËã·¨ 
 	{
 	    if(n==1)
 	    {        
-	       System.out.printf("ï¿½ï¿½%dï¿½ï¿½ï¿½Æ¶ï¿½:\tÔ²ï¿½Ì´ï¿½%cï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½%cï¿½ï¿½\n",++count,a,c);
+	       System.out.printf("µÚ%d´ÎÒÆ¶¯:\tÔ²ÅÌ´Ó%c°ôÒÆ¶¯µ½%c°ô\n",++count,a,c);
 	    }
 	    else
 	    {
-	        hanoi(n-1,a,c,b); 			//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
-	        System.out.printf("ï¿½ï¿½%dï¿½ï¿½ï¿½Æ¶ï¿½:\tÔ²ï¿½Ì´ï¿½%cï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½%cï¿½ï¿½\n",++count,a,c);
-	        hanoi(n-1,b,a,c); 			//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
+	        hanoi(n-1,a,c,b); 			//µÝ¹éµ÷ÓÃ
+	        System.out.printf("µÚ%d´ÎÒÆ¶¯:\tÔ²ÅÌ´Ó%c°ôÒÆ¶¯µ½%c°ô\n",++count,a,c);
+	        hanoi(n-1,b,a,c); 			//µÝ¹éµ÷ÓÃ
 	    }
 	}
 	public static void main(String[] args) {
-		int n; 						//Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+		int n; 						//Ô²ÅÌÊýÁ¿ 
 
 	    count=0;
-	    System.out.printf("ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ëººÅµï¿½ï¿½Ô²ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½:");
+	    System.out.printf("ººÅµËþÎÊÌâÇó½â£¡\n");
+	    System.out.printf("ÇëÊäÈëººÅµËþÔ²ÅÌµÄÊýÁ¿:");
 	    Scanner input=new Scanner(System.in);
 	    n=input.nextInt();
-	    hanoi(n,'A','B','C');    			//ï¿½ï¿½ï¿½
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½Ü¹ï¿½ï¿½ï¿½Òª%dï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½\n",count);
+	    hanoi(n,'A','B','C');    			//Çó½â
+	    System.out.printf("Çó½âÍê±Ï£¡×Ü¹²ÐèÒª%d²½ÒÆ¶¯£¡\n",count);
 
 	}
 

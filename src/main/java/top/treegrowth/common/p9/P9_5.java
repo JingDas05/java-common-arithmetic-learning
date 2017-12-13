@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 
 public class P9_5 {
-	static int gcd(int a, int b) 			//ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ 
+	static int gcd(int a, int b) 			//×î´ó¹«Ô¼Êý 
 	{
 	    int m,n,r;
-		if(a>b)				//mï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½,nï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½
+		if(a>b)				//m±£´æ½Ï´óÊý,n±£´æ½ÏÐ¡Êý
 		{
 			m=a;
 			n=b;
@@ -17,24 +17,24 @@ public class P9_5 {
 			m=b;
 			n=a;
 		}
-	    r=m%n; 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-	    while(r!=0) 			//Õ·×ªï¿½ï¿½ï¿½ 
+	    r=m%n; 				//ÇóÓàÊý 
+	    while(r!=0) 			//Õ·×ªÏà³ý 
 	    {
 	        m=n;
 	        n=r;
 	        r=m%n;
 	    }
-	    return n; 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ 
+	    return n; 				//·µ»Ø×î´ó¹«Ô¼Êý 
 	}
 	public static void main(String[] args) {
 		int a,b,c;
 		
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
+	    System.out.printf("ÊäÈëÁ½¸öÕýÕûÊý:");
 	    Scanner input=new Scanner(System.in);
 	    a=input.nextInt();
-	    b=input.nextInt();	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    b=input.nextInt();	//ÊäÈëÊý¾Ý
 		c=gcd(a,b);
-	    System.out.printf("%dï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½:%d\n",a,b,gcd(a,b));
+	    System.out.printf("%dºÍ%dµÄ×î´ó¹«Ô¼Êý:%d\n",a,b,gcd(a,b));
 
 	}
 

@@ -33,14 +33,14 @@ class upstair{
             }  
             a[k]++;            
        }
-       System.out.println(n+"ï¿½Ä²ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+count+"ï¿½Ö¡ï¿½");
+       System.out.println(n+"µÄ²ð·Ö·½·¨¹²ÓÐ:"+count+"ÖÖ¡£");
 	}
 	
 	
     public static void main(String argc[]){
         int n;
     	Scanner input=new Scanner(System.in);
-        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½");
+        System.out.println("ÇëÊäÈëÊý×Ö£º");
         n=input.nextInt();
         up(n);
     	

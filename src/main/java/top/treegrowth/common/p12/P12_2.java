@@ -7,18 +7,18 @@ import java.util.Scanner;
 
 
 public class P12_2 {
-	static char[] jiami(char[] str,int n)					//ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static char[] jiami(char[] str,int n)					//¼ÓÃÜËã·¨
 	{
 	    int i,len;
 	    char[] miwen;
 
 	    len=str.length;
-	    if((miwen=new char[len+1])==null)	//ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½
+	    if((miwen=new char[len+1])==null)	//ÉêÇëÄÚ´æ
 	    {
-	        System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ê§ï¿½ï¿½!\n");
+	        System.out.print("ÉêÇëÄÚ´æÊ§°Ü!\n");
 	        System.exit(1);
 	    }
-	    for(i=0;i<len;i++)						//ï¿½ï¿½Î»ï¿½æ»»
+	    for(i=0;i<len;i++)						//ÒÆÎ»Ìæ»»
 	    {
 			miwen[i]=(char)(str[i]+n);
 	    }
@@ -26,18 +26,18 @@ public class P12_2 {
 	    return miwen;
 	}
 	
-	static char[] jiemi(char[] str,int n)					//ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static char[] jiemi(char[] str,int n)					//½âÃÜËã·¨
 	{
 	    int i,len;
 	    char[] mingwen;
 
 	    len=str.length;
-	    if((mingwen=new char[len+1])==null)//ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½
+	    if((mingwen=new char[len+1])==null)//ÉêÇëÄÚ´æ
 	    {
-	        System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ê§ï¿½ï¿½!\n");
+	        System.out.print("ÉêÇëÄÚ´æÊ§°Ü!\n");
 	        System.exit(1);
 	    }
-	    for(i=0;i<len;i++)						//ï¿½ï¿½Î»ï¿½æ»»
+	    for(i=0;i<len;i++)						//ÒÆÎ»Ìæ»»
 	    {
 			mingwen[i]=(char)(str[i]-n);
 	    }
@@ -52,41 +52,41 @@ public class P12_2 {
 		char[] miwen;
 		String go;
 
-		System.out.print("ï¿½æ»»ï¿½ï¿½ï¿½Ü½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½Ê¾ï¿½ï¿½\n");
+		System.out.print("Ìæ»»¼ÓÃÜ½âÃÜËã·¨ÑİÊ¾£¡\n");
 		
 		do{
-		System.out.print("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ»»ï¿½ï¿½ï¿½Ü½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½Ğµï¿½ï¿½ï¿½Ô¿ï¿½ï¿½");
+		System.out.print("\nÇëÏÈÊäÈëÌæ»»¼ÓÃÜ½âÃÜËã·¨ÖĞµÄÃÜÔ¿£º");
 		Scanner input=new Scanner(System.in);
-		n=input.nextInt();						//ï¿½ï¿½Ô¿
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½");
+		n=input.nextInt();						//ÃÜÔ¿
+		System.out.print("ÇëÊäÈëÃ÷ÎÄ×Ö·û´®£º");
 			
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		String str=bufferedReader.readLine();
-		srcstr=str.toCharArray();				//ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+		srcstr=str.toCharArray();				//Ã÷ÎÄ×Ö·û´®
 		
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
+		System.out.print("ÊäÈëµÄÃ÷ÎÄÎª£º");
 		for(i=0;i<srcstr.length;i++)
 		{
 		  	System.out.print(srcstr[i]);
 		}
 				
-		miwen=jiami(srcstr,n);				//ï¿½ï¿½ï¿½ï¿½
-		System.out.print("\nï¿½ï¿½ï¿½Üºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
+		miwen=jiami(srcstr,n);				//¼ÓÃÜ
+		System.out.print("\n¼ÓÃÜºóµÄÃÜÎÄÎª£º");
 		for(i=0;i<srcstr.length;i++)
 		{
 		   	System.out.print(miwen[i]);
 		}
-		miwen=jiemi(miwen,n);				//ï¿½ï¿½ï¿½ï¿½
-		System.out.print("\nï¿½ï¿½ï¿½Ü³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
+		miwen=jiemi(miwen,n);				//½âÃÜ
+		System.out.print("\n½âÃÜ³öµÄÃ÷ÎÄÎª£º");
 		for(i=0;i<srcstr.length;i++)
 		{
 		  	System.out.print(miwen[i]);
 		}
 		
-		System.out.print("\nï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½(y/n)?");
+		System.out.print("\n¼ÌĞøÖ´ĞĞ(y/n)?");
 		go=input.next();
 		}while(go.equalsIgnoreCase("y"));
-		System.out.println("ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		System.out.println("ÑİÊ¾½áÊø£¡");
 	}
 
 }

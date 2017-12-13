@@ -7,14 +7,14 @@ public class P6_5 {
 	static void polynomial_div(double A[],int m,double B[],int n,double R[],int k,double L[],int l)
 	{
 		int i,j,mm,ll;
-	    for (i=0; i<k; i++)					//ï¿½ï¿½Öµ
+	    for (i=0; i<k; i++)					//³õÖµ
 		{
 			R[i]=0.0;
 		}
 	    ll=m-1;
 	    for (i=k; i>0; i--)
 	    {
-			R[i-1]=A[ll]/B[n-1];			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ï¿½Ê½Ïµï¿½ï¿½
+			R[i-1]=A[ll]/B[n-1];			//³ý·¨£¬¼ÆËãÉÌ¶àÏîÊ½ÏµÊý
 	        mm=ll;
 	        for (j=1; j<=n-1; j++)
 	        {
@@ -23,7 +23,7 @@ public class P6_5 {
 	        }
 	        ll-=1;
 	    }
-	    for (i=0; i<l; i++)					//ï¿½ï¿½ï¿½ï¿½ï¿½Ê½Ïµï¿½ï¿½
+	    for (i=0; i<l; i++)					//Óà¶àÏîÊ½ÏµÊý
 		{
 			L[i]=A[i];
 		}
@@ -36,16 +36,16 @@ public class P6_5 {
 	    double[] L=new double[2];
 	    DecimalFormat df=new DecimalFormat("0.00E000");
 
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½A(x)/B(x)ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½\n");
-	    polynomial_div(A,5,B,3,R,3,L,2);	//ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	    for (i=0; i<=2; i++)				//ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ï¿½Ê½Ïµï¿½ï¿½
+	    System.out.print("¼ÆËãA(x)/B(x)µÄÉÌ¶àÏîÊ½ºÍÓà¶àÏîÊ½£º\n");
+	    polynomial_div(A,5,B,3,R,3,L,2);	//µ÷ÓÃº¯Êý¼ÆËã
+	    for (i=0; i<=2; i++)				//Êä³öÉÌ¶àÏîÊ½ÏµÊý
 		{
-			System.out.print("ï¿½Ì¶ï¿½ï¿½ï¿½Ê½Ïµï¿½ï¿½ R("+i+")="+df.format(R[i])+"\n");
+			System.out.print("ÉÌ¶àÏîÊ½ÏµÊý R("+i+")="+df.format(R[i])+"\n");
 		}
 	    System.out.print("\n");
-	    for (i=0; i<=1; i++)				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½Ïµï¿½ï¿½
+	    for (i=0; i<=1; i++)				//Êä³öÓà¶àÏîÊ½ÏµÊý
 		{
-			System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½Ê½Ïµï¿½ï¿½ L("+i+")="+df.format(L[i])+"\n");
+			System.out.print("Óà¶àÏîÊ½ÏµÊý L("+i+")="+df.format(L[i])+"\n");
 		}
 	    System.out.print("\n");
 

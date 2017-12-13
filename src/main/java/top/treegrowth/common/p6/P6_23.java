@@ -7,28 +7,28 @@ public class P6_23 {
 		for(i=0;i<m;i++)
 		    for(j=0;j<n;j++)
 		    {
-		      C[i][j]=A[i][j]+B[i][j];                     //ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½
+		      C[i][j]=A[i][j]+B[i][j];                     //¸÷ÔªËØÏà¼Ó
 		    }
 	}
 	public static void main(String[] args) {
-		double A[][]={{1.0,2.0,3.0},			//ï¿½ï¿½ï¿½ï¿½A
+		double A[][]={{1.0,2.0,3.0},			//¾ØÕóA
 				{4.0,5.0,6.0},
 				{7.0,8.0,9.0}};
-		double B[][]={{2.0,-2.0,1.0},			//ï¿½ï¿½ï¿½ï¿½B
+		double B[][]={{2.0,-2.0,1.0},			//¾ØÕóB
 				{1.0,3.0,9.0},
 				{17.0,-3.0,7.0}};
-		double[][] C=new double[3][3];						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½C
+		double[][] C=new double[3][3];						//½á¹û¾ØÕóC
 		int m,n,i,j;
-		m=3;								//ï¿½ï¿½ï¿½ï¿½
-		n=3;								//ï¿½ï¿½ï¿½ï¿½
+		m=3;								//ÐÐÊý
+		n=3;								//ÁÐÊý
 
-		System.out.print("ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½Bï¿½ï¿½ÓµÄ½ï¿½ï¿½Îªï¿½ï¿½\n");
-		MatrixPlus(A,B,m,n,C);				//ï¿½ï¿½ï¿½ï¿½
+		System.out.print("¾ØÕóAºÍBÏà¼ÓµÄ½á¹ûÎª£º\n");
+		MatrixPlus(A,B,m,n,C);				//ÔËËã
 		for(i=0;i<m;i++)
 		{
 			for(j=0;j<n;j++)
 			{
-				System.out.printf("%10.6f ",C[i][j]);		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				System.out.printf("%10.6f ",C[i][j]);		//Êä³ö½á¹û
 			}
 			System.out.print("\n");
 		}

@@ -1,31 +1,31 @@
 package top.treegrowth.common.p9;
 
 public class P9_7 {
-	static int isPrime(int a)			//ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static int isPrime(int a)			//ËØÊıËã·¨
 	{  					 
 	    int i;
 	    for(i=2;i<a;i++)
 		{
 			if(a % i == 0)
 			{
-				return 0;      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+				return 0;      //²»ÊÇËØÊı 
 			}
 		}
-	    return 1;       			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    return 1;       			//ÊÇËØÊı 
 	}
 	public static void main(String[] args) {
 		int i,n,count;
 
-		n=1000;				//ï¿½ï¿½Î§
+		n=1000;				//·¶Î§
 		count=0;
-		System.out.printf("ï¿½Ğ¾ï¿½1~1000Ö®ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+		System.out.printf("ÁĞ¾Ù1~1000Ö®¼äËùÓĞµÄËØÊı£º\n");
 		for(i=1;i<1000;i++)
 		{
-			if(isPrime(i)==1)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			if(isPrime(i)==1)	//Èç¹ûÊÇËØÊı
 			{
 				System.out.printf("%7d",i);
 				count++;
-				if(count%10==0)//10ï¿½ï¿½Ò»ï¿½ï¿½
+				if(count%10==0)//10¸öÒ»ĞĞ
 				{
 					System.out.printf("\n");
 				}

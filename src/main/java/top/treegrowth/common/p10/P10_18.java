@@ -4,19 +4,19 @@ import java.util.Scanner;
 
 
 public class P10_18 {
-	static void threeball(int red,int yellow,int green,int n)		//ï¿½ã·¨
+	static void threeball(int red,int yellow,int green,int n)		//Ëã·¨
 	{
 		int i,j,k;
 
-		System.out.printf("ï¿½Ü¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ö¿ï¿½ï¿½ï¿½!\n");
-		System.out.printf("\tï¿½ï¿½ï¿½ï¿½\tï¿½ï¿½ï¿½ï¿½\tï¿½ï¿½ï¿½ï¿½\n");
-		for(i=0;i<=3;i++)         					//ï¿½ï¿½É«ï¿½ï¿½
+		System.out.printf("×Ü¹²ÓÐÈçÏÂ¼¸ÖÖ¿ÉÄÜ!\n");
+		System.out.printf("\tºìÇò\t»ÆÇò\tÂÌÇò\n");
+		for(i=0;i<=3;i++)         					//ºìÉ«Çò
 		{
-			for(j=0;j<=3;j++)   					//ï¿½ï¿½É«ï¿½ï¿½
+			for(j=0;j<=3;j++)   					//»ÆÉ«Çò
 			{
-				for(k=0;k<=6;k++)				//ï¿½ï¿½É«ï¿½ï¿½
+				for(k=0;k<=6;k++)				//ÂÌÉ«Çò
 				{
-					if(i+j+k== n)				//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
+					if(i+j+k== n)				//ÅÐ¶ÏÊÇ·ñ·ûºÏ
 					{
 						System.out.printf("\t%d\t%d\t%d\n",i,j,k);
 					}
@@ -28,18 +28,18 @@ public class P10_18 {
 		int red,yellow,green;
 		int n;
 
-		System.out.printf("ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");
+		System.out.printf("ÈýÉ«ÇòÎÊÌâÇó½â£¡\n");
+		System.out.printf("ÇëÏÈÊäÈëºìÇòµÄÊýÁ¿Îª:");
 		Scanner input=new Scanner(System.in);
-		red=input.nextInt();						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");
-		yellow=input.nextInt();						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");
-		green=input.nextInt();						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");
-		n=input.nextInt();							//È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		red=input.nextInt();						//ºìÇòµÄÊýÁ¿
+		System.out.printf("ÇëÏÈÊäÈë»ÆÇòµÄÊýÁ¿Îª:");
+		yellow=input.nextInt();						//»ÆÇòµÄÊýÁ¿
+		System.out.printf("ÇëÏÈÊäÈëÂÌÇòµÄÊýÁ¿Îª:");
+		green=input.nextInt();						//ÂÌÇòµÄÊýÁ¿
+		System.out.printf("ÇëÏÈÊäÈëÈ¡³öÇòµÄÊýÁ¿Îª:");
+		n=input.nextInt();							//È¡³öÇòµÄÊýÁ¿
 
-		threeball(red,yellow,green,n);				//ï¿½ï¿½ï¿½
+		threeball(red,yellow,green,n);				//Çó½â
 
 	}
 

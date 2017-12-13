@@ -2,7 +2,7 @@ package top.treegrowth.common.p4;
 
 public class P4_8 {
 	static final int SIZE=10;
-	static void insertionSort(int[] a,int len)  				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static void insertionSort(int[] a,int len)  				//²åÈëÅÅÐò
 	{
 	    int i,j,t,h;
 
@@ -10,17 +10,17 @@ public class P4_8 {
 	    {
 			t=a[i];
 			j=i-1;
-			while(j>=0 && t>a[j])					//ï¿½ï¿½ï¿½ï¿½
+			while(j>=0 && t>a[j])					//·´Ðò
 			{
 				a[j+1]=a[j];
 				j--;
 			}
 			a[j+1]=t;
 
-			System.out.print("ï¿½ï¿½"+i+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");			//ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½
+			System.out.print("µÚ"+i+"²½ÅÅÐò½á¹û:");			//Êä³öÃ¿²½ÅÅÐòµÄ½á¹û
 			for(h=0;h<len;h++)
 			{
-				System.out.print(" "+a[h]);				//ï¿½ï¿½ï¿½
+				System.out.print(" "+a[h]);				//Êä³ö
 			}
 			System.out.print("\n");
 		}
@@ -32,22 +32,22 @@ public class P4_8 {
 		
 		for(i=0;i<SIZE;i++)
 		{
-			shuzu[i]=(int)(100+Math.random()*(100+1));			//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			shuzu[i]=(int)(100+Math.random()*(100+1));			//³õÊ¼»¯Êý×é
 		}
 		
-		System.out.print("ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½\n");				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		System.out.print("ÅÅÐòÇ°µÄÊý×éÎª£º\n");				//Êä³öÅÅÐòÇ°µÄÊý×é
 		for(i=0;i<SIZE;i++)
 		{
 			System.out.print(shuzu[i]+" ");
 		}
 		System.out.print("\n");
 		
-		insertionSort(shuzu,SIZE);					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		insertionSort(shuzu,SIZE);					//ÅÅÐò²Ù×÷
 		
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½\n");
+		System.out.print("ÅÅÐòºóµÄÊý×éÎª£º\n");
 		for(i=0;i<SIZE;i++)
 		{
-			System.out.print(shuzu[i]+" ");					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			System.out.print(shuzu[i]+" ");					//Êä³öÅÅÐòºóµÄÊý×é
 		}
 		System.out.print("\n");
 

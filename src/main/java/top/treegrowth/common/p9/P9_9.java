@@ -1,7 +1,7 @@
 package top.treegrowth.common.p9;
 
 public class P9_9 {
-	static int pingfanghuiwen(int a)				//ï¿½ã·¨
+	static int pingfanghuiwen(int a)				//Ëã·¨
 	{
 		int temp,m,k,t,num,sum;
 		int count,i,n;
@@ -9,16 +9,16 @@ public class P9_9 {
 		n=a*a;
 		k=1;
 		count=0;
-		while(k>0)						//ï¿½Ð¶ï¿½Î»ï¿½ï¿½
+		while(k>0)						//ÅÐ¶ÏÎ»Êý
 		{
 			k=n-(int)Math.pow(10,count);
 			count++;
 		}
-		m=count-1;					//Î»ï¿½ï¿½
+		m=count-1;					//Î»Êý
 
 		sum=0;
 		num=n;
-		for(i=0;i<m;i++)					//ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Î»
+		for(i=0;i<m;i++)					//°´Î»´¦Àí£¬½»»»¸ßµÍÎ»
 		{
 			temp=num%10;
 			sum=sum+temp*((int)Math.pow(10,m-1-i));
@@ -37,10 +37,10 @@ public class P9_9 {
 	public static void main(String[] args) {
 		int i;
 
-		System.out.printf("ï¿½Ð¾ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+		System.out.printf("ÁÐ¾ÙÆ½·½»ØÎÄËØÊý\n");
 		for(i=10;i<1000;i++)
 		{
-			if(pingfanghuiwen(i)==1)		//ï¿½Ð¾ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			if(pingfanghuiwen(i)==1)		//ÁÐ¾ÙÆ½·½»ØÎÄÊý
 			{
 				System.out.printf("%d*%d=%d\n",i,i,i*i);
 			}

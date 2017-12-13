@@ -1,12 +1,11 @@
 package top.treegrowth.common.p8;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /** 
- * Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½Ö¶ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½Õ»ï¿½ï¿½ï¿½È¡ï¿½ 
+ * Ê¹ÓÃÊý×éÊµÏÖ¶ÑÕ»£¬°üÀ¨ÈëÕ»¡¢³öÕ»¡¢»ñÈ¡¶ÑÕ»³¤¶È¡¢ 
  * 
  */  
 class Stack {        
@@ -46,7 +45,7 @@ class Stack {
     {        
         if(isFull())   
         	{        
-        	 	System.out.println("Õ»ï¿½ï¿½ï¿½ï¿½!");        
+        	 	System.out.println("Õ»ÒÑÂú!");        
         	 	return false;        
         	}        
         this.data[++top] = data;        
@@ -57,7 +56,7 @@ class Stack {
     {        
     	if(isEmpty())   
     	{        
-    		throw new Exception("Õ»ï¿½Ñ¿ï¿½!");        
+    		throw new Exception("Õ»ÒÑ¿Õ!");        
     	}        
     	return this.data[top--];        
   }        
@@ -73,10 +72,10 @@ class Stack {
     	char ch,temp;
   	  	int match;
 
-  	  	stack=new Stack(0) ;						//ï¿½ï¿½Ê¼ï¿½ï¿½Ò»ï¿½ï¿½Õ»ï¿½á¹¹,ï¿½ï¿½Õ»
+  	  	stack=new Stack(0) ;						//³õÊ¼»¯Ò»¸öÕ»½á¹¹,¿ÕÕ»
   	  	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-  	  	ch =(char)reader.read(); 				//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½
-  	  	while(ch!='0')							//Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  	  	ch =(char)reader.read(); 				//ÊäÈëÒ»¸ö×Ö·û
+  	  	while(ch!='0')							//Ñ­»·´¦Àí
   	  	{		
   	  		if(getElementCount()==-1)
   	  		{
@@ -84,10 +83,10 @@ class Stack {
   	  		}
   	  		else
   	  		{
-  	  			temp=pop();			//È¡ï¿½ï¿½Õ»ï¿½ï¿½Ôªï¿½ï¿½
+  	  			temp=pop();			//È¡³öÕ»¶¥ÔªËØ
   	  			match=0;
 
-  			if(temp=='(' && ch==')')			//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Æ¥ï¿½ï¿½
+  			if(temp=='(' && ch==')')			//ÅÐ¶ÏÊÇ·ñÆ¥Åä
   			{
   				match=1;
   			}
@@ -104,21 +103,21 @@ class Stack {
   				match=1;
   			}
 
-            if(match==0)					//ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½
+            if(match==0)					//Èç¹û²»Æ¥Åä
     		 {		
-                 push(temp);		//Ô­Õ»ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»
-                 push(ch);			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½Õ»
+                 push(temp);		//Ô­Õ»¶¥ÔªËØÖØÐÂÈëÕ»
+                 push(ch);			//½«ÊäÈëµÄÀ¨ºÅ×Ö·ûÈëÕ»
              }
           }
-          ch =(char)reader.read(); 				//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½
+          ch =(char)reader.read(); 				//ÊäÈëÒ»¸ö×Ö·û
       }
       if(getElementCount()==-1)  
   	  {
-  		  System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«Æ¥ï¿½ï¿½!\n"); 		//ï¿½ï¿½È«Æ¥ï¿½ï¿½
+  		  System.out.printf("ÊäÈëµÄÀ¨ºÅÍêÈ«Æ¥Åä!\n"); 		//ÍêÈ«Æ¥Åä
   	  }
       else  
   	  {
-  		  System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å²ï¿½Æ¥ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½!\n"); 	//ï¿½ï¿½ï¿½ï¿½È«Æ¥ï¿½ï¿½
+  		  System.out.printf("ÊäÈëµÄÀ¨ºÅ²»Æ¥Åä£¬Çë¼ì²é!\n"); 	//²»ÍêÈ«Æ¥Åä
   	  }
   }
   
@@ -131,18 +130,18 @@ public class P8_6
 		String go;
 		Scanner input=new Scanner(System.in);
 		Stack s=new Stack(20);
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
+		System.out.printf("À¨ºÅÆ¥ÅäÎÊÌâ£¡\n");
 		
 		do{
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½0ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½Öµï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½{},(),[],<>ï¿½ï¿½\n");
+		System.out.printf("ÇëÏÈÊäÈëÒ»×éÀ¨ºÅ×éºÏ£¬ÒÔ0±íÊ¾½áÊø¡£Ö§³ÖµÄÀ¨ºÅ°üÀ¨£º{},(),[],<>¡£\n");
 	
-		s.pipei();			//Æ¥ï¿½ï¿½ï¿½ã·¨
+		s.pipei();			//Æ¥ÅäËã·¨
 		
-		System.out.print("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(y/n)?");
+		System.out.print("\n¼ÌÐøÍæÂð(y/n)?");
 		go=input.next();
 		}while(go.equalsIgnoreCase("y"));
 	  
-		System.out.printf("ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+		System.out.printf("ÓÎÏ·½áÊø£¡\n");
        
 	}        
 }       

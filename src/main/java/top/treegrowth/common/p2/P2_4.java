@@ -12,27 +12,27 @@ class DATA4
 class SQType
 {
 	static final int QUEUELEN=15;
-    DATA4[] data=new DATA4[QUEUELEN]; 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-    int head; 								//ï¿½ï¿½Í· 
-    int tail; 								//ï¿½ï¿½Î² 
+    DATA4[] data=new DATA4[QUEUELEN]; 					//¶ÓÁÐÊý×é 
+    int head; 								//¶ÓÍ· 
+    int tail; 								//¶ÓÎ² 
     
     SQType SQTypeInit()
     {
     SQType q;
 
-        if((q=new SQType())!=null) 		//ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ 
+        if((q=new SQType())!=null) 		//ÉêÇëÄÚ´æ 
         {
-            q.head = 0;						//ï¿½ï¿½ï¿½Ã¶ï¿½Í· 
-            q.tail = 0;							//ï¿½ï¿½ï¿½Ã¶ï¿½Î² 
+            q.head = 0;						//ÉèÖÃ¶ÓÍ· 
+            q.tail = 0;							//ÉèÖÃ¶ÓÎ² 
             return q;
         }
     	else
     	{
-            return null; 						//ï¿½ï¿½ï¿½Ø¿ï¿½
+            return null; 						//·µ»Ø¿Õ
     	}
     }
 
-    int SQTypeIsEmpty(SQType q)  				//ï¿½Ð¶Ï¿Õ¶ï¿½ï¿½ï¿½
+    int SQTypeIsEmpty(SQType q)  				//ÅÐ¶Ï¿Õ¶ÓÁÐ
     {
     	int temp=0;
     	if(q.head==q.tail)
@@ -40,7 +40,7 @@ class SQType
         return (temp);
     }
 
-    int SQTypeIsFull(SQType q)					// ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    int SQTypeIsFull(SQType q)					// ÅÐ¶ÏÂú¶ÓÁÐ
     {
     	int temp=0;
     	if(q.tail==QUEUELEN)
@@ -48,13 +48,13 @@ class SQType
         return (temp);
     }
 
-    void SQTypeClear(SQType q)  				//ï¿½ï¿½Õ¶ï¿½ï¿½ï¿½ 
+    void SQTypeClear(SQType q)  				//Çå¿Õ¶ÓÁÐ 
     {
-        q.head = 0;							//ï¿½ï¿½ï¿½Ã¶ï¿½Í· 
-        q.tail = 0;								//ï¿½ï¿½ï¿½Ã¶ï¿½Î² 
+        q.head = 0;							//ÉèÖÃ¶ÓÍ· 
+        q.tail = 0;								//ÉèÖÃ¶ÓÎ² 
     }
 
-    void SQTypeFree(SQType q) 					//ï¿½Í·Å¶ï¿½ï¿½ï¿½
+    void SQTypeFree(SQType q) 					//ÊÍ·Å¶ÓÁÐ
     {
         if (q!=null)
     	{
@@ -62,25 +62,25 @@ class SQType
     	}
     }
 
-    int InSQType(SQType q,DATA4 data)			//ï¿½ï¿½ï¿½ï¿½ï¿½
+    int InSQType(SQType q,DATA4 data)			//Èë¶ÓÁÐ
     {	
         if(q.tail==QUEUELEN)
         { 
-            System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½!\n");
+            System.out.print("¶ÓÁÐÒÑÂú!²Ù×÷Ê§°Ü!\n");
             return(0);
         }
     	else
     	{
-            q.data[q.tail++]=data;				//ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            q.data[q.tail++]=data;				//½«ÔªËØÈë¶ÓÁÐ
             return(1);
         }
     }
 
-    DATA4 OutSQType(SQType q) 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    DATA4 OutSQType(SQType q) 				//³ö¶ÓÁÐ
     {
         if(q.head==q.tail)
         {
-            System.out.print("\nï¿½ï¿½ï¿½ï¿½ï¿½Ñ¿ï¿½!ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½!\n");
+            System.out.print("\n¶ÓÁÐÒÑ¿Õ!²Ù×÷Ê§°Ü!\n");
             
             System.exit(0);
         }
@@ -91,11 +91,11 @@ class SQType
 		return null;
     }
 
-    DATA4 PeekSQType(SQType q) 				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    DATA4 PeekSQType(SQType q) 				//¶Á½áµãÊý¾Ý
     {
         if(SQTypeIsEmpty(q)==1)
         {
-            System.out.print("\nï¿½Õ¶ï¿½ï¿½ï¿½!\n");
+            System.out.print("\n¿Õ¶ÓÁÐ!\n");
             return null; 
         }
     	else
@@ -104,7 +104,7 @@ class SQType
         }
     }
 
-    int SQTypeLen(SQType q) 					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ 
+    int SQTypeLen(SQType q) 					//¼ÆËã¶ÓÁÐ³¤¶È 
     {
     	int temp;
     	temp=q.tail-q.head;
@@ -121,9 +121,9 @@ public class P2_4 {
 		DATA4 data1;    
 		
 		Scanner input=new Scanner(System.in);
-	    SQType stack=st.SQTypeInit();  					//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½\n");
-	    System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½:"); 
+	    SQType stack=st.SQTypeInit();  					//³õÊ¼»¯¶ÓÁÐ
+	    System.out.print("Èë¶ÓÁÐ²Ù×÷£º\n");
+	    System.out.println("ÊäÈëÐÕÃû ÄêÁä½øÐÐÈë¶ÓÁÐ²Ù×÷:"); 
 		do
 		{	
 			DATA4 data=new DATA4();
@@ -131,7 +131,7 @@ public class P2_4 {
 			data.age=input.nextInt();
 			if(data.name.equals("0")) 
 			{
-				break; 						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½
+				break; 						//ÈôÊäÈë0£¬ÔòÍË³ö
 			}
 			else
 			{
@@ -141,16 +141,16 @@ public class P2_4 {
 
 
 		String temp="1";
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½Õ»ï¿½ï¿½ï¿½ï¿½:");
+		System.out.println("³ö¶ÓÁÐ²Ù×÷:°´ÈÎÒâ·Ç0¼ü½øÐÐ³öÕ»²Ù×÷:");
 		temp=input.next();
 		while(!temp.equals("0"))
 		{
 		   	data1=st.OutSQType(stack);
-			System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(%s,%d)\n" ,data1.name,data1.age);	
+			System.out.printf("³ö¶ÓÁÐµÄÊý¾ÝÊÇ(%s,%d)\n" ,data1.name,data1.age);	
 			temp=input.next();
 		}
-		System.out.println("ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½");
-	    st.SQTypeFree(stack); 					//ï¿½Í·Å¶ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ÃµÄ¿Õ¼ï¿½ 
+		System.out.println("²âÊÔ½áÊø£¡");
+	    st.SQTypeFree(stack); 					//ÊÍ·Å¶ÓÁÐËùÕ¼ÓÃµÄ¿Õ¼ä 
 
 	}
 

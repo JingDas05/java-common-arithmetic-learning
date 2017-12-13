@@ -5,14 +5,14 @@ import java.util.Scanner;
 
 public class P5_2 {
 	static final int N=15;
-	static void quickSort(int[] arr,int left,int right)			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static void quickSort(int[] arr,int left,int right)			//¿ìËÙÅÅÐòËã·¨
 	{
 	    int f,t;
 		int rtemp,ltemp;
 
 	    ltemp=left;
 	    rtemp=right;
-	    f=arr[(left+right)/2];						//È·ï¿½ï¿½ï¿½Ö½ï¿½Öµ
+	    f=arr[(left+right)/2];						//È·¶¨·Ö½çÖµ
 		while(ltemp<rtemp)
 		{
 	        while(arr[ltemp]<f)
@@ -39,15 +39,15 @@ public class P5_2 {
 
 	    if(left<rtemp) 
 		{
-			quickSort(arr,left,ltemp-1);				//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
+			quickSort(arr,left,ltemp-1);				//µÝ¹éµ÷ÓÃ
 		}
 	    if(ltemp<right) 
 		{
-			quickSort(arr,rtemp+1,right);				//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
+			quickSort(arr,rtemp+1,right);				//µÝ¹éµ÷ÓÃ
 		}
 	}
 	
-	static int searchFun(int a[],int n,int x)					//ï¿½Û°ï¿½ï¿½ï¿½ï¿½
+	static int searchFun(int a[],int n,int x)					//ÕÛ°ë²éÕÒ
 	{
 	    int mid,low,high;
 
@@ -57,14 +57,14 @@ public class P5_2 {
 	    {
 	   		mid=(low+high)/2;
 			if(a[mid]==x)
-	            return mid;						//ï¿½Òµï¿½
+	            return mid;						//ÕÒµ½
 			else if(a[mid]>x)
 			    high=mid-1;
 	        else
 				low=mid+1;
 	    }
 
-		return -1;								//Î´ï¿½Òµï¿½
+		return -1;								//Î´ÕÒµ½
 	}
 	
 	public static void main(String[] args) {
@@ -73,36 +73,36 @@ public class P5_2 {
 
 		for(i=0;i<N;i++)
 		{
-			shuzu[i]=(int)(100+Math.random()*(100+1));;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			shuzu[i]=(int)(100+Math.random()*(100+1));;				//²úÉúÊý×é
 		}
 		
-		System.out.print("ï¿½Û°ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½Ê¾ï¿½ï¿½\n");
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n");
+		System.out.print("ÕÛ°ë²éÕÒËã·¨ÑÝÊ¾£¡\n");
+	    System.out.print("ÅÅÐòÇ°Êý¾ÝÐòÁÐ:\n");
 	    for(i=0;i<N;i++)
 		{
-	        System.out.print(" "+shuzu[i]);					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	        System.out.print(" "+shuzu[i]);					//Êä³öÐòÁÐ
 		}
 		System.out.print("\n\n");
-		quickSort(shuzu,0,N-1);				//ï¿½ï¿½ï¿½ï¿½
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n");
+		quickSort(shuzu,0,N-1);				//ÅÅÐò
+	    System.out.print("ÅÅÐòºóÊý¾ÝÐòÁÐ:\n");
 	    for(i=0;i<N;i++)
 		{
-	        System.out.print(" "+shuzu[i]);					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	        System.out.print(" "+shuzu[i]);					//Êä³öÐòÁÐ
 		}
 		System.out.print("\n\n");
-	    System.out.print("ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½:");
+	    System.out.print("ÊäÈëÒª²éÕÒµÄÊý:");
 	    Scanner input=new Scanner(System.in);
-	    x=input.nextInt();							//ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½
+	    x=input.nextInt();							//ÊäÈëÒª²éÕÒµÄÊý
 
-	    n=searchFun(shuzu,N,x);						//ï¿½ï¿½ï¿½ï¿½
+	    n=searchFun(shuzu,N,x);						//²éÕÒ
 
-	    if(n<0)								//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò½ï¿½ï¿½
+	    if(n<0)								//Êä³ö²éÕÒ½á¹û
 		{
-			System.out.println("Ã»ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½:"+x);
+			System.out.println("Ã»ÕÒµ½Êý¾Ý:"+x);
 		}
 		else
 		{
-			System.out.println("ï¿½ï¿½ï¿½ï¿½:"+x+" Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½"+(n+1)+" ï¿½ï¿½Ôªï¿½Ø´ï¿½ï¿½ï¿½");
+			System.out.println("Êý¾Ý:"+x+" Î»ÓÚÊý×éµÄµÚ"+(n+1)+" ¸öÔªËØ´¦¡£");
 		}
 
 	}

@@ -5,101 +5,101 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
- class Craps {
-     
-	 public static enum Status {
-         CONTINUE, WON, LOST
-     };
+class Craps {
 
-     private List<String> results;
-     private int w;
-     private int l;
-    
-     public Craps() {
-         results = new ArrayList<String>();
-         w = 0;
-         l = 0;
-     }
-    
-     public static Random random = new Random();
+    public static enum Status {
+        CONTINUE, WON, LOST
+    };
 
-     private final static int SNAKE_EYES = 2;
-     private final static int TREY = 3;
-     private final static int SEVEN = 7;
-     private final static int YO_LEVEN = 11;
-     private final static int BOX_CARS = 12;
+    private List<String> results;
+    private int w;
+    private int l;
 
-    public void play() 
-    {
-         int myPoint = 0;
-         Status gameStatus = Status.CONTINUE;
+    public Craps() {
+        results = new ArrayList<String>();
+        w = 0;
+        l = 0;
+    }
 
-         int sumOfDice = rollDice(); 
+    public static Random random = new Random();
 
-         switch (sumOfDice) 
-         {
-         	case SEVEN:
-         	case YO_LEVEN:
-         		gameStatus = Status.WON;
-         		break;
-         	case SNAKE_EYES:
-         	case TREY:
-         	case BOX_CARS:
-         		gameStatus = Status.LOST;
-         		break;
-         }
-        
-         if(gameStatus == Status.CONTINUE) 
-         {
-             myPoint = sumOfDice;
-             System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  %d\n", myPoint);
-         }
+    private final static int SNAKE_EYES = 2;
+    private final static int TREY = 3;
+    private final static int SEVEN = 7;
+    private final static int YO_LEVEN = 11;
+    private final static int BOX_CARS = 12;
 
-         
-         while (gameStatus == Status.CONTINUE) 
-         {
-             sumOfDice = rollDice(); 
+   public void play()
+   {
+        int myPoint = 0;
+        Status gameStatus = Status.CONTINUE;
 
-             if (sumOfDice == myPoint)
-                 gameStatus = Status.WON;
-             else if (sumOfDice == SEVEN)
-                 gameStatus = Status.LOST;
-         } 
+        int sumOfDice = rollDice();
+
+        switch (sumOfDice)
+        {
+            case SEVEN:
+            case YO_LEVEN:
+                gameStatus = Status.WON;
+                break;
+            case SNAKE_EYES:
+            case TREY:
+            case BOX_CARS:
+                gameStatus = Status.LOST;
+                break;
+        }
+
+        if(gameStatus == Status.CONTINUE)
+        {
+            myPoint = sumOfDice;
+            System.out.printf("µãÊýÊÇ  %d\n", myPoint);
+        }
 
 
-         if (gameStatus == Status.WON) {
-             System.out.println("ï¿½ï¿½ï¿½Ó®");
-             results.add("Ó®");
-             w++;
-         } else {
-             System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½");
-             results.add("ï¿½ï¿½");
-             l++;
-         }
-        
-     } 
+        while (gameStatus == Status.CONTINUE)
+        {
+            sumOfDice = rollDice();
 
-    public int rollDice() 
-    {
-         int die1 = 1 + random.nextInt(6);
-         int die2 = 1 + random.nextInt(6);
+            if (sumOfDice == myPoint)
+                gameStatus = Status.WON;
+            else if (sumOfDice == SEVEN)
+                gameStatus = Status.LOST;
+        }
 
-         int sum = die1 + die2;
 
-         System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½  %d + %d = %d\n", die1, die2, sum);
+        if (gameStatus == Status.WON) {
+            System.out.println("Íæ¼ÒÓ®");
+            results.add("Ó®");
+            w++;
+        } else {
+            System.out.println("Íæ¼ÒÊä");
+            results.add("Êä");
+            l++;
+        }
 
-         return sum;
-     }// end method rollDice
-     // print the results
-     public void print() {
-         System.out.println("ï¿½ï¿½Ï·ï¿½ï¿½ï¿½Í³ï¿½Æ£ï¿½");
-         System.out.println("Ó®ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ " + w);
-         System.out.println("ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ " + l);
-         int i = 0;
-         for(String rs: results) {
-             System.out.println("ï¿½ï¿½  "+(++i)+"ï¿½ï¿½: " +rs);
-         }
-     }
+    }
+
+   public int rollDice()
+   {
+        int die1 = 1 + random.nextInt(6);
+        int die2 = 1 + random.nextInt(6);
+
+        int sum = die1 + die2;
+
+        System.out.printf("Íæ¼ÒÖÀµÄµãÊý  %d + %d = %d\n", die1, die2, sum);
+
+        return sum;
+    }// end method rollDice
+    // print the results
+    public void print() {
+        System.out.println("ÓÎÏ·½á¹ûÍ³¼Æ£º");
+        System.out.println("Ó®µÄ´ÎÊý£º " + w);
+        System.out.println("ÊäµÄ´ÎÊý£º " + l);
+        int i = 0;
+        for(String rs: results) {
+            System.out.println("µÚ  "+(++i)+"´Î: " +rs);
+        }
+    }
 }// end Class Craps
 
 //Fig. 6.10: CrapsTest.java
@@ -112,7 +112,7 @@ public class CrapsTest {
          do{
          game.play();
          
-         System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½(y/n)?");
+         System.out.println("¼ÌÐøÓÎÏ·Âð(y/n)?");
          Scanner input = new Scanner(System.in);
          answer = input.next();
          }while("Y".equalsIgnoreCase(answer));

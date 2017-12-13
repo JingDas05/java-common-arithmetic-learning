@@ -6,17 +6,17 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 
-class LinkList						//ï¿½ï¿½ï¿½ï¿½á¹¹
+class LinkList						//Á´±í½á¹¹
 {
-    char data;							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-    LinkList next;					//Ö¸ï¿½ï¿½ï¿½ï¿½
+    char data;							//Êý¾ÝÓò
+    LinkList next;					//Ö¸ÕëÓò
 }
-	
+
 
 public class P8_1 {
 	static Scanner input=new Scanner(System.in);
 	static char chc;
-	static LinkList CreatLinkList()					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static LinkList CreatLinkList()					//´´½¨Á´±í
 	{
 	    char ch;
 	    LinkList list=null;
@@ -28,7 +28,7 @@ public class P8_1 {
 	    return list;
 	}
 
-	static void insertList(LinkList list,char e)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static void insertList(LinkList list,char e)	//²åÈë½áµã
 	{
 		LinkList p;
 	    p=new LinkList();
@@ -45,7 +45,7 @@ public class P8_1 {
 	    }    
 	}
 
-	static void DynamicSort(LinkList q)				//ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static void DynamicSort(LinkList q)				//¶¯Ì¬Êý×éÅÅÐò
 	{
 	    LinkList p=q;
 	    int i,j,k=0;
@@ -63,7 +63,7 @@ public class P8_1 {
 	        {
 				if(p.data>p.next.data)
 	            {
-	                t=p.data;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	                t=p.data;				//½»»»Êý¾Ý
 	                p.data=p.next.data;
 					p.next.data=t;
 	            }
@@ -78,14 +78,14 @@ public class P8_1 {
 	{
 		int ch;
 		
-		LinkList  list,q;						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		LinkList  list,q;						//ÉùÃ÷Á´±í
 
-	    System.out.printf("ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+	    System.out.printf("¶¯Ì¬Êý×éÅÅÐò£¡\n");
+	    System.out.printf("ÇëÊäÈëÒ»×é×Ö·û£¬ÒÔ0½áÊø£¡\n");
 	    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ch = (char)reader.read();
-        chc=(char)ch;                       //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-        q=list=CreatLinkList();				//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        chc=(char)ch;                       //ÊäÈëÁ´±íµÄµÚÒ»¸öÊý¾Ý 
+        q=list=CreatLinkList();				//´´½¨Ò»¸öÁ´±í½áµã
         while(ch!='0'){
             ch = reader.read();
             if(ch!='0'){
@@ -94,12 +94,12 @@ public class P8_1 {
             }
         }
 		
-	    DynamicSort(list);					//ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    DynamicSort(list);					//¶¯Ì¬Êý×éÅÅÐò
 		System.out.printf("\n");
-		System.out.printf("ï¿½Ô¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ó£¬µÃµï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½\n");
+		System.out.printf("¶Ô¸ÃÊý×éÅÅÐòÖ®ºó£¬µÃµ½ÈçÏÂ½á¹û£º\n");
 	    while(list!=null)							
 	    {
-	        System.out.printf("%c ",list.data);				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	        System.out.printf("%c ",list.data);				//Êä³öÅÅÐòºóµÄÊý×éÄÚÈÝ
 	        list=list.next;
 	    }
 		System.out.printf("\n");

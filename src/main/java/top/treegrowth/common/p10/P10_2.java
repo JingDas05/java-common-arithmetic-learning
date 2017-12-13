@@ -1,25 +1,25 @@
 package top.treegrowth.common.p10;
 
 public class P10_2 {
-	static void WJGJ(int[] len1,int[] len2,int[] len3,int[] len4,int[] len5,int[] len)	//ï¿½ï¿½Ò¹ï¿½ï¿½ï¿½ï¿½ã·¨
+	static void WJGJ(int[] len1,int[] len2,int[] len3,int[] len4,int[] len5,int[] len)	//Îå¼Ò¹²¾®Ëã·¨
 	{
-		for(len5[0]=4; ;len5[0]+=4)                     //len5Îª4ï¿½Ä±ï¿½ï¿½ï¿½ 
+		for(len5[0]=4; ;len5[0]+=4)                     //len5Îª4µÄ±¶Êý 
 			
-			for(len1[0]=5; ;len1[0]+=5)                 //len1Îª5ï¿½Ä±ï¿½ï¿½ï¿½ 
+			for(len1[0]=5; ;len1[0]+=5)                 //len1Îª5µÄ±¶Êý 
 			{ 
 				len4[0]=len5[0]+len1[0]/5; 
 				len3[0]=len4[0]+len5[0]/4; 
 				
 				if(len3[0]%2!=0||len4[0]%3!=0)
-					continue;                          //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü±ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü±ï¿½3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ñ­ï¿½ï¿½ 
+					continue;                          //Èç¹û²»ÄÜ±»2Õû³ý»òÈô²»ÄÜ±»3Õû³ý£¬½øÐÐÏÂÒ»´ÎÑ­»· 
 				
 				len2[0]=len3[0]+len4[0]/3; 
 				if(len2[0]+len3[0]/2<len1[0])
-					break;                             //ï¿½Ð»ï¿½len5[0]Ñ­ï¿½ï¿½(ï¿½ï¿½ÎªxÌ«ï¿½ï¿½ï¿½ï¿½) 
+					break;                             //ÇÐ»Ølen5[0]Ñ­»·(ÒòÎªxÌ«´óÁË) 
 				
 				if(len2[0]+len3[0]/2==len1[0])
 				{ 
-					len[0]=2*(len1[0])+(len2[0]);     //ï¿½ï¿½ï¿½ã¾®ï¿½ï¿½ 
+					len[0]=2*(len1[0])+(len2[0]);     //¼ÆËã¾®Éî 
 					return;
 				} 
 			} 
@@ -35,15 +35,15 @@ public class P10_2 {
 		int[] len5={0};
 		int[] len={0};
 			
-		WJGJ(len1,len2,len3,len4,len5,len);				//ï¿½ï¿½ï¿½ï¿½ã·¨
+		WJGJ(len1,len2,len3,len4,len5,len);				//Çó½âËã·¨
 		
-	    System.out.printf("ï¿½ï¿½Ò¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n");					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	    System.out.printf("ï¿½×¼Ò¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:%d\n",len1[0]);
-	    System.out.printf("ï¿½Ò¼Ò¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:%d\n",len2[0]);
-	    System.out.printf("ï¿½ï¿½ï¿½Ò¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:%d\n",len3[0]);
-	    System.out.printf("ï¿½ï¿½ï¿½Ò¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:%d\n",len4[0]);
-	    System.out.printf("ï¿½ï¿½Ò¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:%d\n",len5[0]);
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½:%d\n",len[0]);
+	    System.out.printf("Îå¼Ò¹²¾®ÎÊÌâÇó½â½á¹ûÈçÏÂ:\n");					//Êä³ö½á¹û
+	    System.out.printf("¼×¼Ò¾®Éþ³¤¶ÈÎª:%d\n",len1[0]);
+	    System.out.printf("ÒÒ¼Ò¾®Éþ³¤¶ÈÎª:%d\n",len2[0]);
+	    System.out.printf("±û¼Ò¾®Éþ³¤¶ÈÎª:%d\n",len3[0]);
+	    System.out.printf("¶¡¼Ò¾®Éþ³¤¶ÈÎª:%d\n",len4[0]);
+	    System.out.printf("Ðç¼Ò¾®Éþ³¤¶ÈÎª:%d\n",len5[0]);
+	    System.out.printf("¾®Éî:%d\n",len[0]);
 
 	}
 

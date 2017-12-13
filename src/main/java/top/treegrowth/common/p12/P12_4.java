@@ -9,21 +9,21 @@ import java.util.Scanner;
 
 public class P12_4 {
 	static int MAX=100;
-	static char[] key=new char[MAX];							//ï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿
+	static char[] key=new char[MAX];							//ÓÃÓÚ±£´æÃÜÔ¿
 	static int len;
-	static char[] bitcode(char[] str)					//Ò»ï¿½ï¿½Ò»ï¿½Ü¼ï¿½ï¿½ï¿½ï¿½ã·¨
+	static char[] bitcode(char[] str)					//Ò»´ÎÒ»ÃÜ¼ÓÃÜËã·¨
 	{
 	    int i;
 	    char[] wen;
 
 	    if((wen=new char[len+1])==null)
 	    {
-	        System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ê§ï¿½ï¿½!\n");
+	        System.out.printf("ÉêÇëÄÚ´æÊ§°Ü!\n");
 	        System.exit(1);
 	    }
 	    for(i=0;i<len;i++)
 	    {
-			wen[i]=(char)(str[i]^key[i]);				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			wen[i]=(char)(str[i]^key[i]);				//Òì»òÔËËã
 	    }
 	    wen[len]='\0';
 	    return wen;
@@ -35,46 +35,46 @@ public class P12_4 {
 	    char[] miwen,mingwen;
 		String go;
 		Scanner input=new Scanner(System.in);
-//		srand(time(NULL));					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		System.out.printf("Ò»ï¿½ï¿½Ò»ï¿½Ü¼ï¿½ï¿½Ü½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½Ê¾ï¿½ï¿½\n");
+//		srand(time(NULL));					//Ëæ»úÖÖ×Ó
+		System.out.printf("Ò»´ÎÒ»ÃÜ¼ÓÃÜ½âÃÜËã·¨ÑİÊ¾£¡\n");
 		
 		do{
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½");
+		System.out.printf("ÇëÊäÈëÃ÷ÎÄ×Ö·û´®£º");
 
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         String str=bufferedReader.readLine();
    
        srcstr=str.toCharArray();
-							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
-       Random r=new Random(); 			        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+							//Ã÷ÎÄĞÅÏ¢
+       Random r=new Random(); 			        //Ëæ»úÖÖ×Ó
 		len=srcstr.length;
 		for(i=0;i<len;i++)
 		{
-			key[i]=(char)(r.nextInt(10)+'0');			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½
+			key[i]=(char)(r.nextInt(10)+'0');			//²úÉúÃÜÔ¿ĞòÁĞ
 		}
-		System.out.printf("ï¿½Ë´Î¼ï¿½ï¿½Ü½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
+		System.out.printf("´Ë´Î¼ÓÃÜ½âÃÜÑİÊ¾µÄÃÜÔ¿ĞòÁĞÎª£º");
 		for(i=0;i<len;i++)
 		{
 			System.out.printf("%c",key[i]);
 		}
 //		System.out.printf("\n");
-	    miwen=bitcode(srcstr);				//ï¿½ï¿½ï¿½ï¿½
-	    System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
+	    miwen=bitcode(srcstr);				//¼ÓÃÜ
+	    System.out.printf("\nÊäÈëµÄÃ÷ÎÄÎª£º");
 	    for(i=0;i<srcstr.length;i++)
 	    	System.out.print(srcstr[i]);
-	    System.out.printf("\nï¿½ï¿½ï¿½Üºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
+	    System.out.printf("\n¼ÓÃÜºóµÄÃÜÎÄÎª£º");
 	    for(i=0;i<miwen.length;i++)
 	    	System.out.print(miwen[i]);
-	    mingwen=bitcode(miwen);				//ï¿½ï¿½ï¿½ï¿½
-	    System.out.printf("\nï¿½ï¿½ï¿½Ü³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
+	    mingwen=bitcode(miwen);				//½âÃÜ
+	    System.out.printf("\n½âÃÜ³öµÄÃ÷ÎÄÎª£º");
 	    for(i=0;i<mingwen.length;i++)
 	    	System.out.print(mingwen[i]);
 	    
-	    System.out.print("\n\nï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½(y/n)?");
+	    System.out.print("\n\n¼ÌĞøÖ´ĞĞ(y/n)?");
 	    
 		go=input.next();
 		}while(go.equalsIgnoreCase("y"));
-		System.out.println("ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		System.out.println("ÑİÊ¾½áÊø£¡");
 
 
 	}

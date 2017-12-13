@@ -15,17 +15,17 @@ public class P4_2 {
         			index = j;
         		}
         	}
-        	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        	//½»»»Á½¸öÊý
         	if(index!=i)
         	{
         	temp=a[i];
         	a[i]=a[index];
         	a[index]=temp;
         	}
-        	System.out.print("ï¿½ï¿½"+i+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");			//ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½
+        	System.out.print("µÚ"+i+"²½ÅÅÐò½á¹û:");			//Êä³öÃ¿²½ÅÅÐòµÄ½á¹û
     		for(int h=0;h<a.length;h++)
     		{
-    			System.out.print(" "+a[h]);				//ï¿½ï¿½ï¿½
+    			System.out.print(" "+a[h]);				//Êä³ö
     		}
     		System.out.print("\n");
         }
@@ -38,10 +38,10 @@ public class P4_2 {
 		
 		for(i=0;i<SIZE;i++)
 		{
-			shuzu[i]=(int)(100+Math.random()*(100+1));			//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			shuzu[i]=(int)(100+Math.random()*(100+1));			//³õÊ¼»¯Êý×é
 		}
 		
-		System.out.print("ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½\n");				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		System.out.print("ÅÅÐòÇ°µÄÊý×éÎª£º\n");				//Êä³öÅÅÐòÇ°µÄÊý×é
 		for(i=0;i<SIZE;i++)
 		{
 			System.out.print(shuzu[i]+" ");
@@ -49,12 +49,12 @@ public class P4_2 {
 		
 		System.out.print("\n");
 		
-		selectSort(shuzu);					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		selectSort(shuzu);					//ÅÅÐò²Ù×÷
 		
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½\n");
+		System.out.print("ÅÅÐòºóµÄÊý×éÎª£º\n");
 		for(i=0;i<SIZE;i++)
 		{
-			System.out.print(shuzu[i]+" ");					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			System.out.print(shuzu[i]+" ");					//Êä³öÅÅÐòºóµÄÊý×é
 		}
 		System.out.print("\n");
 

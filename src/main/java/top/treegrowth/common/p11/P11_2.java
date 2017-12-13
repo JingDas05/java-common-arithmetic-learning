@@ -7,29 +7,29 @@ import java.util.Scanner;
 public class P11_2 {
 	static int computer,user,last;
 	static Scanner input=new Scanner(System.in);
-	static void quhuochai()							//ï¿½ï¿½Ï·ï¿½ã·¨
+	static void quhuochai()							//ÓÎÏ·Ëã·¨
 	{
-		Random r=new Random();							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		Random r=new Random();							//Ëæ»úÖÖ×Ó
 		while(true)
 	   {
-	        System.out.printf(" ----------  Ä¿Ç°ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ %d ï¿½ï¿½ ----------\n",last);
-	        System.out.printf("ï¿½Ã»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:") ;
+	        System.out.printf(" ----------  Ä¿Ç°»¹ÓÐ»ð²ñ %d ¸ù ----------\n",last);
+	        System.out.printf("ÓÃ»§È¡»ð²ñÊýÁ¿:") ;
 	       
-	        user=input.nextInt();					//ï¿½Ã»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	        user=input.nextInt();					//ÓÃ»§È¡»ð²ñÊýÁ¿
 	        if(user<1 || user>4 || user>last)
 	        {
-				System.out.printf("ï¿½ï¿½Î¥ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½È¡ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!\n\n");
+				System.out.printf("ÄãÎ¥¹æÁË£¬ÄãÈ¡µÄ»ð²ñÊýÓÐÎÊÌâ!\n\n");
 				continue;
 			}
-	        last = last - user;						//Ê£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	        last = last - user;						//Ê£Óà»ð²ñÊýÁ¿
 	        if(last == 0)
 			{
-				System.out.printf("\nï¿½Ã»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½Ó®ï¿½ï¿½!\n"); 
+				System.out.printf("\nÓÃ»§È¡ÁË×îºóÒ»¸ö»ð²ñ,Òò´Ë¼ÆËã»úÓ®ÁË!\n"); 
 				break;
 			}
 			else
 			{
-				if(last>5)						//ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				if(last>5)						//¼ÆËã»úÈ¡»ð²ñÊýÁ¿
 				{
 					computer=r.nextInt(5);
 				}
@@ -42,10 +42,10 @@ public class P11_2 {
 					computer=last-1;
 				}
 				last = last - computer;
-				System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:%d  \n",computer);
+				System.out.printf("¼ÆËã»úÈ¡»ð²ñÊýÁ¿:%d  \n",computer);
 				if(last == 0)
 				{
-					System.out.printf("\nï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ó®ï¿½ï¿½!\n"); 
+					System.out.printf("\n¼ÆËã»úÈ¡ÁË×îºóÒ»¸ù»ð²ñ,Òò´ËÓÃ»§Ó®ÁË!\n"); 
 					break;
 				}
 			}
@@ -54,12 +54,12 @@ public class P11_2 {
 	public static void main(String[] args) {
 		int num;
 
-		System.out.printf("È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½\n");
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:");
-		num=input.nextInt();						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª%dï¿½ï¿½",num);
+		System.out.printf("È¡»ð²ñÓÎÏ·£¡\n");
+		System.out.printf("ÇëÏÈÊäÈë»ð²ñµÄ×ÜÁ¿Îª:");
+		num=input.nextInt();						//»ð²ñµÄ×ÜÁ¿
+		System.out.printf("»ð²ñµÄ×ÜÁ¿Îª%d£º",num);
 		last=num;
-		quhuochai();						//Ö´ï¿½ï¿½ï¿½ï¿½Ï·
+		quhuochai();						//Ö´ÐÐÓÎÏ·
 
 	}
 

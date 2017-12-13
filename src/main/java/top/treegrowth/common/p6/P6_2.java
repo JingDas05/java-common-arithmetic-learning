@@ -9,11 +9,11 @@ public class P6_2 {
 		int i;
 	    double result;
 	    result=a[n-1];
-	    for (i=n-2; i>=0; i--)			//ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½ï¿½ï¿½
+	    for (i=n-2; i>=0; i--)			//µÝÍÆËã·¨¼ÆËã
 		{
 			result=result*x+a[i];
 		}
-	    return result;					//ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½ï¿½
+	    return result;					//·µ»Ø¼ÆËã½á¹û
 	}
 
 	public static void main(String[] args) 
@@ -27,11 +27,11 @@ public class P6_2 {
 		DecimalFormat df1 = new DecimalFormat("0.00"); 
 		
 		System.out.print("\n");
-	    for (i=0; i<6; i++)				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    for (i=0; i<6; i++)				//Öð¸ö¼ÆËã½á¹û
 		{
 			result=polynomial1D(a,7,x[i]);
 			
-			System.out.print("x="+df1.format(x[i])+"Ê±ï¿½ï¿½p(x)="+df.format(result)+"\n");
+			System.out.print("x="+df1.format(x[i])+"Ê±£¬p(x)="+df.format(result)+"\n");
 		}
 	    System.out.print("\n");
 	}

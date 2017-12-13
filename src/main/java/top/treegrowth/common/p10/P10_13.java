@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class P10_13 
 {
-	static int fish(int yufu)								//ï¿½æ¸¸ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
+	static int fish(int yufu)								//Óæ¸¸²¶ÓãËã·¨
 	{
 		int init;
 		int n;
@@ -16,7 +16,7 @@ public class P10_13
 	   s = init;
 	   while(n!=0)
 	   {
-	        s=5*s+1;							//ï¿½ï¿½ï¿½ï¿½
+	        s=5*s+1;							//µİÍÆ
 	        n--;
 	   }
 	   return s;
@@ -26,12 +26,12 @@ public class P10_13
 		int num;
 		int yufu;
 
-		System.out.printf("ï¿½æ¸¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ¸¸ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½");
+		System.out.printf("Óæ¸¸²¶ÓãÎÊÌâÇó½â£¡\n");
+		System.out.printf("ÇëÏÈÊäÈëÓæ¸¸µÄ¸öÊı£º");
 		Scanner input=new Scanner(System.in);
-		yufu=input.nextInt();						//ï¿½æ¸¸ï¿½ï¿½ï¿½ï¿½
-		num=fish(yufu);							//ï¿½ï¿½ï¿½
-	    System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÙºÏ»ï²¶ï¿½ï¿½%dï¿½ï¿½ï¿½ã£¡\n",num);
+		yufu=input.nextInt();						//Óæ¸¸¸öÊı
+		num=fish(yufu);							//Çó½â
+	    System.out.printf("Óæ·òÖÁÉÙºÏ»ï²¶ÁË%dÌõÓã£¡\n",num);
 
 	}
 

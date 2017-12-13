@@ -2,30 +2,30 @@ package top.treegrowth.common.p10;
 
 public class P10_14
 {
-	static int jieti()							//ï¿½ã·¨
+	static int jieti()							//Ëã·¨
 	{
 		int i,res;
 		int count;
 
 		count=7;
-	    for(i=1;i<=100;i++)				//Ñ­ï¿½ï¿½
+	    for(i=1;i<=100;i++)				//Ñ­»·
 	    {
-	        if((count%2==1)&&(count%3==2)&&(count%5==4)&&(count%6==5) ) 	//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½
+	        if((count%2==1)&&(count%3==2)&&(count%5==4)&&(count%6==5) ) 	//ÅÐ¶ÏÊÇ·ñÂú×ã
 	        {
 	            res=count;
-	            break;          			//ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½
+	            break;          			//ÕÒµ½£¬Ìø³öÑ­»·
 	        }
-	        count=7*(i+1);				//ï¿½ï¿½Ò»ï¿½ï¿½
+	        count=7*(i+1);				//ÏÂÒ»¸ö
 	    }
-		return count;					//ï¿½ï¿½ï¿½ï¿½
+		return count;					//·µ»Ø
 	}
 	public static void main(String[] args) 
 	{
 		int num;
 
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½Ë¹Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡\n");
-		num=jieti();					//ï¿½ï¿½ï¿½
-		System.out.printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¹ï¿½ï¿½ï¿½%dï¿½ï¿½Ì¨ï¿½×£ï¿½\n",num);
+		System.out.printf("°®ÒòË¹Ì¹½×ÌÝÎÊÌâÇó½â£¡\n");
+		num=jieti();					//Çó½â
+		System.out.printf("Õâ¸ö½×ÌÝ×Ü¹²ÓÐ%d¸öÌ¨½×£¡\n",num);
 
 	}
 

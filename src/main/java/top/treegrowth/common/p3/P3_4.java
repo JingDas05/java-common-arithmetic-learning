@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class P3_4 {
 	static final int MAXNUM=30;
-	static int FalseCoin(int coin[],int low,int high)	//ï¿½ã·¨
+	static int FalseCoin(int coin[],int low,int high)	//Ëã·¨
 	{
 	    int i,sum1,sum2,sum3;
 		int re=0;
 		sum1=sum2=sum3=0;
-		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó²ï¿½Ò°ï¿½ï¿½ÅµÄ»ï¿½
+		// Èç¹ûÁ½¸öÓ²±Ò°¤×ÅµÄ»°
 	    if(low+1==high)
 	    {
 	        if(coin[low]<coin[high]) 
@@ -23,16 +23,16 @@ public class P3_4 {
 				return re;
 			}
 	    }
-	    // ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ï¿½Ä»ï¿½
-	    if((high-low+1)%2 == 0)				//nï¿½ï¿½Å¼ï¿½ï¿½
+	    // Èç¹ûÓ²±ÒÇø¼äµÄ¸öÊıÊÇÅ¼ÊıµÄ»°
+	    if((high-low+1)%2 == 0)				//nÊÇÅ¼Êı
 	    {
 	        for(i=low;i<=low+(high-low)/2;i++)
 			{
-	            sum1= sum1 + coin[i];       	//Ç°ï¿½ï¿½Îºï¿½
+	            sum1= sum1 + coin[i];       	//Ç°°ë¶ÎºÍ
 			}
 	        for(i=low+(high-low)/2+1;i<=high;i++)
 			{
-	            sum2 = sum2 + coin[i];       	//ï¿½ï¿½ï¿½Îºï¿½
+	            sum2 = sum2 + coin[i];       	//ºó°ë¶ÎºÍ
 			}
 	        if(sum1>sum2) 
 			{
@@ -52,11 +52,11 @@ public class P3_4 {
 	    {
 	        for(i=low;i<=low+(high-low)/2-1;i++)
 			{
-	            sum1= sum1 + coin[i];       	//Ç°ï¿½ï¿½Îºï¿½
+	            sum1= sum1 + coin[i];       	//Ç°°ë¶ÎºÍ
 			}
 	        for(i=low+(high-low)/2+1;i<=high;i++)
 			{
-	            sum2 = sum2 + coin[i];       	//ï¿½ï¿½ï¿½Îºï¿½
+	            sum2 = sum2 + coin[i];       	//ºó°ë¶ÎºÍ
 			}
 	        sum3 = coin[low+(high-low)/2];
 	        if(sum1>sum2)  
@@ -72,7 +72,7 @@ public class P3_4 {
 			else
 			{
 			}
-			// ï¿½Ğ¶Ï¼Ù±ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½Ç¸ï¿½
+			// ÅĞ¶Ï¼Ù±ÒÊÇ·ñÊÇÄÇ¸öÆæÊıµ¥×ÅµÄÄÇ¸ö
 	        if(sum1+sum3 == sum2+sum3) 
 			{
 				re=low+(high-low)/2+1;
@@ -85,16 +85,16 @@ public class P3_4 {
 		int[] coin=new int[MAXNUM];
 		int i,n;
 		int weizhi;
-	    System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡");
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÜµÄ¸ï¿½ï¿½ï¿½ï¿½ï¿½");
+	    System.out.println("·ÖÖÎËã·¨Çó½â¼ÙÒø±ÒÎÊÌâ£¡");
+		System.out.print("ÇëÊäÈëÒø±Ò×ÜµÄ¸öÊı£º");
 		Scanner input=new Scanner(System.in);
-		n=input.nextInt();						//ï¿½ï¿½ï¿½ï¿½ï¿½ÜµÄ¸ï¿½ï¿½ï¿½
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½Ù£ï¿½");
+		n=input.nextInt();						//Òø±Ò×ÜµÄ¸öÊı
+		System.out.print("ÇëÊäÈëÒø±ÒµÄÕæ¼Ù£º");
 		for(i=0;i<n;i++)
 		{
-			coin[i]=input.nextInt();			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½
+			coin[i]=input.nextInt();			//ÊäÈëÒø±ÒµÄÕæ¼Ù
 		}
-		weizhi=FalseCoin(coin,0,n-1);			//ï¿½ï¿½ï¿½
-	    System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+MAXNUM+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ£ï¿½ï¿½ï¿½"+weizhi+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¼ÙµÄ£ï¿½");
+		weizhi=FalseCoin(coin,0,n-1);			//Çó½â
+	    System.out.println("ÔÚÉÏÊö"+MAXNUM+"¸öÒø±ÒÖĞ£¬µÚ"+weizhi+"¸öÒø±ÒÊÇ¼ÙµÄ£¡");
 	}
 }

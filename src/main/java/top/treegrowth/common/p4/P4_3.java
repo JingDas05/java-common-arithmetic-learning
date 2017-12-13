@@ -3,15 +3,15 @@ package top.treegrowth.common.p4;
 public class P4_3
 {
 	static final int SIZE=10;
-	static void insertionSort(int[] a)  				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static void insertionSort(int[] a)  				//²åÈëÅÅÐò
 	{
 	    int i,j,t,h;
 	    for (i=1;i<a.length;i++)
 	    {
-	    	// ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½Ø¸ï¿½Öµï¿½ï¿½t
+	    	// ½«ÐèÒª²åÈëµÄÔªËØ¸³Öµ¸øt
 			t=a[i];
 			j=i-1;
-			// Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Îªiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			// Ñ­»·±éÀúÊý×éÀïÃæÆäËûÖµ£¬Èç¹ûÆäËûÖµ¶¼´óÓÚÎ»ÖÃÎªiµÄÊý¾Ý
 			while(j>=0 && t<a[j])
 			{
 				a[j+1]=a[j];
@@ -19,10 +19,10 @@ public class P4_3
 			}
 			a[j+1]=t;
 
-			System.out.print("ï¿½ï¿½"+i+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");			//ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½
+			System.out.print("µÚ"+i+"²½ÅÅÐò½á¹û:");			//Êä³öÃ¿²½ÅÅÐòµÄ½á¹û
 			for(h=0;h<a.length;h++)
 			{
-				System.out.print(" "+a[h]);				//ï¿½ï¿½ï¿½
+				System.out.print(" "+a[h]);				//Êä³ö
 			}
 			System.out.print("\n");
 		}
@@ -34,21 +34,21 @@ public class P4_3
 		
 		for(i=0;i<SIZE;i++)
 		{
-			shuzu[i]=(int)(100+Math.random()*(100+1));			//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			shuzu[i]=(int)(100+Math.random()*(100+1));			//³õÊ¼»¯Êý×é
 		}
-		System.out.print("ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½\n");				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		System.out.print("ÅÅÐòÇ°µÄÊý×éÎª£º\n");				//Êä³öÅÅÐòÇ°µÄÊý×é
 		for(i=0;i<SIZE;i++)
 		{
 			System.out.print(shuzu[i]+" ");
 		}
 		System.out.print("\n");
 		
-		insertionSort(shuzu);					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		insertionSort(shuzu);					//ÅÅÐò²Ù×÷
 		
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½\n");
+		System.out.print("ÅÅÐòºóµÄÊý×éÎª£º\n");
 		for(i=0;i<SIZE;i++)
 		{
-			System.out.print(shuzu[i]+" ");					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			System.out.print(shuzu[i]+" ");					//Êä³öÅÅÐòºóµÄÊý×é
 		}
 		System.out.print("\n");
 

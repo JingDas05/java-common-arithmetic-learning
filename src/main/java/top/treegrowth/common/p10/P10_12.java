@@ -1,57 +1,57 @@
 package top.treegrowth.common.p10;
 
 public class P10_12 {
-	static int count;								//ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½
-	static char color[] = "rwbwwbrbwr".toCharArray();				//ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ 
+	static int count;								//¶Ôµ÷´ÎÊý
+	static char color[] = "rwbwwbrbwr".toCharArray();				//ÈýÉ«Æì×ÓÅÅÁÐµÄÊý×é 
 	static int Blue, Write, Red;
 	 
-	static void swap(char[] c,int x, int y)				//ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
+	static void swap(char[] c,int x, int y)				//¶Ôµ÷¼°ÏÔÊ¾
 	{
 		int i;
 	   char temp;
 
-	   temp= c[x];							//ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½
+	   temp= c[x];							//¶Ôµ÷²Ù×÷
 	   c[x] = c[y];
 	   c[y] = temp;
-	   count++;							//ï¿½Û¼Ó¶Ôµï¿½ï¿½ï¿½ï¿½ï¿½ 
+	   count++;							//ÀÛ¼Ó¶Ôµ÷´ÎÊý 
 
-	   System.out.printf("ï¿½ï¿½%dï¿½Î¶Ôµï¿½ï¿½ï¿½",count);
-	   for (i = 0; i < color.length; i++)		//ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ 
+	   System.out.printf("µÚ%d´Î¶Ôµ÷ºó£º",count);
+	   for (i = 0; i < color.length; i++)		//Êä³öÒÆ¶¯ºóµÄÐ§¹û 
 	   {
 		  System.out.printf(" %c", color[i]);
 	   }
 	   System.out.printf("\n");
 	}
 
-	static void threeflags()						//ï¿½ï¿½É«ï¿½ï¿½ï¿½ã·¨
+	static void threeflags()						//ÈýÉ«ÆìËã·¨
 	{
-	   while (color[Write] == 'b')				//ï¿½ï¿½ï¿½ï¿½ 
+	   while (color[Write] == 'b')				//°×Æì 
 	   {
-		  Blue++;							//ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½
-		  Write++;						//ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½
+		  Blue++;							//ÏòºóÒÆ¶¯À¶Æì
+		  Write++;						//ÏòºóÒÆ¶¯°×Æì
 	   }
-	   while (color[Red] == 'r')				//ï¿½ï¿½ï¿½ï¿½ 
+	   while (color[Red] == 'r')				//ºìÆì 
 	   {
-		  Red--;							//ï¿½ï¿½Ç°ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ 
+		  Red--;							//ÏòÇ°ÒÆ¶¯ºìÆì 
 		}
 	   while (Write <= Red)			
 	   {
-		  if (color[Write] == 'r')				//ï¿½ï¿½ï¿½ï¿½ 
+		  if (color[Write] == 'r')				//ºìÆì 
 		  {
-			 swap(color,Write, Red);	//ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ï¿½ï¿½ 
+			 swap(color,Write, Red);	//¶Ôµ÷ºìÆìºÍ°×Æì 
 			 Red--;	  
-			 while (color[Red] == 'r')			//ï¿½ï¿½ï¿½Çºï¿½ï¿½ï¿½ 
+			 while (color[Red] == 'r')			//ÈôÊÇºìÆì 
 			 {
-				Red--;					//ï¿½ï¿½Ç°ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½
+				Red--;					//ÏòÇ°ÒÆ¶¯ºìÆì
 			 }
 		  }
-		  while (color[Write] == 'w')			//ï¿½ï¿½ï¿½ï¿½
+		  while (color[Write] == 'w')			//°×Æì
 		  {
 			 Write++;	
 		  }
-		  if (color[Write] == 'b')				//ï¿½ï¿½ï¿½ï¿½ 
+		  if (color[Write] == 'b')				//À¶Æì 
 		  {
-			 swap(color,Write, Blue);	//ï¿½Ôµï¿½
+			 swap(color,Write, Blue);	//¶Ôµ÷
 			 Blue++;	
 			 Write++;	
 		  }
@@ -60,22 +60,22 @@ public class P10_12 {
 	public static void main(String[] args) {
 		 int i;
 
-		   Blue=0;							//ï¿½ï¿½Ê¼ï¿½ï¿½
+		   Blue=0;							//³õÊ¼»¯
 		   Write=0;
 		   Red=color.length - 1;
 		   count=0;
 
-		   System.out.printf("ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!\n");
-		   System.out.printf("ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½:\n");
+		   System.out.printf("ÈýÉ«ÆìÎÊÌâÇó½â!\n");
+		   System.out.printf("ÈýÉ«Æì×î³õÅÅÁÐÐ§¹û:\n");
 		   System.out.printf("             ");
-		   for (i = 0; i <= Red; i++)				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+		   for (i = 0; i <= Red; i++)				//Êä³ö×î³õµÄÆì×ÓÅÅÁÐ 
 		   {
 			   System.out.printf(" %c", color[i]);
 		   }
 		   System.out.printf("\n");
-		   threeflags();							//ï¿½ï¿½ï¿½
-		   System.out.printf("Í¨ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½É¶Ôµï¿½,ï¿½ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:\n", count);
-		   for (i = 0; i < color.length; i++)		//ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ 
+		   threeflags();							//Çó½â
+		   System.out.printf("Í¨¹ý%d´ÎÍê³É¶Ôµ÷,×îÖÕ½á¹ûÈçÏÂ:\n", count);
+		   for (i = 0; i < color.length; i++)		//Êä³öÒÆ¶¯ºóµÄÐ§¹û 
 		   {
 			   System.out.printf(" %c", color[i]);
 		   }

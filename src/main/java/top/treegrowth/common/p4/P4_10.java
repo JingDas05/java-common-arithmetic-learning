@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 public class P4_10 {
-	static void kuaiSu(char[] a,int left,int right)				//ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	static void kuaiSu(char[] a,int left,int right)				//×Ö·û¿ìËÙÅÅÐò
 	{
 	    int f,l,r;
 	    char t;
@@ -29,12 +29,12 @@ public class P4_10 {
 			l++;
 	    if(left<r) 
 		{
-			kuaiSu(a,left,l-1);					//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
+			kuaiSu(a,left,l-1);					//µÝ¹éµ÷ÓÃ
 		}
 
 	    if(l<right) 
 		{
-			kuaiSu(a,r+1,right);				//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½
+			kuaiSu(a,r+1,right);				//µÝ¹éµ÷ÓÃ
 		}
 	}
 	public static void main(String[] args) 
@@ -42,19 +42,19 @@ public class P4_10 {
 		char[] str=new char[80];
 		int N;
 
-		System.out.print("ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½:");
+		System.out.print("ÊäÈëÒ»¸ö×Ö·û´®:");
 		Scanner input=new Scanner(System.in);
-		str=input.next().toCharArray();							//ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+		str=input.next().toCharArray();							//ÊäÈë×Ö·û´®
 
 		N=str.length;
 			
-		System.out.print("ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½\n");
-		System.out.println(str);				//ï¿½ï¿½ï¿½
+		System.out.print("ÅÅÐòÇ°£º\n");
+		System.out.println(str);				//Êä³ö
 
-		kuaiSu(str,0,N-1);							//ï¿½ï¿½ï¿½ï¿½
+		kuaiSu(str,0,N-1);							//ÅÅÐò
 
-		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½\n");
-		System.out.print(str);				//ï¿½ï¿½ï¿½
+		System.out.print("ÅÅÐòºó£º\n");
+		System.out.print(str);				//Êä³ö
 	
 
 	}
