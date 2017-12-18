@@ -121,26 +121,28 @@ public class P2_5 {
         }
     }
 
-    CBTType TreeLeftNode(CBTType treeNode)    //获取左子树
-    {
+    //获取左子树
+    CBTType TreeLeftNode(CBTType treeNode) {
         if (treeNode != null) {
-            return treeNode.left;                    //返回值
+            //返回值
+            return treeNode.left;
         } else {
             return null;
         }
     }
 
-    CBTType TreeRightNode(CBTType treeNode)    //获取右子树
-    {
+    //获取右子树
+    CBTType TreeRightNode(CBTType treeNode) {
         if (treeNode != null) {
-            return treeNode.right;                //返回值
+            //返回值
+            return treeNode.right;
         } else {
             return null;
         }
     }
 
-    int TreeIsEmpty(CBTType treeNode)            //判断空树
-    {
+    //判断空树
+    int TreeIsEmpty(CBTType treeNode) {
         if (treeNode != null) {
             return 0;
         } else {
@@ -148,15 +150,18 @@ public class P2_5 {
         }
     }
 
-    int TreeDepth(CBTType treeNode)                //计算二叉树深度
-    {
+    //计算二叉树深度(暂且没看懂)
+    int TreeDepth(CBTType treeNode) {
         int depleft, depright;
 
         if (treeNode == null) {
-            return 0; //对于空树，深度为0
+            //对于空树，深度为0
+            return 0;
         } else {
-            depleft = TreeDepth(treeNode.left);        //左子树深度 (递归调用)
-            depright = TreeDepth(treeNode.right);    //右子树深度 (递归调用)
+            //左子树深度 (递归调用)
+            depleft = TreeDepth(treeNode.left);
+            //右子树深度 (递归调用)
+            depright = TreeDepth(treeNode.right);
             if (depleft > depright) {
                 return depleft + 1;
             } else {
@@ -165,29 +170,36 @@ public class P2_5 {
         }
     }
 
-    void ClearTree(CBTType treeNode)        // 清空二叉树
+    // 清空二叉树
+    void ClearTree(CBTType treeNode)
     {
         if (treeNode != null) {
-            ClearTree(treeNode.left);        //清空左子树
-            ClearTree(treeNode.right);        //清空右子树
-            treeNode = null;                    //释放当前结点所占内存
+            //清空左子树
+            ClearTree(treeNode.left);
+            //清空右子树
+            ClearTree(treeNode.right);
+            treeNode = null;
 //	         treeNode=null;
         }
     }
 
-    void TreeNodeData(CBTType p)            //显示结点数据
-    {
-        System.out.printf("%s ", p.data);                //输出结点数据
+    // 显示结点数据
+    void TreeNodeData(CBTType p) {
+        //输出结点数据
+        System.out.printf("%s ", p.data);
     }
 
 
-    void LevelTree(CBTType treeNode)    //按层遍历
+    //按层遍历
+    void LevelTree(CBTType treeNode)
     {
         CBTType p;
-        CBTType[] q = new CBTType[MAXLEN];                                        //定义一个顺序栈
+        //定义一个顺序栈
+        CBTType[] q = new CBTType[MAXLEN];
         int head = 0, tail = 0;
 
-        if (treeNode != null)                                                //如果队首指针不为空
+        //如果队首指针不为空
+        if (treeNode != null)
         {
             tail = (tail + 1) % MAXLEN;                                    //计算循环队列队尾序号
             q[tail] = treeNode;                                        //将二叉树根指针进队
