@@ -141,7 +141,7 @@ public class P2_5 {
         }
     }
 
-    //判断空树
+    //判断空树，不等于空返回0，等于空返回1
     int TreeIsEmpty(CBTType treeNode) {
         if (treeNode != null) {
             return 0;
@@ -162,6 +162,7 @@ public class P2_5 {
             depleft = TreeDepth(treeNode.left);
             //右子树深度 (递归调用)
             depright = TreeDepth(treeNode.right);
+            // 递归左树或者右树的深度，取大值，加1返回
             if (depleft > depright) {
                 return depleft + 1;
             } else {
@@ -170,9 +171,8 @@ public class P2_5 {
         }
     }
 
-    // 清空二叉树
-    void ClearTree(CBTType treeNode)
-    {
+    // 递归清空二叉树
+    void ClearTree(CBTType treeNode) {
         if (treeNode != null) {
             //清空左子树
             ClearTree(treeNode.left);
@@ -190,69 +190,87 @@ public class P2_5 {
     }
 
 
-    //按层遍历
-    void LevelTree(CBTType treeNode)
-    {
+    // 按层遍历
+    void LevelTree(CBTType treeNode) {
         CBTType p;
         //定义一个顺序栈
         CBTType[] q = new CBTType[MAXLEN];
         int head = 0, tail = 0;
 
         //如果队首指针不为空
-        if (treeNode != null)
-        {
-            tail = (tail + 1) % MAXLEN;                                    //计算循环队列队尾序号
-            q[tail] = treeNode;                                        //将二叉树根指针进队
+        if (treeNode != null) {
+            //计算循环队列队尾序号
+            tail = (tail + 1) % MAXLEN;
+            //将二叉树根指针进队
+            q[tail] = treeNode;
         }
-        while (head != tail)                                            //队列不为空，进行循环
-        {
-            head = (head + 1) % MAXLEN;                                //计算循环队列的队首序号
-            p = q[head];                                            //获取队首元素
-            TreeNodeData(p);                                        //处理队首元素
-            if (p.left != null)                                        //如果结点存在左子树
-            {
-                tail = (tail + 1) % MAXLEN;                                //计算循环队列的队尾序号
-                q[tail] = p.left;                                        //将左子树指针进队
+        //队列不为空，循环遍历
+        while (head != tail) {
+            //计算循环队列的队首序号
+            head = (head + 1) % MAXLEN;
+            //获取队首元素
+            p = q[head];
+            //处理队首元素
+            TreeNodeData(p);
+            //如果结点存在左子树
+            if (p.left != null) {
+                //计算循环队列的队尾序号
+                tail = (tail + 1) % MAXLEN;
+                //将左子树指针进队
+                q[tail] = p.left;
             }
 
-            if (p.right != null)                                        //如果结点存在右子树
-            {
-                tail = (tail + 1) % MAXLEN;                                //计算循环队列的队尾序号
-                q[tail] = p.right;                                        //将右子树指针进队
+            //如果结点存在右子树
+            if (p.right != null) {
+                //计算循环队列的队尾序号
+                tail = (tail + 1) % MAXLEN;
+                //将右子树指针进队
+                q[tail] = p.right;
             }
         }
     }
 
 
-    void DLRTree(CBTType treeNode)  //先序遍历
-    {
+    // 先序遍历
+    // 考察到一个节点后，即刻输出该节点的值，并继续遍历其左右子树。(根左右)
+    void DLRTree(CBTType treeNode) {
         if (treeNode != null) {
-            TreeNodeData(treeNode);                            //显示结点的数据
+            //显示结点的数据
+            TreeNodeData(treeNode);
             DLRTree(treeNode.left);
             DLRTree(treeNode.right);
         }
     }
 
-    void LDRTree(CBTType treeNode)  //中序遍历
-    {
+    // 中序遍历
+    // 考察到一个节点后，将其暂存，遍历完左子树后，再输出该节点的值，然后遍历右子树。(左根右)
+    void LDRTree(CBTType treeNode) {
         if (treeNode != null) {
-            LDRTree(treeNode.left);                    //中序遍历左子树
-            TreeNodeData(treeNode);                                //显示结点数据
-            LDRTree(treeNode.right);                //中序遍历右子树
+            //中序遍历左子树
+            LDRTree(treeNode.left);
+            //显示结点数据
+            TreeNodeData(treeNode);
+            //中序遍历右子树
+            LDRTree(treeNode.right);
         }
     }
 
-    void LRDTree(CBTType treeNode) //后序遍历
-    {
+    // 后序遍历
+    // 考察到一个节点后，将其暂存，遍历完左右子树后，再输出该节点的值。(左右根)
+    void LRDTree(CBTType treeNode) {
         if (treeNode != null) {
-            LRDTree(treeNode.left);                    //后序遍历左子树
-            LRDTree(treeNode.right);                //后序遍历右子树
-            TreeNodeData(treeNode);                                //显示结点数据
+            //后序遍历左子树
+            LRDTree(treeNode.left);
+            //后序遍历右子树
+            LRDTree(treeNode.right);
+            //显示结点数据
+            TreeNodeData(treeNode);
         }
     }
 
     public static void main(String[] args) {
-        CBTType root = null;        //root为指向二叉树根结点的指针
+        //root为指向二叉树根结点的指针
+        CBTType root = null;
         int menusel;
         P2_5 t = new P2_5();
         //设置根元素
@@ -260,11 +278,13 @@ public class P2_5 {
         //添加结点
         do {
             System.out.printf("请选择菜单添加二叉树的结点\n");
-            System.out.printf("0.退出\t");            //显示菜单
+            //显示菜单
+            System.out.printf("0.退出\t");
             System.out.printf("1.添加二叉树的结点\n");
             menusel = input.nextInt();
             switch (menusel) {
-                case 1:            //添加结点
+                //添加结点
+                case 1:
                     t.AddTreeNode(root);
                     break;
                 case 0:
@@ -277,7 +297,8 @@ public class P2_5 {
         //遍历
         do {
             System.out.printf("请选择菜单遍历二叉树,输入0表示退出:\n");
-            System.out.printf("1.先序遍历DLR\t");    //显示菜单
+            //显示菜单
+            System.out.printf("1.先序遍历DLR\t");
             System.out.printf("2.中序遍历LDR\n");
             System.out.printf("3.后序遍历LRD\t");
             System.out.printf("4.按层遍历\n");
@@ -285,22 +306,26 @@ public class P2_5 {
             switch (menusel) {
                 case 0:
                     break;
-                case 1:                //先序遍历
+                case 1:
+                    //先序遍历
                     System.out.printf("\n先序遍历DLR的结果：");
                     t.DLRTree(root);
                     System.out.printf("\n");
                     break;
-                case 2:                //中序遍历
+                case 2:
+                    //中序遍历
                     System.out.printf("\n中序LDR遍历的结果：");
                     t.LDRTree(root);
                     System.out.printf("\n");
                     break;
-                case 3:                //后序遍历
+                case 3:
+                    //后序遍历
                     System.out.printf("\n后序遍历LRD的结果：");
                     t.LRDTree(root);
                     System.out.printf("\n");
                     break;
-                case 4:                //按层遍历
+                case 4:
+                    //按层遍历
                     System.out.printf("\n按层遍历的结果：");
                     t.LevelTree(root);
                     System.out.printf("\n");
@@ -312,10 +337,8 @@ public class P2_5 {
         //深度
         System.out.printf("\n二叉树深度为:%d\n", t.TreeDepth(root));
 
-        t.ClearTree(root);            //清空二叉树
+        //清空二叉树
+        t.ClearTree(root);
         root = null;
-
-
     }
-
 }
