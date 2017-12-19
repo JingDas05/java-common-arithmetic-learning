@@ -102,45 +102,53 @@ public class P2_6 {
         System.out.printf("->%c", GM.Vertex[n]);
         //添加处理节点的操作
         for (i = 0; i < GM.VertexNum; i++) {
+            //
             if (GM.EdgeWeight[n][i] != GraphMatrix.MaxValue && GM.isTrav[n] == 0) {
-                DeepTraOne(GM, i);            //递归进行遍历
+                //递归进行遍历
+                DeepTraOne(GM, i);
             }
         }
     }
 
-    static void DeepTraGraph(GraphMatrix GM)        //深度优先遍历
-    {
+    //深度优先遍历
+    static void DeepTraGraph(GraphMatrix GM) {
         int i;
-
-        for (i = 0; i < GM.VertexNum; i++)            //清除各顶点遍历标志
-        {
+        //清除各顶点遍历标志
+        for (i = 0; i < GM.VertexNum; i++) {
             GM.isTrav[i] = 0;
         }
         System.out.printf("深度优先遍历结点:");
         for (i = 0; i < GM.VertexNum; i++) {
-            if (GM.isTrav[i] == 0)                //若该点未遍历
-            {
-                DeepTraOne(GM, i);            //调用函数遍历
+            //若该点未遍历
+            if (GM.isTrav[i] == 0) {
+                //调用函数遍历
+                DeepTraOne(GM, i);
             }
         }
         System.out.printf("\n");
     }
 
     public static void main(String[] args) {
-        GraphMatrix GM = new GraphMatrix();                    //定义保存邻接表结构的图
+        //定义保存邻接表结构的图
+        GraphMatrix GM = new GraphMatrix();
 
         System.out.printf("输入生成图的类型:");
-        GM.GType = input.nextInt();            //图的种类
+        //图的种类
+        GM.GType = input.nextInt();
         System.out.printf("输入图的顶点数量:");
-        GM.VertexNum = input.nextInt();        //输入图顶点数
+        //输入图顶点数
+        GM.VertexNum = input.nextInt();
         System.out.printf("输入图的边数量:");
-        GM.EdgeNum = input.nextInt();            //输入图边数
-        ClearGraph(GM);                    //清空图
-        CreateGraph(GM);                    //生成邻接表结构的图
+        //输入图边数
+        GM.EdgeNum = input.nextInt();
+        //清空图
+        ClearGraph(GM);
+        //生成邻接表结构的图
+        CreateGraph(GM);
         System.out.printf("该图的邻接矩阵数据如下:\n");
-        OutGraph(GM);                    //输出邻接矩阵
-        DeepTraGraph(GM);                //深度优先搜索遍历图
-
+        //输出邻接矩阵
+        OutGraph(GM);
+        //深度优先搜索遍历图
+        DeepTraGraph(GM);
     }
-
 }
